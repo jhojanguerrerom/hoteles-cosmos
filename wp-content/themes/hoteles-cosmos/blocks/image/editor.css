@@ -1,0 +1,198 @@
+/* =====================================================
+   EDITOR - IMAGEN
+===================================================== */
+
+.cosmos-image {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-image--container {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CONTAINER + IMAGEN 100%
+===================================================== */
+
+.cosmos-image--container.cosmos-image--full {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   FULL WIDTH REAL
+===================================================== */
+
+.cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.cosmos-image__inner {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   IMAGEN 100%
+===================================================== */
+
+.cosmos-image--full .cosmos-image__img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   IMAGEN AUTOMÁTICA
+===================================================== */
+
+.cosmos-image--auto .cosmos-image__img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ALINEACIÓN IZQUIERDA
+===================================================== */
+
+.cosmos-image--align-left .cosmos-image__inner {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* =====================================================
+   ALINEACIÓN CENTRO
+===================================================== */
+
+.cosmos-image--align-center .cosmos-image__inner {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   ALINEACIÓN DERECHA
+===================================================== */
+
+.cosmos-image--align-right .cosmos-image__inner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-image__placeholder {
+    width: 100%;
+    min-height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: #eeeeee;
+    color: #777777;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image__img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image--container,
+    .cosmos-image--container.cosmos-image--full {
+        width: calc(100% - 40px);
+        max-width: none;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-image--container,
+    .cosmos-image--container.cosmos-image--full {
+        width: calc(100% - 30px);
+    }
+
+}

@@ -1,0 +1,76 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/icon-text",
+    "title": "Iconos y texto",
+    "category": "cosmos",
+    "icon": "star-filled",
+    "description": "Bloque de iconos circulares con texto debajo.",
+    "keywords": [
+        "iconos",
+        "servicios",
+        "características",
+        "beneficios",
+        "iconos y texto"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "items": {
+            "type": "array",
+            "default": [
+                {
+                    "iconId": 0,
+                    "iconUrl": "",
+                    "iconAlt": "",
+                    "text": "Texto"
+                }
+            ]
+        },
+
+        "circleSize": {
+            "type": "number",
+            "default": 80
+        },
+
+        "iconSize": {
+            "type": "number",
+            "default": 34
+        },
+
+        "textSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "spacing": {
+            "type": "number",
+            "default": 24
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

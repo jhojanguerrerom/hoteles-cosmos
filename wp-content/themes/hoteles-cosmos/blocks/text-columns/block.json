@@ -1,0 +1,88 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/text-columns",
+    "title": "Texto en columnas",
+    "category": "cosmos",
+    "icon": "columns",
+    "description": "Bloque de texto con una o dos columnas, fondo opcional y estilos configurables.",
+    "keywords": [
+        "texto",
+        "columnas",
+        "contenido",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "columns": {
+            "type": "number",
+            "default": 1
+        },
+
+        "contentOne": {
+            "type": "string",
+            "default": ""
+        },
+
+        "contentTwo": {
+            "type": "string",
+            "default": ""
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "fontSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "fontWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "hasBackground": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#f5f5f5"
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 60
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 60
+        },
+
+        "columnGap": {
+            "type": "number",
+            "default": 60
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

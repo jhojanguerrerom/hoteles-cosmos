@@ -1,0 +1,200 @@
+/* =====================================================
+   EDITOR - GALERÍA
+===================================================== */
+
+.cosmos-gallery {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-gallery--container {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   FULL SCREEN
+===================================================== */
+
+.cosmos-gallery--full {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.cosmos-gallery__inner {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-gallery-columns),
+            minmax(0, 1fr)
+        );
+
+    gap: var(--cosmos-gallery-gap);
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ITEM
+===================================================== */
+
+.cosmos-gallery__item {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-gallery__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: top;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: inherit;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-gallery__placeholder {
+    width: 100%;
+    height: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background: #eeeeee;
+
+    color: #777777;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   CONTROLES DEL EDITOR
+===================================================== */
+
+.cosmos-gallery-editor-image-control {
+    margin-bottom: 24px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.cosmos-gallery-editor-image-control strong {
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+
+.cosmos-gallery-editor-thumb {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 10px;
+
+    border-radius: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-gallery--container {
+        width: calc(100% - 40px);
+        max-width: none;
+    }
+
+
+    .cosmos-gallery__inner {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-gallery--container {
+        width: calc(100% - 30px);
+    }
+
+
+    .cosmos-gallery__inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+}

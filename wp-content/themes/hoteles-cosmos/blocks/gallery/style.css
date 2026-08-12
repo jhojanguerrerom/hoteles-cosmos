@@ -1,0 +1,167 @@
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.cosmos-gallery {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-gallery--container {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   FULL SCREEN
+===================================================== */
+
+.cosmos-gallery--full {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*
+ * Importante:
+ * evita que Gutenberg o elementos internos
+ * produzcan scroll horizontal.
+ */
+
+.cosmos-gallery--full {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.cosmos-gallery__inner {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-gallery-columns),
+            minmax(0, 1fr)
+        );
+
+    gap: var(--cosmos-gallery-gap);
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ITEM
+===================================================== */
+
+.cosmos-gallery__item {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: var(--cosmos-gallery-height);
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    border-radius: var(--cosmos-gallery-radius);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-gallery__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: top;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: inherit;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-gallery--container {
+        width: calc(100% - 40px);
+        max-width: none;
+    }
+
+
+    /*
+     * 4 imágenes → 2 columnas
+     * 3 imágenes → 2 columnas
+     */
+
+    .cosmos-gallery__inner {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-gallery--container {
+        width: calc(100% - 30px);
+    }
+
+
+    /*
+     * En móvil siempre una imagen
+     * debajo de la otra.
+     */
+
+    .cosmos-gallery__inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+
+    .cosmos-gallery__item {
+        height: auto;
+    }
+
+}

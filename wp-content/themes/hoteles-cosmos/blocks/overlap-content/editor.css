@@ -1,0 +1,306 @@
+/* =====================================================
+   IMÁGENES SUPERPUESTAS Y TEXTO
+   EDITOR GUTENBERG
+===================================================== */
+
+.cosmos-overlap-content {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-overlap-content .container {
+    width: min(1400px, calc(100% - 48px));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.cosmos-overlap-content__grid {
+    display: grid;
+
+    grid-template-columns: 40% 60%;
+
+    align-items: center;
+
+    column-gap: 40px;
+}
+
+/* =====================================================
+   COLUMNA DE IMÁGENES
+===================================================== */
+
+.cosmos-overlap-content__images {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 560px;
+}
+
+/* =====================================================
+   IMAGEN 1
+===================================================== */
+
+.cosmos-overlap-content__image-one {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 60%;
+
+    aspect-ratio: 3 / 4;
+
+    z-index: 2;
+}
+
+/* =====================================================
+   IMAGEN 2
+===================================================== */
+
+.cosmos-overlap-content__image-two {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 60%;
+
+    aspect-ratio: 3 / 4;
+
+    z-index: 1;
+}
+
+/* =====================================================
+   IMÁGENES
+===================================================== */
+
+.cosmos-overlap-content__image-one img,
+.cosmos-overlap-content__image-two img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+}
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-overlap-content__placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eeeeee;
+
+    color: #777777;
+
+    text-align: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-overlap-content__text {
+    padding-left: 50px;
+    padding-right: 20px;
+    width: max-content;
+    text-align: left;
+}
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.cosmos-overlap-content__title {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: clamp(32px, 3vw, 46px);
+
+    line-height: 1.12;
+
+    font-weight: 400;
+
+    letter-spacing: -0.02em;
+
+    text-align: left;
+}
+
+/* =====================================================
+   PALABRA DESTACADA
+===================================================== */
+
+.cosmos-overlap-content__highlight {
+    display: block;
+
+    margin-top: 2px;
+    margin-bottom: 30px;
+
+    color: #111111;
+
+    font-size: clamp(42px, 4vw, 64px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: -0.025em;
+
+    text-align: left;
+}
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.cosmos-overlap-content__description {
+    max-width: 680px;
+
+    color: #333333;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+}
+
+.cosmos-overlap-content__description p {
+    margin: 0 0 20px;
+}
+
+.cosmos-overlap-content__description p:last-child {
+    margin-bottom: 0;
+}
+
+/* =====================================================
+   PANTALLAS GRANDES
+===================================================== */
+
+@media (min-width: 1401px) {
+
+    .cosmos-overlap-content__grid {
+        column-gap: 70px;
+    }
+
+    .cosmos-overlap-content__text {
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-overlap-content {
+        padding: 80px 0;
+    }
+
+    .cosmos-overlap-content .container {
+        width: calc(100% - 40px);
+    }
+
+    .cosmos-overlap-content__grid {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+    }
+
+    .cosmos-overlap-content__images {
+        min-height: 520px;
+
+        margin-bottom: 70px;
+    }
+
+    .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__image-two {
+        width: 60%;
+
+        aspect-ratio: 3 / 4;
+    }
+
+    .cosmos-overlap-content__text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cosmos-overlap-content__description {
+        max-width: none;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-overlap-content {
+        padding: 60px 0;
+    }
+
+    .cosmos-overlap-content .container {
+        width: calc(100% - 30px);
+    }
+
+    .cosmos-overlap-content__images {
+        min-height: 470px;
+
+        margin-bottom: 55px;
+    }
+
+    .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__image-two {
+        width: 70%;
+
+        aspect-ratio: 3 / 4;
+    }
+
+    .cosmos-overlap-content__title {
+        font-size: 32px;
+    }
+
+    .cosmos-overlap-content__highlight {
+        font-size: 42px;
+    }
+
+    .cosmos-overlap-content__description {
+        font-size: 16px;
+
+        line-height: 1.65;
+
+        text-align: justify;
+    }
+
+}

@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.6/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image",
+    "title": "Imagen",
+    "category": "cosmos",
+    "icon": "format-image",
+    "description": "Imagen configurable con opciones de ancho, alineación y bordes.",
+    "keywords": [
+        "imagen",
+        "image",
+        "foto",
+        "fotografía"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "widthMode": {
+            "type": "string",
+            "default": "container"
+        },
+
+        "imageWidth": {
+            "type": "string",
+            "default": "auto"
+        },
+
+        "alignment": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "borderRadius": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

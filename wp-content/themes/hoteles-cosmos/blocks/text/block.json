@@ -1,0 +1,99 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/text",
+    "title": "Texto",
+    "category": "cosmos",
+    "icon": "editor-alignleft",
+    "description": "Bloque de texto con título, párrafo y texto destacado.",
+    "keywords": [
+        "texto",
+        "titulo",
+        "párrafo",
+        "contenido",
+        "destacado"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "showTitle": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "showParagraph": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "titleTag": {
+            "type": "string",
+            "default": "h2"
+        },
+
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+
+        "paragraph": {
+            "type": "string",
+            "default": ""
+        },
+
+        "titleFontSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "titleFontWeight": {
+            "type": "number",
+            "default": 400
+        },
+
+        "paragraphFontSize": {
+            "type": "number",
+            "default": 17
+        },
+
+        "paragraphColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "paragraphFontWeight": {
+            "type": "number",
+            "default": 400
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "paragraphAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "containerWidth": {
+            "type": "string",
+            "default": "container"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

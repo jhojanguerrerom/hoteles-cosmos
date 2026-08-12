@@ -1,0 +1,88 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/cta",
+    "title": "CTA Cosmos",
+    "category": "cosmos",
+    "icon": "megaphone",
+    "description": "Llamada a la acción con enlace y estilos configurables.",
+    "keywords": [
+        "cta",
+        "llamada a la acción",
+        "enlace",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "text": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "url": {
+            "type": "string",
+            "default": ""
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "fontSize": {
+            "type": "number",
+            "default": 32
+        },
+
+        "fontWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "hasBackground": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "borderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "paddingVertical": {
+            "type": "number",
+            "default": 14
+        },
+
+        "paddingHorizontal": {
+            "type": "number",
+            "default": 28
+        },
+
+        "hasUnderline": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

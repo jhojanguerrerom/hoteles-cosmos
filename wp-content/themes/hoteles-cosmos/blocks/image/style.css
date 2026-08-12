@@ -1,0 +1,267 @@
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BLOQUE CONTAINER
+===================================================== */
+
+.cosmos-image--container {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BLOQUE FULL WIDTH
+===================================================== */
+
+.cosmos-image--full {
+    box-sizing: border-box;
+}
+
+
+/*
+ * IMPORTANTE:
+ *
+ * Si existen AMBAS clases:
+ *
+ * cosmos-image--container
+ * cosmos-image--full
+ *
+ * "container" tiene prioridad para el ancho
+ * del bloque.
+ *
+ * "full" solamente controla que la imagen
+ * ocupe el 100% disponible.
+ */
+
+.cosmos-image--container.cosmos-image--full {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   FULL WIDTH REAL
+===================================================== */
+
+/*
+ * Solamente cuando NO existe container,
+ * el bloque ocupa toda la pantalla.
+ */
+
+.cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+    width: 100vw;
+    max-width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.cosmos-image__inner {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   IMAGEN - 100% DEL ANCHO DISPONIBLE
+===================================================== */
+
+.cosmos-image--full .cosmos-image__img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   IMAGEN - TAMAÑO NATURAL
+===================================================== */
+
+.cosmos-image--auto .cosmos-image__img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ALINEACIÓN IZQUIERDA
+===================================================== */
+
+.cosmos-image--align-left .cosmos-image__inner {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* =====================================================
+   ALINEACIÓN CENTRADA
+===================================================== */
+
+.cosmos-image--align-center .cosmos-image__inner {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   ALINEACIÓN DERECHA
+===================================================== */
+
+.cosmos-image--align-right .cosmos-image__inner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image__img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BORDER RADIUS
+===================================================== */
+
+.cosmos-image__img {
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-image__placeholder {
+    width: 100%;
+    min-height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: #eeeeee;
+    color: #777777;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   EVITAR SCROLL HORIZONTAL
+===================================================== */
+
+.cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+    overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+
+    .cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image--container,
+    .cosmos-image--container.cosmos-image--full {
+        width: calc(100% - 40px);
+        max-width: none;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-image--container,
+    .cosmos-image--container.cosmos-image--full {
+        width: calc(100% - 30px);
+    }
+
+
+    .cosmos-image:not(.cosmos-image--container).cosmos-image--full {
+        width: 100vw;
+        max-width: 100vw;
+
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+}

@@ -1,0 +1,194 @@
+/* =====================================================
+   ICONOS Y TEXTO
+===================================================== */
+
+.cosmos-icon-text {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.cosmos-icon-text .container {
+    width: min(1280px, calc(100% - 48px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.cosmos-icon-text__grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        var(--cosmos-icon-columns, 6),
+        minmax(0, 1fr)
+    );
+
+    gap: var(--cosmos-icon-spacing);
+
+    align-items: start;
+
+    /*
+     * Mantiene los iconos agrupados y centrados
+     * sin ocupar innecesariamente todo el container.
+     */
+    width: min(100%, 1100px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   ELEMENTO
+===================================================== */
+
+.cosmos-icon-text__item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: var(--cosmos-icon-text-align);
+}
+
+
+/* =====================================================
+   CÍRCULO
+===================================================== */
+
+.cosmos-icon-text__circle {
+    width: var(--cosmos-icon-circle-size);
+    height: var(--cosmos-icon-circle-size);
+
+    min-width: var(--cosmos-icon-circle-size);
+    min-height: var(--cosmos-icon-circle-size);
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    margin: 0 auto 12px;
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.cosmos-icon-text__circle:hover {
+    transform: scale(1.08);
+
+    background-color: #222222;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.cosmos-icon-text__circle img {
+    display: block;
+
+    width: var(--cosmos-icon-size);
+    height: var(--cosmos-icon-size);
+
+    max-width: none;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-icon-text__text {
+    margin: 0;
+
+    color: var(--cosmos-icon-text-color);
+
+    font-size: var(--cosmos-icon-text-size);
+
+    font-weight: var(--cosmos-icon-text-weight);
+
+    line-height: 1.45;
+
+    text-align: var(--cosmos-icon-text-align);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-icon-text .container {
+        width: calc(100% - 40px);
+    }
+
+    .cosmos-icon-text__grid {
+        width: 100%;
+
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-icon-text .container {
+        width: calc(100% - 30px);
+    }
+
+    .cosmos-icon-text__grid {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: var(--cosmos-icon-spacing);
+        row-gap: 40px;
+    }
+
+    /* Si hay una cantidad impar, el último elemento queda centrado */
+    .cosmos-icon-text__item:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 100%;
+        max-width: calc(
+            (100% - var(--cosmos-icon-spacing)) / 2
+        );
+    }
+
+}

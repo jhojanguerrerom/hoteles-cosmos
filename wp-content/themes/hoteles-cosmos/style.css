@@ -1,0 +1,1601 @@
+css
+/*
+Theme Name: Hoteles Cosmos
+Theme URI: http://localhost:8080
+Author: Hoteles Cosmos
+Description: Tema personalizado para Hoteles Cosmos.
+Version: 1.0
+Text Domain: hoteles-cosmos
+*/
+
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 170px 0 0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    background: #ffffff;
+    color: #111111;
+    transition: padding-top 0.35s ease;
+}
+
+body:has(.site-header.is-scrolled) {
+    padding-top: 76px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =====================================================
+   CONTENEDOR GLOBAL
+===================================================== */
+
+.container {
+    width: min(1280px, calc(100% - 48px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   GUTENBERG - CONTENIDO NORMAL
+===================================================== */
+
+/*
+ * Los bloques nativos de Gutenberg que no tengan
+ * alineación especial utilizan 1280px.
+ */
+
+.entry-content > .wp-block-image,
+.entry-content > .wp-block-paragraph,
+.entry-content > .wp-block-heading,
+.entry-content > .wp-block-list,
+.entry-content > .wp-block-buttons,
+.entry-content > .wp-block-separator,
+.entry-content > .wp-block-gallery {
+    width: min(1280px, calc(100% - 48px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   GUTENBERG - ANCHO AMPLIO
+===================================================== */
+
+.entry-content > .alignwide {
+    width: min(1280px, calc(100% - 48px));
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   GUTENBERG - ANCHO COMPLETO
+===================================================== */
+
+.entry-content > .alignfull {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* =====================================================
+   NUESTROS BLOQUES COSMOS
+===================================================== */
+
+/*
+ * Los bloques personalizados utilizan su propio
+ * .container y NO son afectados por las reglas
+ * anteriores.
+ */
+
+.entry-content > .wp-block-hoteles-cosmos-hero,
+.entry-content > .wp-block-hoteles-cosmos-overlap-content {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    .entry-content > .wp-block-image,
+    .entry-content > .wp-block-paragraph,
+    .entry-content > .wp-block-heading,
+    .entry-content > .wp-block-list,
+    .entry-content > .wp-block-buttons,
+    .entry-content > .wp-block-separator,
+    .entry-content > .wp-block-gallery {
+        width: calc(100% - 40px);
+    }
+
+    .entry-content > .alignwide {
+        width: calc(100% - 40px);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .entry-content > .wp-block-image,
+    .entry-content > .wp-block-paragraph,
+    .entry-content > .wp-block-heading,
+    .entry-content > .wp-block-list,
+    .entry-content > .wp-block-buttons,
+    .entry-content > .wp-block-separator,
+    .entry-content > .wp-block-gallery {
+        width: calc(100% - 30px);
+    }
+
+    .entry-content > .alignwide {
+        width: calc(100% - 30px);
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: #000000;
+    color: #ffffff;
+
+    z-index: 1000;
+
+    transition:
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   HEADER INNER
+   ========================================================= */
+
+.header-inner {
+    width: min(1280px, calc(100% - 48px));
+
+    height: 170px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+
+    align-items: center;
+
+    position: relative;
+
+    transition:
+        height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.site-logo {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 22px;
+
+    transition:
+        padding 0.35s ease;
+}
+
+.site-logo a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.site-logo img {
+    display: block;
+
+    width: auto;
+
+    max-width: 240px;
+    max-height: 95px;
+
+    object-fit: contain;
+
+    transition:
+        max-width 0.35s ease,
+        max-height 0.35s ease;
+}
+
+
+/* =========================================================
+   IDIOMAS
+   ========================================================= */
+
+.language-switcher {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+    align-self: start;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding-top: 28px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+.language {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.language:hover,
+.language.active {
+    color: #ffffff;
+}
+
+.language:hover {
+    transform: translateY(-1px);
+}
+
+.language-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================================
+   MENÚ PRINCIPAL
+   ========================================================= */
+
+.main-navigation {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 24px;
+
+    transition:
+        padding 0.35s ease;
+}
+
+.primary-menu {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.primary-menu > li {
+    position: relative;
+}
+
+.primary-menu a {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 12px 18px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   LÍNEA ANIMADA DEL MENÚ PRINCIPAL
+   ========================================================= */
+
+.primary-menu > li > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    bottom: 4px;
+
+    height: 1px;
+
+    background: #ffffff;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.primary-menu > li > a:hover::after,
+.primary-menu > li.current-menu-item > a::after,
+.primary-menu > li.current-menu-ancestor > a::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   SUBMENÚ DESKTOP
+   ESTILO MINIMALISTA
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    /*
+     * Elemento padre
+     */
+    .primary-menu > li {
+        position: relative;
+    }
+
+
+    /*
+     * Submenu
+     *
+     * Sin tarjeta.
+     * Sin borde.
+     * Sin sombra.
+     * Sin fondo de hover.
+     */
+    .primary-menu .sub-menu {
+        position: absolute;
+
+        top: 100%;
+        left: 50%;
+
+        min-width: 220px;
+
+        margin: 0;
+        padding: 18px 0 12px;
+
+        list-style: none;
+
+        background: #000000;
+
+        border: 0;
+        box-shadow: none;
+
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform:
+            translate(-50%, 6px);
+
+        transition:
+            opacity 0.22s ease,
+            visibility 0.22s ease,
+            transform 0.22s ease;
+
+        z-index: 100;
+    }
+
+
+    /*
+     * Zona invisible entre el menú
+     * y el submenu.
+     */
+    .primary-menu .sub-menu::before {
+        content: "";
+
+        position: absolute;
+
+        top: -12px;
+        left: 0;
+
+        width: 100%;
+        height: 12px;
+
+        background: transparent;
+    }
+
+
+    /*
+     * Línea superior muy discreta
+     */
+    .primary-menu .sub-menu::after {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+
+        width: 24px;
+        height: 1px;
+
+        background:
+            rgba(255, 255, 255, 0.45);
+
+        transform:
+            translateX(-50%);
+    }
+
+
+    /*
+     * Mostrar submenu
+     */
+    .primary-menu > li:hover > .sub-menu,
+    .primary-menu > li:focus-within > .sub-menu {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform:
+            translate(-50%, 0);
+    }
+
+
+    /*
+     * Elementos del submenu
+     */
+    .primary-menu .sub-menu li {
+        position: relative;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /*
+     * Enlaces del submenu
+     */
+    .primary-menu .sub-menu a {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        padding: 9px 24px;
+
+        color:
+            rgba(255, 255, 255, 0.62);
+
+        font-size: 13px;
+
+        font-weight: 400;
+
+        line-height: 1.4;
+
+        letter-spacing: 0.025em;
+
+        white-space: nowrap;
+
+        transition:
+            color 0.22s ease,
+            padding-left 0.22s ease;
+    }
+
+
+    /*
+     * Eliminamos la línea inferior
+     * heredada del menú principal.
+     */
+    .primary-menu .sub-menu a::after {
+        display: none;
+    }
+
+
+    /*
+     * Indicador lateral
+     */
+    .primary-menu .sub-menu a::before {
+        content: "";
+
+        position: absolute;
+
+        left: 12px;
+        top: 50%;
+
+        width: 2px;
+        height: 0;
+
+        background: #ffffff;
+
+        transform:
+            translateY(-50%);
+
+        transition:
+            height 0.22s ease;
+    }
+
+
+    /*
+     * Hover del submenu
+     */
+    .primary-menu .sub-menu a:hover {
+        color: #ffffff;
+
+        padding-left: 30px;
+
+        background: transparent;
+    }
+
+
+    /*
+     * Indicador activo
+     */
+    .primary-menu .sub-menu a:hover::before {
+        height: 15px;
+    }
+
+
+    /*
+     * Página actual
+     */
+    .primary-menu .sub-menu
+    li.current-menu-item > a {
+        color: #ffffff;
+    }
+
+    .primary-menu .sub-menu
+    li.current-menu-item > a::before {
+        height: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER AL HACER SCROLL
+   ========================================================= */
+
+.site-header.is-scrolled {
+    background:
+        rgba(0, 0, 0, 0.94);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.20);
+}
+
+.site-header.is-scrolled .header-inner {
+    height: 76px;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    grid-template-rows:
+        1fr;
+}
+
+
+/* =========================================================
+   LOGO COMPACTO AL HACER SCROLL
+   ========================================================= */
+
+.site-header.is-scrolled .site-logo {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-content: flex-start;
+
+    padding-top: 0;
+}
+
+.site-header.is-scrolled .site-logo img {
+    max-width: 145px;
+    max-height: 52px;
+}
+
+
+/* =========================================================
+   MENÚ COMPACTO AL HACER SCROLL
+   ========================================================= */
+
+.site-header.is-scrolled .main-navigation {
+    grid-column: 2;
+    grid-row: 1;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   IDIOMAS COMPACTOS AL HACER SCROLL
+   ========================================================= */
+
+.site-header.is-scrolled .language-switcher {
+    grid-column: 3;
+    grid-row: 1;
+
+    padding-top: 0;
+}
+
+
+/* =========================================================
+   BOTÓN HAMBURGUESA
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 1.5px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   HAMBURGUESA ABIERTA
+   ========================================================= */
+
+.menu-toggle.is-active span:nth-child(1) {
+    transform:
+        translateY(6.5px)
+        rotate(45deg);
+}
+
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+    transform:
+        translateY(-6.5px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        padding-top: 70px;
+    }
+
+
+    /* -----------------------------------------
+       HEADER
+       ----------------------------------------- */
+
+    .site-header {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        height: 70px;
+    }
+
+
+    .header-inner {
+        width:
+            calc(100% - 30px);
+
+        height: 70px;
+
+        display: grid;
+
+        grid-template-columns:
+            50px 1fr 50px;
+
+        grid-template-rows:
+            70px;
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+       ----------------------------------------- */
+
+    .site-logo {
+        grid-column: 2;
+        grid-row: 1;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .site-logo img {
+        max-width: 145px;
+        max-height: 52px;
+    }
+
+
+    /* -----------------------------------------
+       IDIOMAS
+       ----------------------------------------- */
+
+    .language-switcher {
+        grid-column: 3;
+        grid-row: 1;
+
+        justify-self: end;
+        align-self: center;
+
+        padding: 0;
+
+        font-size: 11px;
+    }
+
+    .language-separator {
+        display: none;
+    }
+
+    .language span {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       HAMBURGUESA
+       ----------------------------------------- */
+
+    .menu-toggle {
+        grid-column: 1;
+        grid-row: 1;
+
+        display: flex;
+
+        align-self: center;
+    }
+
+
+    /* -----------------------------------------
+       NAVEGACIÓN MOBILE
+       ----------------------------------------- */
+
+    .main-navigation {
+        position: fixed;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        height:
+            calc(100vh - 70px);
+
+        padding:
+            30px 24px;
+
+        background:
+            rgba(0, 0, 0, 0.98);
+
+        display: block;
+
+        overflow-y: auto;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-12px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .main-navigation.is-open {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+
+    /* -----------------------------------------
+       MENÚ MOBILE
+       ----------------------------------------- */
+
+    .primary-menu {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+    }
+
+    .primary-menu > li {
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.10);
+    }
+
+    .primary-menu > li > a {
+        justify-content: space-between;
+
+        padding:
+            18px 5px;
+
+        font-size: 18px;
+    }
+
+    .primary-menu > li > a::after {
+        display: none;
+    }
+
+
+    /* -----------------------------------------
+       SUBMENÚ MOBILE
+       ----------------------------------------- */
+
+    .primary-menu .sub-menu {
+        position: static;
+
+        min-width: 0;
+
+        margin: 0;
+
+        padding:
+            0 0 8px;
+
+        background: transparent;
+
+        border: 0;
+
+        box-shadow: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: none;
+
+        display: none;
+    }
+
+    .primary-menu .sub-menu::before,
+    .primary-menu .sub-menu::after {
+        display: none;
+    }
+
+    .primary-menu .sub-menu.is-open {
+        display: block;
+    }
+
+    .primary-menu .sub-menu li {
+        width: 100%;
+    }
+
+    .primary-menu .sub-menu a {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        padding:
+            12px 20px 12px 25px;
+
+        color:
+            rgba(255, 255, 255, 0.60);
+
+        font-size: 15px;
+
+        font-weight: 400;
+
+        line-height: 1.4;
+
+        transition:
+            color 0.22s ease,
+            padding-left 0.22s ease;
+    }
+
+    .primary-menu .sub-menu a::after {
+        display: none;
+    }
+
+    .primary-menu .sub-menu a::before {
+        content: "";
+
+        position: absolute;
+
+        left: 8px;
+        top: 50%;
+
+        width: 2px;
+        height: 0;
+
+        background: #ffffff;
+
+        transform:
+            translateY(-50%);
+
+        transition:
+            height 0.22s ease;
+    }
+
+    .primary-menu .sub-menu a:hover {
+        background: transparent;
+
+        color: #ffffff;
+
+        padding-left: 30px;
+    }
+
+    .primary-menu .sub-menu a:hover::before {
+        height: 14px;
+    }
+
+
+    /* -----------------------------------------
+       HEADER SCROLLEADO MOBILE
+       ----------------------------------------- */
+
+    .site-header.is-scrolled .header-inner {
+        height: 70px;
+
+        grid-template-columns:
+            50px 1fr 50px;
+
+        grid-template-rows:
+            70px;
+    }
+
+    .site-header.is-scrolled .site-logo {
+        grid-column: 2;
+        grid-row: 1;
+
+        justify-content: center;
+    }
+
+    .site-header.is-scrolled .site-logo img {
+        max-width: 145px;
+        max-height: 52px;
+    }
+
+    .site-header.is-scrolled .main-navigation {
+        grid-column: auto;
+        grid-row: auto;
+
+        padding:
+            30px 24px;
+    }
+
+    .site-header.is-scrolled .language-switcher {
+        grid-column: 3;
+        grid-row: 1;
+
+        padding-top: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1150px) {
+
+    .header-inner {
+        width:
+            calc(100% - 32px);
+    }
+
+    .primary-menu {
+        gap: 0;
+    }
+
+    .primary-menu a {
+        padding-left: 12px;
+        padding-right: 12px;
+
+        font-size: 13px;
+    }
+
+    .primary-menu > li > a::after {
+        left: 12px;
+        right: 12px;
+    }
+
+    .site-logo img {
+        max-width: 210px;
+    }
+}
+
+
+/* =========================================================
+   IDIOMAS — HEADER REDUCIDO DESKTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    .site-header.is-scrolled .language-switcher {
+        display: flex;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        width: auto;
+        height: 76px;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .site-header.is-scrolled .language {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        line-height: 1;
+
+        white-space: nowrap;
+
+        padding:
+            6px 4px;
+    }
+
+    .site-header.is-scrolled .language-separator {
+        display: inline-block;
+
+        line-height: 1;
+
+        margin: 0 3px;
+
+        color:
+            rgba(255, 255, 255, 0.35);
+    }
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+.menu-toggle:focus-visible,
+.language:focus-visible,
+.primary-menu a:focus-visible {
+    outline: 2px solid #ffffff;
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    background: #000000;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER INNER
+   ========================================================= */
+
+.footer-inner {
+    width:
+        min(1280px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap: 80px;
+
+    padding:
+        80px 0 70px;
+}
+
+
+/* =========================================================
+   FOOTER — MARCA
+   ========================================================= */
+
+.footer-brand {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   FOOTER — LOGO
+   ========================================================= */
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo a {
+    display: flex;
+
+    align-items: center;
+}
+
+.footer-logo img {
+    display: block;
+
+    width: auto;
+
+    max-width: 220px;
+    max-height: 90px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   FOOTER — REDES SOCIALES
+   ========================================================= */
+
+.footer-social {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.social-link {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.social-link img {
+    width: 22px;
+    height: 22px;
+
+    display: block;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.social-link:hover {
+    transform:
+        translateY(-4px);
+}
+
+.social-link:hover img {
+    transform:
+        scale(1.08);
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   FOOTER — EMAIL
+   ========================================================= */
+
+.footer-email {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+
+    letter-spacing: 0.02em;
+
+    transition:
+        color 0.25s ease;
+}
+
+.footer-email:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER — TÍTULOS
+   ========================================================= */
+
+.footer-title {
+    margin:
+        0 0 25px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER — MENÚ
+   ========================================================= */
+
+.footer-menu {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu a {
+    display: inline-block;
+
+    padding:
+        7px 0;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-menu a:hover {
+    color: #ffffff;
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER — SUBMENÚ
+   ========================================================= */
+
+/*
+ * El footer utiliza el mismo menú de WordPress.
+ *
+ * Si existen submenús dentro del footer,
+ * se muestran de forma sencilla y sin cajas.
+ */
+
+.footer-menu .sub-menu {
+    list-style: none;
+
+    margin: 0;
+
+    padding:
+        0 0 0 16px;
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+}
+
+.footer-menu .sub-menu li {
+    margin: 0;
+}
+
+.footer-menu .sub-menu a {
+    padding:
+        5px 0;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 13px;
+}
+
+.footer-menu .sub-menu a:hover {
+    color: #ffffff;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   FOOTER — COPYRIGHT
+   ========================================================= */
+
+.footer-bottom {
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom-inner {
+    width:
+        min(1280px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding:
+        22px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 12px;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   FOOTER — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-inner {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 50px;
+
+        padding:
+            65px 0 55px;
+    }
+
+    .footer-brand {
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+/* =========================================================
+   FOOTER — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .footer-inner {
+        width:
+            calc(100% - 40px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 45px;
+
+        padding:
+            55px 0 45px;
+    }
+
+    .footer-brand {
+        align-items: flex-start;
+    }
+
+    .footer-logo img {
+        max-width: 190px;
+        max-height: 75px;
+    }
+
+    .footer-title {
+        margin-bottom: 18px;
+
+        font-size: 14px;
+    }
+
+    .footer-menu a {
+        padding:
+            6px 0;
+
+        font-size: 14px;
+    }
+
+    .footer-menu .sub-menu {
+        padding-left: 14px;
+    }
+
+    .footer-menu .sub-menu a {
+        font-size: 13px;
+    }
+
+    .footer-bottom-inner {
+        width:
+            calc(100% - 40px);
+
+        padding:
+            20px 0;
+    }
+
+    .footer-bottom p {
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .site-header,
+    .header-inner,
+    .site-logo,
+    .site-logo img,
+    .primary-menu a,
+    .primary-menu .sub-menu,
+    .main-navigation,
+    .menu-toggle span,
+    .social-link,
+    .social-link img,
+    .footer-menu a,
+    .footer-email {
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
+

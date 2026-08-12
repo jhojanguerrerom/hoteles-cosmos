@@ -1,0 +1,192 @@
+.cosmos-hero {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.cosmos-hero__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+.cosmos-hero__overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.75) 25%,
+            rgba(0, 0, 0, 0.38) 55%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.cosmos-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cosmos-hero__content {
+    width: 100%;
+
+    text-align: left;
+
+    color: #fff;
+}
+
+.cosmos-hero__content--small {
+    max-width: 760px;
+}
+
+.cosmos-hero__content--medium {
+    max-width: 900px;
+}
+
+.cosmos-hero__content--large {
+    max-width: 1100px;
+}
+
+.cosmos-hero__eyebrow {
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.cosmos-hero__title {
+    max-width: 700px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(40px, 3vw, 72px);
+    font-weight: 700;
+}
+
+.cosmos-hero__subtitle {
+    max-width: 600px;
+    margin: 10px 0 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: clamp(25px, 1.2vw, 52px);
+}
+
+.cosmos-hero__button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+
+    padding: 13px 26px;
+
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    background: transparent;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.cosmos-hero__button:hover {
+    color: #000;
+    background: #fff;
+    border-color: #fff;
+}
+
+
+@media (max-width: 900px) {
+
+    .cosmos-hero {
+        min-height: 520px;
+    }
+
+    .cosmos-hero__overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.78),
+                rgba(0, 0, 0, 0.42)
+            );
+    }
+
+    .cosmos-hero__title {
+        font-size: clamp(36px, 8vw, 54px);
+    }
+
+    .cosmos-hero__subtitle {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cosmos-hero {
+        min-height: 520px;
+    }
+
+    .cosmos-hero__overlay {
+        background: rgba(0, 0, 0, 0.52);
+    }
+
+    .cosmos-hero__eyebrow {
+        font-size: 11px;
+    }
+
+    .cosmos-hero__title {
+        font-size: 38px;
+        line-height: 1.08;
+    }
+
+    .cosmos-hero__subtitle {
+        margin-top: 18px;
+
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .cosmos-hero__button {
+        margin-top: 26px;
+    }
+
+}
