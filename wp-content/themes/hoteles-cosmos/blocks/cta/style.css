@@ -17,7 +17,6 @@
 
     margin-top: var(--cosmos-cta-margin-top, 0px);
     margin-bottom: var(--cosmos-cta-margin-bottom, 0px);
-    padding-bottom: 60px;
 
     padding-left: 0;
     padding-right: 0;
@@ -339,12 +338,6 @@
 
 @media (max-width: 900px) {
 
-    .cosmos-cta {
-
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
 
     .cosmos-cta > .container {
 
@@ -371,13 +364,6 @@
 ===================================================== */
 
 @media (max-width: 600px) {
-
-    .cosmos-cta {
-
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
 
     .cosmos-cta > .container {
 

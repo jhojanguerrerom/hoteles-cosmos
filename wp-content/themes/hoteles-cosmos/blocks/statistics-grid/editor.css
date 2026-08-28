@@ -1,0 +1,102 @@
+/*
+ * =====================================================
+ * EDITOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/*
+ * =====================================================
+ * EDITOR - ITEM
+ * =====================================================
+ */
+
+.cosmos-statistics-editor-item {
+
+    margin-bottom: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid #e0e0e0;
+}
+
+
+/*
+ * =====================================================
+ * EDITOR - HEADER
+ * =====================================================
+ */
+
+.cosmos-statistics-editor-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+ * =====================================================
+ * RICH TEXT
+ * =====================================================
+ */
+
+.cosmos-statistics-grid
+.block-editor-rich-text__editable {
+
+    min-height: 1em;
+}
+
+
+/*
+ * =====================================================
+ * NÚMERO EDITOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__number {
+
+    cursor: default;
+}
+
+
+/*
+ * =====================================================
+ * PLACEHOLDER
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__text
+[data-rich-text-placeholder] {
+
+    opacity: 0.5;
+}
+
+
+/*
+ * =====================================================
+ * MOBILE EDITOR
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-statistics-grid__item {
+
+        padding:
+            20px 10px;
+    }
+
+}

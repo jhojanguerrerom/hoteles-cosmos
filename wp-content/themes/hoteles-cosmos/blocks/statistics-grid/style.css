@@ -1,0 +1,403 @@
+/*
+ * =====================================================
+ * CONTENEDOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding-top:
+        var(
+            --cosmos-statistics-padding-top,
+            20px
+        );
+
+    padding-bottom:
+        var(
+            --cosmos-statistics-padding-bottom,
+            20px
+        );
+}
+
+
+/*
+ * =====================================================
+ * FILAS
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__row {
+
+    display: grid;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    column-gap:
+        var(
+            --cosmos-statistics-column-gap,
+            0px
+        );
+
+    position: relative;
+}
+
+
+/*
+ * =====================================================
+ * FILA SUPERIOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__row--top {
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-statistics-columns, 1),
+            minmax(0, 1fr)
+        );
+}
+
+
+/*
+ * =====================================================
+ * FILA INFERIOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__row--bottom {
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-statistics-columns, 1),
+            minmax(0, 1fr)
+        );
+
+    margin-top:
+        var(
+            --cosmos-statistics-row-gap,
+            0px
+        );
+}
+
+
+/*
+ * =====================================================
+ * ITEM
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__item {
+
+    position: relative;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding:
+        25px
+        20px;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * LÍNEAS VERTICALES INTERNAS
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__item
++ .cosmos-statistics-grid__item {
+
+    border-left:
+        var(--cosmos-statistics-line-width, 1px)
+        solid
+        var(--cosmos-statistics-line-color, #dddddd);
+}
+
+
+/*
+ * =====================================================
+ * LÍNEA HORIZONTAL ENTRE FILAS
+ * =====================================================
+ *
+ * IMPORTANTE:
+ *
+ * No utilizamos border-top sobre toda la fila.
+ *
+ * La línea empieza y termina dentro de cada celda,
+ * evitando crear una línea exterior continua.
+ *
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__row--bottom
+.cosmos-statistics-grid__item {
+
+    border-top:
+        var(--cosmos-statistics-line-width, 1px)
+        solid
+        var(--cosmos-statistics-line-color, #dddddd);
+}
+
+
+/*
+ * =====================================================
+ * NÚMERO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__number {
+
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    color:
+        var(
+            --cosmos-statistics-number-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-statistics-number-size,
+            42px
+        );
+
+    font-weight:
+        var(
+            --cosmos-statistics-number-weight,
+            700
+        );
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+/*
+ * =====================================================
+ * VALOR ANIMADO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__number-value {
+
+    display: inline-block;
+
+    min-width: 0;
+}
+
+
+/*
+ * =====================================================
+ * PREFIJO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__prefix,
+.cosmos-statistics-grid__suffix {
+
+    font: inherit;
+}
+
+
+/*
+ * =====================================================
+ * TEXTO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid__text {
+
+    margin-top: 8px;
+
+    color:
+        var(
+            --cosmos-statistics-text-color,
+            #666666
+        );
+
+    font-size:
+        var(
+            --cosmos-statistics-text-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-statistics-text-weight,
+            400
+        );
+
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-statistics-grid__item {
+
+        padding:
+            22px 15px;
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    /*
+     * ---------------------------------------------
+     * ITEM
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__item {
+
+        padding:
+            20px 10px;
+
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * NÚMERO
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__number {
+
+        font-size:
+            calc(
+                var(--cosmos-statistics-number-size, 42px)
+                * 0.75
+            );
+
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * TEXTO
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__text {
+
+        font-size:
+            calc(
+                var(--cosmos-statistics-text-size, 16px)
+                * 0.9
+            );
+
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * FILAS
+     *
+     * En mobile:
+     *
+     * 1 cifra = 1 columna
+     * 2 cifras = 2 columnas
+     * 3+ cifras = 2 columnas
+     *
+     * Esto evita que 4 o 5 cifras
+     * queden demasiado pequeñas.
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__row {
+
+        grid-template-columns:
+            repeat(
+                min(
+                    2,
+                    var(--cosmos-statistics-columns, 1)
+                ),
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * CORRECCIÓN DE LÍNEAS VERTICALES
+     * ---------------------------------------------
+     *
+     * La línea vertical solo aparece
+     * entre elementos de la misma fila visual.
+     *
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__item
+    + .cosmos-statistics-grid__item {
+
+        border-left:
+            var(--cosmos-statistics-line-width, 1px)
+            solid
+            var(--cosmos-statistics-line-color, #dddddd);
+
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * CUANDO HAY 3 O 5 ELEMENTOS
+     *
+     * El último elemento ocupa solamente
+     * su propia columna, no toda la fila.
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid__item:last-child:nth-child(odd) {
+
+        grid-column:
+            auto;
+
+    }
+
+}
+
+
+.cosmos-statistics-grid--container {
+    max-width: var(--wp--style--global--content-size);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cosmos-statistics-grid--full {
+    width: 100%;
+    max-width: none;
+}

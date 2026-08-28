@@ -1,0 +1,123 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/statistics-grid",
+    "title": "Cifras Cosmos",
+    "category": "cosmos",
+    "icon": "chart-bar",
+    "description": "Grid de cifras animadas con texto descriptivo.",
+    "keywords": [
+        "cifras",
+        "estadísticas",
+        "números",
+        "estadisticas",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "row1": {
+            "type": "array",
+            "default": [
+                {
+                    "number": 0,
+                    "prefix": "",
+                    "suffix": "",
+                    "text": ""
+                }
+            ]
+        },
+
+        "row2": {
+            "type": "array",
+            "default": []
+        },
+
+        "numberColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#666666"
+        },
+
+        "numberSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "textSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "numberWeight": {
+            "type": "number",
+            "default": 700
+        },
+
+        "textWeight": {
+            "type": "number",
+            "default": 400
+        },
+
+        "lineColor": {
+            "type": "string",
+            "default": "#dddddd"
+        },
+
+        "lineWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "animationDuration": {
+            "type": "number",
+            "default": 1800
+        },
+
+        "animationDecimals": {
+            "type": "number",
+            "default": 0
+        },
+
+        "columnGap": {
+            "type": "number",
+            "default": 0
+        },
+
+        "rowGap": {
+            "type": "number",
+            "default": 0
+        },
+
+        "sectionPaddingTop": {
+            "type": "number",
+            "default": 20
+        },
+
+        "sectionPaddingBottom": {
+            "type": "number",
+            "default": 20
+        },
+
+        "contentWidth": {
+            "type": "string",
+            "default": "container"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "viewScript": "file:./view.js",
+    "render": "file:./render.php"
+}

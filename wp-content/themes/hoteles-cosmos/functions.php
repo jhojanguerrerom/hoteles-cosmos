@@ -238,6 +238,10 @@ function hoteles_cosmos_register_blocks() {
     register_block_type(
         get_template_directory() . '/blocks/carousel'
     );
+
+    register_block_type(
+        get_template_directory() . '/blocks/statistics-grid'
+    );
 }
 
 add_action(
