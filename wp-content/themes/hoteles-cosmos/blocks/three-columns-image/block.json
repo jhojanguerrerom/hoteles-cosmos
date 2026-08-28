@@ -1,0 +1,145 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/three-columns-image",
+    "title": "Tres columnas + imagen Cosmos",
+    "category": "cosmos",
+    "icon": "columns",
+    "description": "Dos columnas de texto laterales y una imagen central dentro del container.",
+    "keywords": [
+        "tres columnas",
+        "imagen",
+        "texto",
+        "columnas",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "leftTitle": {
+            "type": "string",
+            "default": "Título izquierdo"
+        },
+
+        "leftDescription": {
+            "type": "string",
+            "default": "Descripción del contenido izquierdo."
+        },
+
+        "rightTitle": {
+            "type": "string",
+            "default": "Título derecho"
+        },
+
+        "rightDescription": {
+            "type": "string",
+            "default": "Descripción del contenido derecho."
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 28
+        },
+
+        "titleWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "descriptionColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "descriptionSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "descriptionWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "leftAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "rightAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "imageWidth": {
+            "type": "number",
+            "default": 100
+        },
+
+        "imageHeight": {
+            "type": "number",
+            "default": 500
+        },
+
+        "columnGap": {
+            "type": "number",
+            "default": 40
+        },
+
+        "paddingTop": {
+            "type": "number",
+            "default": 70
+        },
+
+        "paddingBottom": {
+            "type": "number",
+            "default": 70
+        },
+
+        "blockMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "blockMarginBottom": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

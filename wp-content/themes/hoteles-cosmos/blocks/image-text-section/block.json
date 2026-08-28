@@ -1,0 +1,181 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image-text-section",
+    "title": "Imagen y texto Cosmos",
+    "category": "cosmos",
+    "icon": "align-pull-right",
+    "description": "Contenedor de dos columnas con imagen y contenido configurable.",
+    "keywords": [
+        "imagen",
+        "texto",
+        "columnas",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imagePosition": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "imageWidth": {
+            "type": "number",
+            "default": 50
+        },
+
+        "textWidth": {
+            "type": "number",
+            "default": 50
+        },
+
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "descriptionSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 0
+        },
+
+        "showCta": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "ctaTitle": {
+            "type": "string",
+            "default": ""
+        },
+
+        "ctaDescription": {
+            "type": "string",
+            "default": ""
+        },
+
+        "ctaButtonText": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "ctaButtonUrl": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "ctaAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "ctaTitleSize": {
+            "type": "number",
+            "default": 24
+        },
+
+        "ctaTitleColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "ctaDescriptionSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "ctaDescriptionColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "ctaButtonColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "ctaButtonTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaButtonSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "ctaButtonPaddingVertical": {
+            "type": "number",
+            "default": 14
+        },
+
+        "ctaButtonPaddingHorizontal": {
+            "type": "number",
+            "default": 28
+        },
+
+        "ctaButtonRadius": {
+            "type": "number",
+            "default": 4
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

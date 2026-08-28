@@ -1,0 +1,114 @@
+/* =====================================================
+   HOTELES COSMOS
+   TWO COLUMN TEXT
+   EDITOR
+===================================================== */
+
+
+/*
+ * El editor debe respetar exactamente
+ * la misma estructura visual del frontend.
+ */
+
+.wp-block-hoteles-cosmos-two-column-text {
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+}
+
+
+/*
+ * Container del tema
+ */
+
+.wp-block-hoteles-cosmos-two-column-text > .container {
+
+    width: min(
+        1280px,
+        calc(100% - 48px)
+    );
+
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Evitar que Gutenberg introduzca
+ * espacios adicionales.
+ */
+
+.wp-block-hoteles-cosmos-two-column-text
+.cosmos-two-column-text__grid {
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Columnas
+ */
+
+.wp-block-hoteles-cosmos-two-column-text
+.cosmos-two-column-text__column {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * RichText
+ */
+
+.wp-block-hoteles-cosmos-two-column-text
+.rich-text {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Mobile editor
+ */
+
+@media (max-width: 600px) {
+
+    .wp-block-hoteles-cosmos-two-column-text > .container {
+
+        width: calc(100% - 32px);
+
+        max-width: none;
+    }
+
+
+    .wp-block-hoteles-cosmos-two-column-text
+    .cosmos-two-column-text__grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        row-gap: 35px;
+    }
+
+}

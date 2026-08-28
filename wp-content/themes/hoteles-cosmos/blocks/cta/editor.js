@@ -25,16 +25,29 @@ function Edit({ attributes, setAttributes }) {
     const {
         text,
         url,
+
         textColor,
         textAlign,
         fontSize,
         fontWeight,
+
         hasBackground,
         backgroundColor,
+
+        hasBorder,
+        borderColor,
+        borderWidth,
+
         borderRadius,
+
         paddingVertical,
         paddingHorizontal,
-        hasUnderline
+
+        hasUnderline,
+
+        marginTop,
+        marginBottom
+
     } = attributes;
 
 
@@ -55,38 +68,60 @@ function Edit({ attributes, setAttributes }) {
      */
 
     const blockProps = useBlockProps({
-        className: 'cosmos-cta'
+
+        className: 'cosmos-cta',
+
+        style: {
+
+            '--cosmos-cta-text-color':
+                textColor,
+
+            '--cosmos-cta-text-align':
+                textAlign,
+
+            '--cosmos-cta-font-size':
+                `${fontSize}px`,
+
+            '--cosmos-cta-font-weight':
+                fontWeight,
+
+            '--cosmos-cta-background':
+                hasBackground
+                    ? backgroundColor
+                    : 'transparent',
+
+            '--cosmos-cta-border-width':
+                hasBorder
+                    ? `${borderWidth}px`
+                    : '0px',
+
+            '--cosmos-cta-border-color':
+                hasBorder
+                    ? borderColor
+                    : 'transparent',
+
+            '--cosmos-cta-border-radius':
+                `${borderRadius}px`,
+
+            '--cosmos-cta-padding-vertical':
+                `${paddingVertical}px`,
+
+            '--cosmos-cta-padding-horizontal':
+                `${paddingHorizontal}px`,
+
+            '--cosmos-cta-text-decoration':
+                hasUnderline
+                    ? 'underline'
+                    : 'none',
+
+            '--cosmos-cta-margin-top':
+                `${marginTop}px`,
+
+            '--cosmos-cta-margin-bottom':
+                `${marginBottom}px`
+        }
+
     });
-
-
-    /*
-     * =====================================================
-     * ESTILOS DEL CTA
-     * =====================================================
-     */
-
-    const linkStyle = {
-
-        color: textColor,
-
-        textAlign: textAlign,
-
-        fontSize: `${fontSize}px`,
-
-        fontWeight: fontWeight,
-
-        backgroundColor: hasBackground
-            ? backgroundColor
-            : 'transparent',
-
-        borderRadius: `${borderRadius}px`,
-
-        padding: `${paddingVertical}px ${paddingHorizontal}px`,
-
-        textDecoration: hasUnderline
-            ? 'underline'
-            : 'none'
-    };
 
 
     return (
@@ -178,8 +213,12 @@ function Edit({ attributes, setAttributes }) {
                                 value: '400'
                             },
                             {
-                                label: __('Seminegrita', 'hoteles-cosmos'),
+                                label: __('Medio', 'hoteles-cosmos'),
                                 value: '500'
+                            },
+                            {
+                                label: __('Seminegrita', 'hoteles-cosmos'),
+                                value: '600'
                             },
                             {
                                 label: __('Negrita', 'hoteles-cosmos'),
@@ -213,7 +252,8 @@ function Edit({ attributes, setAttributes }) {
                         value={textColor}
                         onChange={(value) =>
                             setAttributes({
-                                textColor: value || '#111111'
+                                textColor:
+                                    value || '#111111'
                             })
                         }
                     />
@@ -222,11 +262,11 @@ function Edit({ attributes, setAttributes }) {
 
 
                 {/* =================================================
-                    FONDO Y BOTÓN
+                    FONDO
                 ================================================= */}
 
                 <PanelBody
-                    title={__('Fondo y botón', 'hoteles-cosmos')}
+                    title={__('Fondo', 'hoteles-cosmos')}
                     initialOpen={false}
                 >
 
@@ -263,6 +303,76 @@ function Edit({ attributes, setAttributes }) {
 
                     )}
 
+                </PanelBody>
+
+
+                {/* =================================================
+                    BORDE
+                ================================================= */}
+
+                <PanelBody
+                    title={__('Borde', 'hoteles-cosmos')}
+                    initialOpen={false}
+                >
+
+                    <ToggleControl
+                        label={__('Mostrar borde', 'hoteles-cosmos')}
+                        checked={hasBorder}
+                        onChange={(value) =>
+                            setAttributes({
+                                hasBorder: value
+                            })
+                        }
+                    />
+
+
+                    {hasBorder && (
+
+                        <>
+
+                            <p>
+                                {__('Color del borde', 'hoteles-cosmos')}
+                            </p>
+
+                            <ColorPalette
+                                value={borderColor}
+                                onChange={(value) =>
+                                    setAttributes({
+                                        borderColor:
+                                            value || '#111111'
+                                    })
+                                }
+                            />
+
+
+                            <RangeControl
+                                label={__('Grosor del borde', 'hoteles-cosmos')}
+                                value={borderWidth}
+                                onChange={(value) =>
+                                    setAttributes({
+                                        borderWidth: value
+                                    })
+                                }
+                                min={1}
+                                max={10}
+                                step={1}
+                            />
+
+                        </>
+
+                    )}
+
+                </PanelBody>
+
+
+                {/* =================================================
+                    FORMA Y ESPACIADO DEL BOTÓN
+                ================================================= */}
+
+                <PanelBody
+                    title={__('Forma y espaciado', 'hoteles-cosmos')}
+                    initialOpen={false}
+                >
 
                     <RangeControl
                         label={__('Radio de las esquinas', 'hoteles-cosmos')}
@@ -276,7 +386,7 @@ function Edit({ attributes, setAttributes }) {
                         max={50}
                         step={1}
                         help={__(
-                            '0 px = esquinas rectas. 50 px = muy redondeado.',
+                            '0 px = esquinas rectas.',
                             'hoteles-cosmos'
                         )}
                     />
@@ -306,6 +416,45 @@ function Edit({ attributes, setAttributes }) {
                         }
                         min={0}
                         max={100}
+                        step={1}
+                    />
+
+                </PanelBody>
+
+
+                {/* =================================================
+                    MÁRGENES
+                ================================================= */}
+
+                <PanelBody
+                    title={__('Margen del bloque', 'hoteles-cosmos')}
+                    initialOpen={false}
+                >
+
+                    <RangeControl
+                        label={__('Margen superior', 'hoteles-cosmos')}
+                        value={marginTop}
+                        onChange={(value) =>
+                            setAttributes({
+                                marginTop: value
+                            })
+                        }
+                        min={0}
+                        max={250}
+                        step={1}
+                    />
+
+
+                    <RangeControl
+                        label={__('Margen inferior', 'hoteles-cosmos')}
+                        value={marginBottom}
+                        onChange={(value) =>
+                            setAttributes({
+                                marginBottom: value
+                            })
+                        }
+                        min={0}
+                        max={250}
                         step={1}
                     />
 
@@ -349,7 +498,6 @@ function Edit({ attributes, setAttributes }) {
                     <a
                         className="cosmos-cta__link"
                         href={url || '#'}
-                        style={linkStyle}
                         onClick={(event) => {
 
                             if (!url) {

@@ -1,0 +1,149 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image-text-banner",
+    "title": "Imagen + Contenido Cosmos",
+    "category": "cosmos",
+    "icon": "format-image",
+    "description": "Imagen de fondo a ancho completo con contenido dentro del container.",
+    "keywords": [
+        "imagen",
+        "contenido",
+        "banner",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageHeight": {
+            "type": "number",
+            "default": 500
+        },
+
+        "backgroundPosition": {
+            "type": "string",
+            "default": "center center"
+        },
+
+        "overlay": {
+            "type": "number",
+            "default": 0
+        },
+
+        "title": {
+            "type": "string",
+            "default": "Conozca nuestra propuesta"
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "titleWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "titleAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "description": {
+            "type": "string",
+            "default": "Conozca más sobre nuestra propuesta y descubra nuevas oportunidades."
+        },
+
+        "descriptionColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "descriptionSize": {
+            "type": "number",
+            "default": 17
+        },
+
+        "descriptionAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "contentBackgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "contentPaddingTop": {
+            "type": "number",
+            "default": 60
+        },
+
+        "contentPaddingBottom": {
+            "type": "number",
+            "default": 60
+        },
+
+        "contentPaddingLeft": {
+            "type": "number",
+            "default": 60
+        },
+
+        "contentPaddingRight": {
+            "type": "number",
+            "default": 60
+        },
+
+        "backgroundPaddingTop": {
+            "type": "number",
+            "default": 90
+        },
+
+        "backgroundPaddingBottom": {
+            "type": "number",
+            "default": 90
+        },
+
+        "blockMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "blockMarginBottom": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

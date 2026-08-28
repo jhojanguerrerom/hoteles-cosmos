@@ -1,0 +1,112 @@
+/* =====================================================
+   HOTELES COSMOS
+   EDITOR
+   TRES COLUMNAS + IMAGEN
+===================================================== */
+
+.wp-block-hoteles-cosmos-three-columns-image {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    clear: both;
+
+    isolation: isolate;
+}
+
+
+/*
+ * El editor mantiene exactamente
+ * el container del frontend.
+ */
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__inner {
+
+    width: min(1280px, calc(100% - 48px));
+
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * RichText
+ */
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__title {
+
+    outline: none;
+}
+
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__description {
+
+    outline: none;
+}
+
+
+/*
+ * Evita márgenes inesperados
+ * del editor.
+ */
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__description p {
+
+    margin-top: 0;
+}
+
+
+/*
+ * Imagen
+ */
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Botón de selección
+ */
+
+.wp-block-hoteles-cosmos-three-columns-image
+.cosmos-three-columns-image__image
+.components-button {
+
+    margin: 20px auto;
+}
+
+
+/* =====================================================
+   MOBILE EDITOR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .wp-block-hoteles-cosmos-three-columns-image
+    .cosmos-three-columns-image__inner {
+
+        width: calc(100% - 48px);
+
+        max-width: none;
+    }
+
+}

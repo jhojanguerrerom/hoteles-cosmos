@@ -1,0 +1,128 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image-cards",
+    "title": "Cards con imagen Cosmos",
+    "category": "cosmos",
+    "icon": "grid-view",
+    "description": "Cuatro cards con imagen de fondo, título superior y descripción inferior.",
+    "keywords": [
+        "cards",
+        "tarjetas",
+        "imagen",
+        "servicios",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "cards": {
+            "type": "array",
+            "default": [
+                {
+                    "imageUrl": "",
+                    "imageId": 0,
+                    "imageAlt": "",
+                    "title": "Título de la card 1",
+                    "description": "Descripción de la card 1."
+                },
+                {
+                    "imageUrl": "",
+                    "imageId": 0,
+                    "imageAlt": "",
+                    "title": "Título de la card 2",
+                    "description": "Descripción de la card 2."
+                },
+                {
+                    "imageUrl": "",
+                    "imageId": 0,
+                    "imageAlt": "",
+                    "title": "Título de la card 3",
+                    "description": "Descripción de la card 3."
+                },
+                {
+                    "imageUrl": "",
+                    "imageId": 0,
+                    "imageAlt": "",
+                    "title": "Título de la card 4",
+                    "description": "Descripción de la card 4."
+                }
+            ]
+        },
+
+        "cardHeight": {
+            "type": "number",
+            "default": 560
+        },
+
+        "cardGap": {
+            "type": "number",
+            "default": 24
+        },
+
+        "overlay": {
+            "type": "number",
+            "default": 45
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 28
+        },
+
+        "titleWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "titleAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "descriptionColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "descriptionSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "descriptionWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "descriptionAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "blockMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "blockMarginBottom": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

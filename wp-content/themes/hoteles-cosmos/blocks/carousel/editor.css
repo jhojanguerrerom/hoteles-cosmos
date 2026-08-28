@@ -1,0 +1,479 @@
+/*
+ * =====================================================
+ * CONTENEDOR PRINCIPAL - EDITOR
+ * =====================================================
+ */
+
+.cosmos-image-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    padding-left: 58px;
+
+    padding-right: 58px;
+}
+
+
+/*
+ * =====================================================
+ * VIEWPORT
+ * =====================================================
+ */
+
+.cosmos-image-carousel__viewport {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TRACK
+ * =====================================================
+ */
+
+.cosmos-image-carousel__track {
+
+    display: flex;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    gap: 65px;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * SLIDE
+ * =====================================================
+ */
+
+.cosmos-image-carousel__slide {
+
+    flex:
+        0 0
+        calc(
+            (
+                100% -
+                (
+                    65px *
+                    (
+                        var(
+                            --cosmos-carousel-desktop-columns,
+                            3
+                        ) - 1
+                    )
+                )
+            )
+            /
+            var(
+                --cosmos-carousel-desktop-columns,
+                3
+            )
+        );
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CARD
+ * =====================================================
+ */
+
+.cosmos-image-carousel__card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-carousel__image-wrapper {
+
+    position: relative;
+
+    width: 72%;
+
+    max-width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-carousel__image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    margin: 0;
+
+    border-radius:
+        var(
+            --cosmos-carousel-image-radius,
+            50%
+        );
+
+    cursor: pointer;
+}
+
+
+/*
+ * =====================================================
+ * PLACEHOLDER IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-carousel__image-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border:
+        2px dashed
+        #b5b5b5;
+
+    border-radius:
+        var(
+            --cosmos-carousel-image-radius,
+            50%
+        );
+
+    background: #f5f5f5;
+
+    color: #666666;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * TEXTO
+ * =====================================================
+ */
+
+.cosmos-image-carousel__text {
+
+    width: 100%;
+
+    max-width: 90%;
+
+    margin:
+        20px auto 0;
+
+    color:
+        var(
+            --cosmos-carousel-text-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-carousel-text-size,
+            18px
+        );
+
+    line-height: 1.45;
+
+    text-align:
+        var(
+            --cosmos-carousel-text-align,
+            center
+        );
+
+    box-sizing: border-box;
+
+    min-height: 1.4em;
+}
+
+
+/*
+ * =====================================================
+ * RICH TEXT
+ * =====================================================
+ */
+
+.cosmos-image-carousel
+.block-editor-rich-text__editable {
+
+    min-height: 1.4em;
+
+    outline: none;
+}
+
+
+/*
+ * =====================================================
+ * FLECHAS
+ * =====================================================
+ */
+
+.cosmos-image-carousel__arrow {
+
+  display: none;
+}
+
+
+/*
+ * =====================================================
+ * FLECHA IZQUIERDA
+ * =====================================================
+ */
+
+.cosmos-image-carousel__arrow--prev {
+
+    left: 8px;
+
+}
+
+
+/*
+ * =====================================================
+ * FLECHA DERECHA
+ * =====================================================
+ */
+
+.cosmos-image-carousel__arrow--next {
+
+    right: 8px;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-image-carousel {
+
+        padding-left: 48px;
+
+        padding-right: 48px;
+    }
+
+
+    .cosmos-image-carousel__track {
+
+        gap: 45px;
+    }
+
+
+    .cosmos-image-carousel__slide {
+
+        flex-basis:
+            calc(
+                (
+                    100% -
+                    (
+                        45px *
+                        (
+                            var(
+                                --cosmos-carousel-tablet-columns,
+                                2
+                            ) - 1
+                        )
+                    )
+                )
+                /
+                var(
+                    --cosmos-carousel-tablet-columns,
+                    2
+                )
+            );
+    }
+
+
+    .cosmos-image-carousel__image-wrapper {
+
+        width: 76%;
+    }
+
+
+    .cosmos-image-carousel__arrow {
+
+        top: 35%;
+    }
+
+
+    .cosmos-image-carousel__arrow--prev {
+
+        left: 5px;
+    }
+
+
+    .cosmos-image-carousel__arrow--next {
+
+        right: 5px;
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-image-carousel {
+
+        padding-left: 40px;
+
+        padding-right: 40px;
+    }
+
+
+    .cosmos-image-carousel__track {
+
+        gap: 25px;
+    }
+
+
+    .cosmos-image-carousel__slide {
+
+        flex-basis:
+            calc(
+                (
+                    100% -
+                    (
+                        25px *
+                        (
+                            var(
+                                --cosmos-carousel-mobile-columns,
+                                1
+                            ) - 1
+                        )
+                    )
+                )
+                /
+                var(
+                    --cosmos-carousel-mobile-columns,
+                    1
+                )
+            );
+    }
+
+
+    .cosmos-image-carousel__image-wrapper {
+
+        width: 78%;
+    }
+
+
+    .cosmos-image-carousel__text {
+
+        max-width: 100%;
+
+        margin-top: 16px;
+    }
+
+
+    .cosmos-image-carousel__arrow {
+
+        width:
+            calc(
+                var(
+                    --cosmos-carousel-arrow-size,
+                    42px
+                ) * 0.78
+            );
+
+        height:
+            calc(
+                var(
+                    --cosmos-carousel-arrow-size,
+                    42px
+                ) * 0.78
+            );
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-carousel-arrow-size,
+                    42px
+                ) * 0.50
+            );
+
+        top: 34%;
+    }
+
+
+    .cosmos-image-carousel__arrow--prev {
+
+        left: 3px;
+    }
+
+
+    .cosmos-image-carousel__arrow--next {
+
+        right: 3px;
+    }
+
+}

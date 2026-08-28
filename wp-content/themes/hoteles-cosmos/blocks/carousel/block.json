@@ -1,0 +1,120 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image-carousel",
+    "title": "Carrusel de imágenes Cosmos",
+    "category": "cosmos",
+    "icon": "images-alt2",
+    "description": "Carrusel responsive de imágenes con texto.",
+    "keywords": [
+        "carrusel",
+        "carousel",
+        "imagenes",
+        "fotos",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "items": {
+            "type": "array",
+            "default": [
+                {
+                    "id": 0,
+                    "url": "",
+                    "alt": "",
+                    "text": ""
+                },
+                {
+                    "id": 0,
+                    "url": "",
+                    "alt": "",
+                    "text": ""
+                },
+                {
+                    "id": 0,
+                    "url": "",
+                    "alt": "",
+                    "text": ""
+                }
+            ]
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "imageRadius": {
+            "type": "number",
+            "default": 50
+        },
+
+        "cardGap": {
+            "type": "number",
+            "default": 30
+        },
+
+        "desktopColumns": {
+            "type": "number",
+            "default": 3
+        },
+
+        "tabletColumns": {
+            "type": "number",
+            "default": 2
+        },
+
+        "mobileColumns": {
+            "type": "number",
+            "default": 1
+        },
+
+        "showArrows": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "arrowColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "arrowBackgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "arrowSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "imageSize": {
+            "type": "number",
+            "default": 100
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "viewScript": "file:./view.js",
+    "render": "file:./render.php"
+}

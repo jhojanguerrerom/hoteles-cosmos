@@ -1,0 +1,364 @@
+/* =====================================================
+   HOTELES COSMOS
+   TWO COLUMN TEXT
+===================================================== */
+
+
+/* =====================================================
+   BLOQUE COMPLETO
+===================================================== */
+
+.cosmos-two-column-text {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: var(--cosmos-two-column-margin-top);
+    margin-bottom: var(--cosmos-two-column-margin-bottom);
+
+    padding-top: var(--cosmos-two-column-padding-top);
+    padding-bottom: var(--cosmos-two-column-padding-bottom);
+
+    background-color: var(--cosmos-two-column-background);
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-two-column-text > .container {
+
+    width: min(
+        1280px,
+        calc(100% - 48px)
+    );
+
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.cosmos-two-column-text__grid {
+
+    display: grid;
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    column-gap: var(--cosmos-two-column-gap);
+
+    align-items: center;
+
+    /*
+     * El ancho de la primera columna se controla
+     * desde Gutenberg.
+     */
+    grid-template-columns:
+        minmax(
+            0,
+            calc(
+                var(--cosmos-two-column-left-width)
+                - var(--cosmos-two-column-gap) / 2
+            )
+        )
+        minmax(
+            0,
+            calc(
+                100%
+                - var(--cosmos-two-column-left-width)
+                - var(--cosmos-two-column-gap) / 2
+            )
+        );
+}
+
+
+/* =====================================================
+   COLUMNAS
+===================================================== */
+
+.cosmos-two-column-text__column {
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TEXTO IZQUIERDO
+===================================================== */
+
+.cosmos-two-column-text__left-text {
+
+    width: 100%;
+    max-width: 100%;
+
+    color: var(--cosmos-two-column-left-color);
+
+    font-size: var(--cosmos-two-column-left-size);
+
+    font-weight: var(--cosmos-two-column-left-weight);
+
+    line-height: 1.15;
+
+    text-align: var(--cosmos-two-column-left-align);
+
+    box-sizing: border-box;
+
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+}
+
+
+/* =====================================================
+   TEXTO DERECHO
+===================================================== */
+
+.cosmos-two-column-text__right-text {
+
+    width: 100%;
+    max-width: 100%;
+
+    color: var(--cosmos-two-column-right-color);
+
+    font-size: var(--cosmos-two-column-right-size);
+
+    font-weight: var(--cosmos-two-column-right-weight);
+
+    line-height: 1.6;
+
+    text-align: var(--cosmos-two-column-right-align);
+
+    box-sizing: border-box;
+
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+}
+
+
+/* =====================================================
+   FORMATOS
+===================================================== */
+
+.cosmos-two-column-text__left-text strong,
+.cosmos-two-column-text__right-text strong {
+
+    font-weight: 700;
+}
+
+
+.cosmos-two-column-text__left-text em,
+.cosmos-two-column-text__right-text em {
+
+    font-style: italic;
+}
+
+
+.cosmos-two-column-text__left-text a,
+.cosmos-two-column-text__right-text a {
+
+    color: inherit;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+}
+
+
+/* =====================================================
+   PÁRRAFOS
+===================================================== */
+
+.cosmos-two-column-text__left-text p,
+.cosmos-two-column-text__right-text p {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+}
+
+
+.cosmos-two-column-text__left-text p:last-child,
+.cosmos-two-column-text__right-text p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-two-column-text {
+
+        padding-top: var(--cosmos-two-column-padding-top);
+        padding-bottom: var(--cosmos-two-column-padding-bottom);
+    }
+
+
+    .cosmos-two-column-text > .container {
+
+        width: calc(100% - 40px);
+
+        max-width: none;
+    }
+
+
+    .cosmos-two-column-text__grid {
+
+        column-gap: 35px;
+
+        /*
+         * En tablet mantenemos la proporción
+         * configurada desde Gutenberg.
+         */
+        grid-template-columns:
+            minmax(
+                0,
+                calc(
+                    var(--cosmos-two-column-left-width)
+                    - 17.5px
+                )
+            )
+            minmax(
+                0,
+                calc(
+                    100%
+                    - var(--cosmos-two-column-left-width)
+                    - 17.5px
+                )
+            );
+    }
+
+
+    .cosmos-two-column-text__left-text {
+
+        font-size: clamp(
+            28px,
+            5vw,
+            var(--cosmos-two-column-left-size)
+        );
+    }
+
+
+    .cosmos-two-column-text__right-text {
+
+        font-size: clamp(
+            15px,
+            2vw,
+            var(--cosmos-two-column-right-size)
+        );
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-two-column-text {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: var(--cosmos-two-column-margin-top);
+        margin-bottom: var(--cosmos-two-column-margin-bottom);
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .cosmos-two-column-text > .container {
+
+        width: calc(100% - 32px);
+
+        max-width: none;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .cosmos-two-column-text__grid {
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr);
+
+        row-gap: 35px;
+
+        column-gap: 0;
+
+        width: 100%;
+    }
+
+
+    .cosmos-two-column-text__column {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .cosmos-two-column-text__left-text {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(
+            28px,
+            9vw,
+            var(--cosmos-two-column-left-size)
+        );
+
+        line-height: 1.15;
+    }
+
+
+    .cosmos-two-column-text__right-text {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(
+            15px,
+            4.5vw,
+            var(--cosmos-two-column-right-size)
+        );
+
+        line-height: 1.6;
+    }
+
+}

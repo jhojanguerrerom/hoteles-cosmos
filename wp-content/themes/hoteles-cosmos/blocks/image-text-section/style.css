@@ -1,0 +1,321 @@
+.cosmos-image-text {
+    box-sizing: border-box;
+    width: 100%;
+
+    margin-top:
+        var(--cosmos-image-text-margin-top, 0);
+
+    margin-bottom:
+        var(--cosmos-image-text-margin-bottom, 0);
+}
+
+
+/*
+ * =====================================================
+ * CONTENEDOR PRINCIPAL
+ * =====================================================
+ */
+
+.cosmos-image-text__inner {
+    display: flex;
+    width: 100%;
+    min-height: 400px;
+}
+
+
+/*
+ * =====================================================
+ * COLUMNA IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-text__image-column {
+    flex:
+        0 0
+        var(--cosmos-image-text-image-width, 50%);
+
+    width:
+        var(--cosmos-image-text-image-width, 50%);
+
+    overflow: hidden;
+}
+
+
+.cosmos-image-text__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 400px;
+
+    object-fit: cover;
+
+    margin: 0;
+}
+
+
+/*
+ * =====================================================
+ * COLUMNA CONTENIDO
+ * =====================================================
+ */
+
+.cosmos-image-text__content-column {
+    flex:
+        0 0
+        var(--cosmos-image-text-content-width, 50%);
+
+    width:
+        var(--cosmos-image-text-content-width, 50%);
+
+    box-sizing: border-box;
+
+    background:
+        var(--cosmos-image-text-background, #ffffff);
+
+    color:
+        var(--cosmos-image-text-color, #111111);
+
+    padding: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align:
+        var(--cosmos-image-text-align, left);
+}
+
+
+/*
+ * =====================================================
+ * TITULO PRINCIPAL
+ * =====================================================
+ */
+
+.cosmos-image-text__title {
+    margin: 0 0 24px;
+
+    color: inherit;
+
+    font-size:
+        var(--cosmos-image-text-title-size, 42px);
+
+    line-height: 1.15;
+}
+
+
+/*
+ * =====================================================
+ * DESCRIPCION PRINCIPAL
+ * =====================================================
+ */
+
+.cosmos-image-text__description {
+    margin: 0;
+
+    color: inherit;
+
+    font-size:
+        var(--cosmos-image-text-description-size, 18px);
+
+    line-height: 1.5;
+}
+
+
+/*
+ * =====================================================
+ * CTA
+ * =====================================================
+ */
+
+.cosmos-image-text__cta {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 0;
+
+    background: transparent;
+
+    text-align:
+        var(--cosmos-image-text-cta-align, left);
+}
+
+
+/*
+ * =====================================================
+ * CTA TITULO
+ * =====================================================
+ */
+
+.cosmos-image-text__cta-title {
+    margin: 0 0 12px;
+
+    font-size:
+        var(--cosmos-image-text-cta-title-size, 24px);
+
+    color:
+        var(--cosmos-image-text-cta-title-color, #111111);
+
+    line-height: 1.2;
+
+    text-align:
+        var(--cosmos-image-text-cta-align, left);
+}
+
+
+/*
+ * =====================================================
+ * CTA DESCRIPCION
+ * =====================================================
+ */
+
+.cosmos-image-text__cta-description {
+    margin: 0 0 20px;
+
+    font-size:
+        var(--cosmos-image-text-cta-description-size, 16px);
+
+    color:
+        var(--cosmos-image-text-cta-description-color, #111111);
+
+    line-height: 1.5;
+
+    text-align:
+        var(--cosmos-image-text-cta-align, left);
+}
+
+
+/*
+ * =====================================================
+ * CTA BOTON WRAPPER
+ * =====================================================
+ */
+
+.cosmos-image-text__cta-button-wrapper {
+    width: 100%;
+
+    text-align:
+        var(--cosmos-image-text-cta-align, left);
+}
+
+
+/*
+ * =====================================================
+ * CTA BOTON
+ * =====================================================
+ */
+
+.cosmos-image-text__cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding:
+        var(
+            --cosmos-image-text-cta-button-padding-vertical,
+            14px
+        )
+        var(
+            --cosmos-image-text-cta-button-padding-horizontal,
+            28px
+        );
+
+    background:
+        var(
+            --cosmos-image-text-cta-button-color,
+            #111111
+        );
+
+    color:
+        var(
+            --cosmos-image-text-cta-button-text-color,
+            #ffffff
+        );
+
+    font-size:
+        var(
+            --cosmos-image-text-cta-button-size,
+            16px
+        );
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    border-radius:
+        var(
+            --cosmos-image-text-cta-button-radius,
+            4px
+        );
+
+    text-decoration: none;
+
+    border: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.cosmos-image-text__cta-button:hover {
+    opacity: 0.9;
+}
+
+
+/*
+ * =====================================================
+ * POSICION IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-text__image-right {
+    flex-direction: row-reverse;
+}
+
+
+/*
+ * =====================================================
+ * RESPONSIVE
+ * =====================================================
+ */
+
+@media (max-width: 768px) {
+
+    .cosmos-image-text__inner {
+        flex-direction: column;
+    }
+
+
+    .cosmos-image-text__image-column,
+    .cosmos-image-text__content-column {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+
+    .cosmos-image-text__image {
+        min-height: 300px;
+    }
+
+
+    .cosmos-image-text__content-column {
+        padding: 40px 25px;
+    }
+
+
+    .cosmos-image-text__cta {
+        margin-top: 30px;
+    }
+
+}

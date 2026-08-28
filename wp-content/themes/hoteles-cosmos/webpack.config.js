@@ -29,7 +29,6 @@ if (fs.existsSync(blocksPath)) {
         }
 
         entries[block.name] = editorPath;
-
     });
 
 }

@@ -1599,3 +1599,862 @@ a {
     }
 }
 
+
+/* =========================================================
+   FORMULARIO DE CONTACTO
+   HOTELES COSMOS
+========================================================= */
+
+.cosmos-lead-form {
+    width: 100%;
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cosmos-lead-form__header {
+    max-width: 680px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cosmos-lead-form__eyebrow {
+    margin: 0 0 14px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.cosmos-lead-form__title {
+    margin: 0 0 18px;
+
+    color: #111111;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.18;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.cosmos-lead-form__intro {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #707070;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.cosmos-lead-form__body {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FILAS
+========================================================= */
+
+.cosmos-lead-form__row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 34px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CAMPO
+========================================================= */
+
+.cosmos-lead-form__field {
+    min-width: 0;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.cosmos-lead-form__field > p {
+    margin: 0;
+}
+
+.cosmos-lead-form__field > label {
+    display: block;
+
+    margin: 0 0 8px;
+
+    color: #333333;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+}
+
+.cosmos-lead-form__field > label span {
+    color: #999999;
+}
+
+
+/* =========================================================
+   INPUTS BASE
+========================================================= */
+
+.cosmos-lead-form__input,
+.cosmos-lead-form__select,
+.cosmos-lead-form__textarea {
+
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 0;
+
+    border-bottom:
+        1px solid #d6d6d6;
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111111;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.cosmos-lead-form__input {
+
+    height: 44px;
+
+    padding:
+        0 2px;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.cosmos-lead-form__select {
+
+    height: 44px;
+
+    padding:
+        0 30px 0 2px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    background-color: transparent;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #555555 50%
+        ),
+        linear-gradient(
+            135deg,
+            #555555 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 10px) 18px,
+        calc(100% - 5px) 18px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.cosmos-lead-form__textarea {
+    height: 110px !important;
+    min-height: 110px !important;
+
+    padding:
+        10px 2px 8px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.cosmos-lead-form__input::placeholder,
+.cosmos-lead-form__textarea::placeholder {
+
+    color: #a0a0a0;
+
+    opacity: 1;
+
+    transition:
+        color 0.2s ease;
+}
+
+.cosmos-lead-form__input:focus::placeholder,
+.cosmos-lead-form__textarea:focus::placeholder {
+
+    color: #c5c5c5;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.cosmos-lead-form__input:focus,
+.cosmos-lead-form__select:focus,
+.cosmos-lead-form__textarea:focus {
+
+    border-bottom-color: #111111;
+
+    background: rgba(0, 0, 0, 0.015);
+}
+
+
+/* =========================================================
+   CAMPO MENSAJE
+========================================================= */
+
+.cosmos-lead-form__field--message {
+
+    margin-top: 8px;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cosmos-lead-form__footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding-top: 4px;
+}
+
+
+/* =========================================================
+   PRIVACIDAD
+========================================================= */
+
+.cosmos-lead-form__privacy {
+
+    max-width: 560px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+.cosmos-lead-form__privacy .wpcf7-list-item {
+    margin: 0;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.cosmos-lead-form__privacy label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    cursor: pointer;
+}
+
+.cosmos-lead-form__privacy input[type="checkbox"] {
+
+    width: 14px;
+    height: 14px;
+
+    flex: 0 0 14px;
+
+    margin:
+        1px 0 0;
+
+    accent-color: #111111;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LINK PRIVACIDAD
+========================================================= */
+
+.cosmos-lead-form__privacy a {
+
+    color: #222222;
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.cosmos-lead-form__submit-wrapper {
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.cosmos-lead-form__submit {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 175px;
+
+    height: 46px;
+
+    padding:
+        0 26px;
+
+    border:
+        1px solid #111111;
+
+    border-radius: 0;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.cosmos-lead-form__submit:hover {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.cosmos-lead-form__submit:active {
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   ERRORES
+========================================================= */
+
+.cosmos-lead-form .wpcf7-not-valid {
+
+    border-bottom-color: #9b0000;
+}
+
+.cosmos-lead-form .wpcf7-not-valid-tip {
+
+    margin-top: 6px;
+
+    color: #9b0000;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MENSAJE CONTACT FORM 7
+========================================================= */
+
+.cosmos-lead-form .wpcf7-response-output {
+
+    margin:
+        30px 0 0;
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid #dddddd;
+
+    color: #444444;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.cosmos-lead-form .wpcf7-spinner {
+
+    margin:
+        0 0 0 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cosmos-lead-form {
+
+        max-width: 100%;
+    }
+
+    .cosmos-lead-form__header {
+
+        margin-bottom: 45px;
+    }
+
+    .cosmos-lead-form__title {
+
+        font-size: 33px;
+    }
+
+    .cosmos-lead-form__row {
+
+        gap: 28px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cosmos-lead-form__header {
+
+        margin-bottom: 38px;
+    }
+
+
+    .cosmos-lead-form__eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 0.16em;
+    }
+
+
+    .cosmos-lead-form__title {
+
+        font-size: 28px;
+
+        line-height: 1.2;
+    }
+
+
+    .cosmos-lead-form__intro {
+
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+
+    .cosmos-lead-form__row {
+
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .cosmos-lead-form__field > label {
+
+        margin-bottom: 7px;
+
+        font-size: 9px;
+    }
+
+
+    .cosmos-lead-form__input,
+    .cosmos-lead-form__select {
+
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+
+    .cosmos-lead-form__textarea {
+
+        min-height: 105px;
+
+        font-size: 14px;
+    }
+
+
+    .cosmos-lead-form__field--message {
+
+        margin-top: 0;
+
+        margin-bottom: 30px;
+    }
+
+
+    .cosmos-lead-form__footer {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 25px;
+    }
+
+
+    .cosmos-lead-form__privacy {
+
+        max-width: none;
+
+        font-size: 10px;
+    }
+
+
+    .cosmos-lead-form__submit-wrapper {
+
+        width: 100%;
+    }
+
+
+    .cosmos-lead-form__submit {
+
+        width: 100%;
+
+        height: 46px;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cosmos-lead-form__input,
+    .cosmos-lead-form__select,
+    .cosmos-lead-form__textarea,
+    .cosmos-lead-form__submit {
+
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   CONTACT FORM 7
+   MENSAJE DE RESPUESTA
+   HOTELES COSMOS
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.wpcf7 form .wpcf7-response-output {
+
+    display: block;
+
+    width: min(960px, calc(100% - 48px));
+
+    margin:
+        32px auto;
+
+    padding:
+        16px 20px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid #dddddd;
+
+    border-radius: 4px;
+
+    background:
+        #fafafa;
+
+    color:
+        #555555;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.55;
+
+    text-align:
+        center;
+
+    box-shadow:
+        none;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   ESTADO INICIAL
+========================================================= */
+
+.wpcf7 form.init .wpcf7-response-output,
+.wpcf7 form.resetting .wpcf7-response-output,
+.wpcf7 form.submitting .wpcf7-response-output {
+
+    display: none;
+}
+
+
+/* =========================================================
+   ENVÍO CORRECTO
+========================================================= */
+
+.wpcf7 form.sent .wpcf7-response-output {
+
+    border-color:
+        #d7e3da;
+
+    background:
+        #f7faf8;
+
+    color:
+        #31543d;
+}
+
+
+/* =========================================================
+   ERROR DE ENVÍO
+========================================================= */
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+
+    border-color:
+        #ead8d8;
+
+    background:
+        #fcf8f8;
+
+    color:
+        #704444;
+}
+
+
+/* =========================================================
+   SPAM
+========================================================= */
+
+.wpcf7 form.spam .wpcf7-response-output {
+
+    border-color:
+        #eadfd5;
+
+    background:
+        #fcfaf7;
+
+    color:
+        #765c42;
+}
+
+
+/* =========================================================
+   CAMPOS INVÁLIDOS
+========================================================= */
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+
+    border-color:
+        #e4ddd0;
+
+    background:
+        #faf9f6;
+
+    color:
+        #625a4b;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .wpcf7 form .wpcf7-response-output {
+
+        width:
+            calc(100% - 30px);
+
+        margin-top:
+            24px;
+
+        padding:
+            14px 15px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.55;
+    }
+
+}

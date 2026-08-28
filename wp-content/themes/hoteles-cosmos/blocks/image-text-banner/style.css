@@ -1,0 +1,333 @@
+/* =====================================================
+   HOTELES COSMOS
+   IMAGE + TEXT BANNER
+   FRONTEND
+===================================================== */
+
+
+/* =====================================================
+   BLOQUE COMPLETO
+===================================================== */
+
+.cosmos-image-text-banner {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: var(--cosmos-block-margin-top, 0px);
+    margin-bottom: var(--cosmos-block-margin-bottom, 0px);
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    display: block;
+
+    clear: both;
+}
+
+
+/* =====================================================
+   FONDO / IMAGEN
+===================================================== */
+
+.cosmos-image-text-banner__background {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: var(--cosmos-banner-height);
+
+    padding-top: var(--cosmos-background-padding-top);
+    padding-bottom: var(--cosmos-background-padding-bottom);
+
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: var(--cosmos-banner-position, center center);
+    background-repeat: no-repeat;
+
+    display: block;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-image-text-banner__background > .container {
+
+    width: min(1280px, calc(100% - 48px));
+
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.cosmos-image-text-banner__content {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding:
+        var(--cosmos-content-padding-top)
+        var(--cosmos-content-padding-right)
+        var(--cosmos-content-padding-bottom)
+        var(--cosmos-content-padding-left);
+
+    box-sizing: border-box;
+
+    background-color: var(--cosmos-content-background);
+
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.cosmos-image-text-banner__title {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 20px;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: var(--cosmos-title-color);
+
+    font-size: var(--cosmos-title-size);
+
+    font-weight: var(--cosmos-title-weight);
+
+    line-height: 1.15;
+
+    letter-spacing: -0.02em;
+
+    text-align: var(--cosmos-title-align);
+
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.cosmos-image-text-banner__description {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: var(--cosmos-description-color);
+
+    font-size: var(--cosmos-description-size);
+
+    line-height: 1.65;
+
+    text-align: var(--cosmos-description-align);
+
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   PÁRRAFOS
+===================================================== */
+
+.cosmos-image-text-banner__description p {
+
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+
+.cosmos-image-text-banner__description p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   FORMATOS
+===================================================== */
+
+.cosmos-image-text-banner__description strong {
+
+    font-weight: 700;
+}
+
+
+.cosmos-image-text-banner__description em {
+
+    font-style: italic;
+}
+
+
+.cosmos-image-text-banner__description a {
+
+    color: inherit;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image-text-banner__background {
+
+        min-height: auto;
+
+        padding-top: var(--cosmos-background-padding-top);
+        padding-bottom: var(--cosmos-background-padding-bottom);
+    }
+
+
+    .cosmos-image-text-banner__background > .container {
+
+        width: calc(100% - 40px);
+
+        max-width: none;
+    }
+
+
+    .cosmos-image-text-banner__content {
+
+        padding-top: 45px;
+        padding-bottom: 45px;
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+
+    .cosmos-image-text-banner__title {
+
+        font-size: clamp(
+            32px,
+            5vw,
+            var(--cosmos-title-size)
+        );
+    }
+
+
+    .cosmos-image-text-banner__description {
+
+        font-size: clamp(
+            15px,
+            2vw,
+            var(--cosmos-description-size)
+        );
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-image-text-banner {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: var(--cosmos-block-margin-top, 0px);
+        margin-bottom: var(--cosmos-block-margin-bottom, 0px);
+    }
+
+
+    .cosmos-image-text-banner__background {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-height: auto;
+
+        padding-top: var(--cosmos-background-padding-top);
+        padding-bottom: var(--cosmos-background-padding-bottom);
+
+        background-position:
+            var(--cosmos-banner-position, center center);
+    }
+
+
+    .cosmos-image-text-banner__background > .container {
+
+        width: calc(100% - 48px);
+
+        max-width: 1280px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 0;
+    }
+
+
+    .cosmos-image-text-banner__content {
+
+        width: 100%;
+        max-width: 100%;
+
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+
+    .cosmos-image-text-banner__title {
+
+        margin-bottom: 15px;
+
+        font-size: clamp(
+            28px,
+            8vw,
+            36px
+        );
+
+        line-height: 1.15;
+    }
+
+
+    .cosmos-image-text-banner__description {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+}

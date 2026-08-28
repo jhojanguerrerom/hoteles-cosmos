@@ -214,6 +214,30 @@ function hoteles_cosmos_register_blocks() {
     register_block_type(
         get_template_directory() . '/blocks/text-columns'
     );
+
+    register_block_type(
+        get_template_directory() . '/blocks/image-text-banner'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/two-column-text'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/image-cards'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/three-columns-image'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/image-text-section'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/carousel'
+    );
 }
 
 add_action(

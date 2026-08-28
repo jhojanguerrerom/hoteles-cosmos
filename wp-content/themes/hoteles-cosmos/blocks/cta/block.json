@@ -10,6 +10,7 @@
         "cta",
         "llamada a la acción",
         "enlace",
+        "botón",
         "cosmos"
     ],
     "textdomain": "hoteles-cosmos",
@@ -20,6 +21,7 @@
     },
 
     "attributes": {
+
         "text": {
             "type": "string",
             "default": "Conoce más"
@@ -60,6 +62,21 @@
             "default": "#111111"
         },
 
+        "hasBorder": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "borderColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "borderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
         "borderRadius": {
             "type": "number",
             "default": 0
@@ -78,6 +95,16 @@
         "hasUnderline": {
             "type": "boolean",
             "default": true
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 0
         }
     },
 

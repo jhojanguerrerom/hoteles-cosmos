@@ -1,0 +1,209 @@
+/* =====================================================
+   HOTELES COSMOS
+   IMAGE + TEXT BANNER
+   GUTENBERG EDITOR
+===================================================== */
+
+
+/*
+ * Gutenberg puede aplicar estilos propios
+ * al bloque. Aquí aislamos nuestro componente.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner {
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    margin-top: var(--cosmos-block-margin-top, 0px) !important;
+    margin-bottom: var(--cosmos-block-margin-bottom, 0px) !important;
+
+    padding: 0 !important;
+
+    overflow: visible;
+
+    isolation: isolate;
+}
+
+
+/*
+ * Fondo completamente contenido
+ * dentro del bloque.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__background {
+
+    position: relative;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    z-index: 0;
+}
+
+
+/*
+ * El container nunca debe crecer
+ * más allá del bloque.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__background
+> .container {
+
+    width: min(1280px, calc(100% - 48px)) !important;
+
+    max-width: 1280px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/*
+ * Contenido.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__content {
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 2;
+
+    overflow-wrap: break-word;
+}
+
+
+/*
+ * Gutenberg a veces introduce
+ * márgenes propios en los RichText.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__title {
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    margin-top: 0 !important;
+}
+
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__description {
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Evitamos que elementos del editor
+ * provoquen overflow horizontal.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner img,
+.wp-block-hoteles-cosmos-image-text-banner iframe,
+.wp-block-hoteles-cosmos-image-text-banner video {
+
+    max-width: 100%;
+}
+
+
+/*
+ * Importante:
+ * no usar transform, position fixed,
+ * negativos ni z-index elevados.
+ */
+
+.wp-block-hoteles-cosmos-image-text-banner
+.cosmos-image-text-banner__background {
+
+    transform: none;
+
+}
+
+
+/* =====================================================
+   MOBILE EDITOR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .wp-block-hoteles-cosmos-image-text-banner {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-top:
+            var(--cosmos-block-margin-top, 0px) !important;
+
+        margin-bottom:
+            var(--cosmos-block-margin-bottom, 0px) !important;
+    }
+
+
+    .wp-block-hoteles-cosmos-image-text-banner
+    .cosmos-image-text-banner__background {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow: hidden;
+    }
+
+
+    .wp-block-hoteles-cosmos-image-text-banner
+    .cosmos-image-text-banner__background
+    > .container {
+
+        width: calc(100% - 48px) !important;
+
+        max-width: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        padding: 0 !important;
+    }
+
+
+    .wp-block-hoteles-cosmos-image-text-banner
+    .cosmos-image-text-banner__content {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box;
+    }
+
+}
