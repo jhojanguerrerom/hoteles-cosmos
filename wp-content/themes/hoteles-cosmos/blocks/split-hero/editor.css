@@ -1,0 +1,548 @@
+/*
+ * =====================================================
+ * CONTENEDOR DEL EDITOR
+ * =====================================================
+ */
+
+.cosmos-split-hero {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/*
+ * =====================================================
+ * CONTENEDOR INTERNO
+ * =====================================================
+ */
+
+.cosmos-split-hero__inner {
+
+    display: flex;
+
+    width: 100%;
+
+    height:
+        var(
+            --cosmos-split-hero-height,
+            600px
+        );
+
+    min-height:
+        var(
+            --cosmos-split-hero-height,
+            600px
+        );
+}
+
+
+/*
+ * =====================================================
+ * COLUMNA IMAGEN
+ * =====================================================
+ */
+
+.cosmos-split-hero__image-column {
+
+    flex:
+        0 0
+        var(
+            --cosmos-split-hero-image-width,
+            50%
+        );
+
+    width:
+        var(
+            --cosmos-split-hero-image-width,
+            50%
+        );
+
+    height: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f5f5;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-split-hero__image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    object-fit: cover;
+}
+
+
+/*
+ * =====================================================
+ * COLUMNA CONTENIDO
+ * =====================================================
+ */
+
+.cosmos-split-hero__content-column {
+
+    flex:
+        0 0
+        var(
+            --cosmos-split-hero-text-width,
+            50%
+        );
+
+    width:
+        var(
+            --cosmos-split-hero-text-width,
+            50%
+        );
+
+    height: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    background:
+        var(
+            --cosmos-split-hero-text-background,
+            #111111
+        );
+
+    color:
+        var(
+            --cosmos-split-hero-text-color,
+            #ffffff
+        );
+
+    display: flex;
+
+    align-items: stretch;
+}
+
+
+/*
+ * =====================================================
+ * CONTENIDO
+ * =====================================================
+ */
+
+.cosmos-split-hero__content {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 60px;
+
+    margin-top: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+}
+
+
+/*
+ * =====================================================
+ * TITULO
+ * =====================================================
+ */
+
+.cosmos-split-hero__title {
+
+    width: 100%;
+
+    margin: 0 0 28px;
+
+    padding: 0;
+
+    color: inherit;
+
+    font-size:
+        var(
+            --cosmos-split-hero-title-size,
+            52px
+        );
+
+    font-weight:
+        var(
+            --cosmos-split-hero-title-weight,
+            700
+        );
+
+    line-height: 1.08;
+
+    text-align: left;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CTA EDITOR
+ * =====================================================
+ *
+ * Este elemento es un RichText <span>.
+ *
+ * Lo hacemos visualmente igual al botón real.
+ *
+ * =====================================================
+ */
+
+.cosmos-split-hero__cta-editor {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    width: auto;
+
+    min-height: 0;
+
+    padding:
+        var(
+            --cosmos-split-hero-cta-padding-y,
+            14px
+        )
+        var(
+            --cosmos-split-hero-cta-padding-x,
+            28px
+        );
+
+    background:
+        var(
+            --cosmos-split-hero-cta-background,
+            #ffffff
+        );
+
+    color:
+        var(
+            --cosmos-split-hero-cta-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-split-hero-cta-size,
+            16px
+        );
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        var(
+            --cosmos-split-hero-cta-radius,
+            4px
+        );
+
+    text-decoration: none;
+
+    cursor: text;
+
+    outline: none;
+}
+
+
+/*
+ * =====================================================
+ * CTA OUTLINE
+ * =====================================================
+ */
+
+.cosmos-split-hero__cta-editor {
+
+    /*
+     * Si el botón es outline,
+     * el fondo se vuelve transparente.
+     */
+}
+
+
+/*
+ * =====================================================
+ * DETECCIÓN DEL ESTILO OUTLINE
+ * =====================================================
+ *
+ * Como el editor actualmente no recibe una clase
+ * específica para ctaStyle, usamos una variable CSS
+ * para mantener el comportamiento visual.
+ *
+ * =====================================================
+ */
+
+.cosmos-split-hero__cta-editor[data-cta-style="outline"] {
+
+    background: transparent;
+
+    color:
+        var(
+            --cosmos-split-hero-cta-color,
+            #ffffff
+        );
+
+    border:
+        1px solid
+        var(
+            --cosmos-split-hero-cta-background,
+            #ffffff
+        );
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN A LA DERECHA
+ * =====================================================
+ */
+
+.cosmos-split-hero__image-right {
+
+    flex-direction: row-reverse;
+}
+
+
+/*
+ * =====================================================
+ * PLACEHOLDER IMAGEN
+ * =====================================================
+ */
+
+.cosmos-split-hero__image-column
+.editor-post-featured-image__container {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/*
+ * =====================================================
+ * BOTÓN DE SELECCIONAR IMAGEN
+ * =====================================================
+ */
+
+.cosmos-split-hero__image-column
+.components-button {
+
+    margin: 20px;
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    /*
+     * Contenedor
+     */
+
+    .cosmos-split-hero__inner {
+
+        height:
+            var(
+                --cosmos-split-hero-mobile-height,
+                650px
+            );
+
+        min-height:
+            var(
+                --cosmos-split-hero-mobile-height,
+                650px
+            );
+
+        flex-direction: column;
+    }
+
+
+    /*
+     * =================================================
+     * IMAGEN PRIMERO
+     * =================================================
+     */
+
+    .cosmos-split-hero__mobile-image-first
+    .cosmos-split-hero__image-column {
+
+        order: 1;
+    }
+
+
+    .cosmos-split-hero__mobile-image-first
+    .cosmos-split-hero__content-column {
+
+        order: 2;
+    }
+
+
+    /*
+     * =================================================
+     * CONTENIDO PRIMERO
+     * =================================================
+     */
+
+    .cosmos-split-hero__mobile-content-first
+    .cosmos-split-hero__content-column {
+
+        order: 1;
+    }
+
+
+    .cosmos-split-hero__mobile-content-first
+    .cosmos-split-hero__image-column {
+
+        order: 2;
+    }
+
+
+    /*
+     * =================================================
+     * COLUMNAS MOBILE
+     * =================================================
+     */
+
+    .cosmos-split-hero__image-column,
+    .cosmos-split-hero__content-column {
+
+        width: 100%;
+
+        flex-basis: 50%;
+
+        height: 50%;
+    }
+
+
+    /*
+     * =================================================
+     * CONTENIDO MOBILE
+     * =================================================
+     */
+
+    .cosmos-split-hero__content {
+
+        padding:
+            35px 25px;
+    }
+
+
+    /*
+     * =================================================
+     * TITULO MOBILE
+     * =================================================
+     */
+
+    .cosmos-split-hero__title {
+
+        margin-bottom: 22px;
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-split-hero-title-size,
+                    52px
+                )
+                * 0.65
+            );
+    }
+
+
+    /*
+     * =================================================
+     * CTA MOBILE
+     * =================================================
+     */
+
+    .cosmos-split-hero__cta-editor {
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-split-hero-cta-size,
+                    16px
+                )
+            );
+
+        padding:
+            var(
+                --cosmos-split-hero-cta-padding-y,
+                14px
+            )
+            var(
+                --cosmos-split-hero-cta-padding-x,
+                28px
+            );
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (min-width: 768px)
+and (max-width: 1024px) {
+
+    .cosmos-split-hero__content {
+
+        padding:
+            45px;
+    }
+
+
+    .cosmos-split-hero__title {
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-split-hero-title-size,
+                    52px
+                )
+                * 0.8
+            );
+    }
+
+}

@@ -1,0 +1,155 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/split-hero",
+    "title": "Hero dividido Cosmos",
+    "category": "cosmos",
+    "icon": "align-pull-left",
+    "description": "Hero de dos columnas con imagen, título y CTA opcional.",
+    "keywords": [
+        "hero",
+        "banner",
+        "imagen",
+        "cta",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imagePosition": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "imageWidth": {
+            "type": "number",
+            "default": 50
+        },
+
+        "textWidth": {
+            "type": "number",
+            "default": 50
+        },
+
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+
+        "textBackgroundColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 52
+        },
+
+        "titleWeight": {
+            "type": "number",
+            "default": 700
+        },
+
+        "showCta": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "ctaText": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "ctaUrl": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "ctaBackgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaTextColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "ctaStyle": {
+            "type": "string",
+            "default": "filled"
+        },
+
+        "ctaTextSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "ctaPaddingVertical": {
+            "type": "number",
+            "default": 14
+        },
+
+        "ctaPaddingHorizontal": {
+            "type": "number",
+            "default": 28
+        },
+
+        "ctaRadius": {
+            "type": "number",
+            "default": 4
+        },
+
+        "heroHeight": {
+            "type": "number",
+            "default": 600
+        },
+
+        "mobileHeight": {
+            "type": "number",
+            "default": 650
+        },
+
+        "mobileImageFirst": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "contentWidth": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

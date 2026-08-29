@@ -1,0 +1,755 @@
+/* =====================================================
+   BLOQUE
+   ===================================================== */
+
+.cosmos-card-grid {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-top:
+        var(
+            --cosmos-card-grid-margin-top,
+            50px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-card-grid-margin-bottom,
+            50px
+        );
+
+    box-sizing: border-box;
+
+    /* IMPORTANTE:
+       El section no debe tener ningún borde */
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   WRAPPER DE WORDPRESS
+   ===================================================== */
+
+.wp-block-hoteles-cosmos-card-grid {
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   CONTENEDOR
+   IMPORTANTE:
+   NO SE MODIFICA EL CONTAINER GENERAL DEL SITIO
+   ===================================================== */
+
+
+/* =====================================================
+   LISTA
+   ===================================================== */
+
+.cosmos-card-grid__list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap:
+        var(
+            --cosmos-card-grid-gap,
+            30px
+        );
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.cosmos-card-grid__card {
+
+    position: relative;
+
+    flex:
+        0 0
+        calc(
+            (
+                100% -
+                (
+                    var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    ) * 2
+                )
+            ) / 3
+        );
+
+    max-width:
+        calc(
+            (
+                100% -
+                (
+                    var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    ) * 2
+                )
+            ) / 3
+        );
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    /* SIN BORDE */
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* =====================================================
+   CARD ESTADOS
+   ===================================================== */
+
+.cosmos-card-grid__card:hover,
+.cosmos-card-grid__card:focus,
+.cosmos-card-grid__card:active {
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+   ===================================================== */
+
+.cosmos-card-grid__card:hover {
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+/* =====================================================
+   LINK DE IMAGEN
+   ===================================================== */
+
+.cosmos-card-grid__image-link {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    background: transparent;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+   ===================================================== */
+
+.cosmos-card-grid__image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        var(
+            --cosmos-card-grid-image-ratio,
+            4 / 3
+        );
+
+    overflow: hidden;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: #eeeeee;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   IMAGEN REAL
+   ===================================================== */
+
+.cosmos-card-grid__image-wrapper img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    box-sizing: border-box;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    transition:
+        transform 0.6s ease;
+
+}
+
+
+/* =====================================================
+   HOVER IMAGEN
+   ===================================================== */
+
+.cosmos-card-grid__card:hover
+.cosmos-card-grid__image-wrapper img {
+
+    transform:
+        scale(1.035);
+
+}
+
+
+/* =====================================================
+   OVERLAY
+   ===================================================== */
+
+.cosmos-card-grid__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.05) 65%,
+            rgba(0, 0, 0, 0)
+        );
+
+    opacity:
+        calc(
+            var(
+                --cosmos-card-grid-overlay,
+                55
+            ) / 100
+        );
+
+}
+
+
+/* =====================================================
+   TEXTO SOBRE IMAGEN
+   ===================================================== */
+
+.cosmos-card-grid__text {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        22px 24px;
+
+    box-sizing: border-box;
+
+    line-height: 1.3;
+
+    font-weight: 400;
+
+    overflow-wrap: break-word;
+
+}
+
+
+/* =====================================================
+   TEXTO EN NEGRITA
+   ===================================================== */
+
+.cosmos-card-grid__text.is-bold {
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   NEGRITA INDIVIDUAL
+   ===================================================== */
+
+.cosmos-card-grid__text strong {
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   PÁRRAFOS
+   ===================================================== */
+
+.cosmos-card-grid__text p {
+
+    margin: 0;
+
+}
+
+
+/* =====================================================
+   CTA
+   ÚNICO ELEMENTO QUE PUEDE TENER BORDE
+   ===================================================== */
+
+.cosmos-card-grid__cta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width:
+        var(
+            --cosmos-card-grid-cta-width,
+            90%
+        );
+
+    min-height: 44px;
+
+    margin-top: 18px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding:
+        0 18px;
+
+    box-sizing: border-box;
+
+    border-style: solid !important;
+
+    border-width:
+        var(
+            --cosmos-card-grid-cta-border-width,
+            1px
+        ) !important;
+
+    border-color:
+        var(
+            --cosmos-card-grid-cta-color,
+            #111111
+        ) !important;
+
+    border-radius:
+        var(
+            --cosmos-card-grid-cta-border-radius,
+            0px
+        );
+
+    background:
+        var(
+            --cosmos-card-grid-cta-background,
+            transparent
+        );
+
+    color:
+        var(
+            --cosmos-card-grid-cta-color,
+            #111111
+        ) !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-align: center;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+/* =====================================================
+   CTA
+   ===================================================== */
+
+.cosmos-card-grid__card
+.cosmos-card-grid__cta {
+
+    border-style: solid !important;
+
+}
+
+
+/* =====================================================
+   HOVER CTA
+   ===================================================== */
+
+.cosmos-card-grid__card:hover
+.cosmos-card-grid__cta {
+
+    background:
+        var(
+            --cosmos-card-grid-cta-color,
+            #111111
+        );
+
+    color:
+        #ffffff !important;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+   ===================================================== */
+
+.cosmos-card-grid__placeholder {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 200px;
+
+    background: #eeeeee;
+
+    color: #666666;
+
+    cursor: pointer;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   AGREGAR
+   ===================================================== */
+
+.cosmos-card-grid__add {
+
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 10px;
+
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    .cosmos-card-grid__card {
+
+        flex:
+            0 0
+            calc(
+                (
+                    100% -
+                    var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    )
+                ) / 2
+            );
+
+        max-width:
+            calc(
+                (
+                    100% -
+                    var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    )
+                ) / 2
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+    .cosmos-card-grid {
+
+        margin-top:
+            var(
+                --cosmos-card-grid-margin-top,
+                40px
+            );
+
+        margin-bottom:
+            var(
+                --cosmos-card-grid-margin-bottom,
+                40px
+            );
+
+    }
+
+
+    .cosmos-card-grid__list {
+
+        gap:
+            var(
+                --cosmos-card-grid-gap,
+                20px
+            );
+
+    }
+
+
+    .cosmos-card-grid__card {
+
+        flex:
+            0 0
+            calc(
+                (
+                    100% -
+                    var(
+                        --cosmos-card-grid-gap,
+                        20px
+                    )
+                ) / 2
+            );
+
+        max-width:
+            calc(
+                (
+                    100% -
+                    var(
+                        --cosmos-card-grid-gap,
+                        20px
+                    )
+                ) / 2
+            );
+
+    }
+
+
+    .cosmos-card-grid__text {
+
+        padding:
+            14px 14px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .cosmos-card-grid__cta {
+
+        min-height: 40px;
+
+        margin-top: 14px;
+
+        padding:
+            0 10px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PEQUEÑO
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .cosmos-card-grid__list {
+
+        gap: 14px;
+
+    }
+
+
+    .cosmos-card-grid__card {
+
+        flex:
+            0 0
+            calc(
+                (
+                    100% -
+                    14px
+                ) / 2
+            );
+
+        max-width:
+            calc(
+                (
+                    100% -
+                    14px
+                ) / 2
+            );
+
+    }
+
+
+    .cosmos-card-grid__text {
+
+        padding:
+            12px;
+
+        font-size: 14px;
+
+    }
+
+
+    .cosmos-card-grid__cta {
+
+        min-height: 38px;
+
+        margin-top: 12px;
+
+        font-size: 10px;
+
+    }
+
+}

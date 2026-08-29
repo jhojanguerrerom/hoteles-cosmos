@@ -341,7 +341,7 @@
         grid-template-columns:
             repeat(
                 min(
-                    2,
+                    1,
                     var(--cosmos-statistics-columns, 1)
                 ),
                 minmax(0, 1fr)

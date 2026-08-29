@@ -1,0 +1,61 @@
+/* =====================================================
+   CARD GRID - EDITOR
+   ===================================================== */
+
+.wp-block-hoteles-cosmos-card-grid,
+.wp-block-hoteles-cosmos-card-grid.cosmos-card-grid {
+
+    border: 0 !important;
+
+    border-width: 0 !important;
+
+    border-style: none !important;
+
+    border-color: transparent !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.wp-block-hoteles-cosmos-card-grid section,
+.cosmos-card-grid {
+
+    border: 0 !important;
+
+    border-width: 0 !important;
+
+    border-style: none !important;
+
+    border-color: transparent !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.cosmos-card-grid__card {
+
+    border: 0 !important;
+
+    border-width: 0 !important;
+
+    border-style: none !important;
+
+    outline: none !important;
+
+    box-shadow: none !important;
+
+}

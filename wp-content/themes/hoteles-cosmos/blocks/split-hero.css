@@ -1,0 +1,56 @@
+.cosmos-split-hero{box-sizing:border-box;overflow:hidden;width:100%}.cosmos-split-hero__inner{display:flex;height:var(
+            --cosmos-split-hero-height,600px
+        );min-height:var(
+            --cosmos-split-hero-height,600px
+        );width:100%}.cosmos-split-hero__image-column{align-items:center;background:#f5f5f5;display:flex;flex:0 0 var(
+            --cosmos-split-hero-image-width,50%
+        );height:100%;justify-content:center;min-width:0;overflow:hidden;width:var(
+            --cosmos-split-hero-image-width,50%
+        )}.cosmos-split-hero__image{display:block;height:100%;margin:0;object-fit:cover;width:100%}.cosmos-split-hero__content-column{align-items:stretch;background:var(
+            --cosmos-split-hero-text-background,#111
+        );box-sizing:border-box;color:var(
+            --cosmos-split-hero-text-color,#fff
+        );display:flex;flex:0 0 var(
+            --cosmos-split-hero-text-width,50%
+        );height:100%;min-width:0;width:var(
+            --cosmos-split-hero-text-width,50%
+        )}.cosmos-split-hero__content{align-items:flex-start;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;margin-top:auto;padding:60px;width:100%}.cosmos-split-hero__title{box-sizing:border-box;color:inherit;font-size:var(
+            --cosmos-split-hero-title-size,52px
+        );font-weight:var(
+            --cosmos-split-hero-title-weight,700
+        );line-height:1.08;margin:0 0 28px;padding:0;text-align:left;width:100%}.cosmos-split-hero__cta-editor{align-items:center;background:var(
+            --cosmos-split-hero-cta-background,#fff
+        );border:1px solid transparent;border-radius:var(
+            --cosmos-split-hero-cta-radius,4px
+        );box-sizing:border-box;color:var(
+            --cosmos-split-hero-cta-color,#111
+        );cursor:text;display:inline-flex;font-size:var(
+            --cosmos-split-hero-cta-size,16px
+        );font-weight:600;justify-content:center;line-height:1.2;min-height:0;outline:none;padding:var(
+            --cosmos-split-hero-cta-padding-y,14px
+        ) var(
+            --cosmos-split-hero-cta-padding-x,28px
+        );text-decoration:none;width:auto}.cosmos-split-hero__cta-editor[data-cta-style=outline]{background:transparent;border:1px solid var(
+            --cosmos-split-hero-cta-background,#fff
+        );color:var(
+            --cosmos-split-hero-cta-color,#fff
+        )}.cosmos-split-hero__image-right{flex-direction:row-reverse}.cosmos-split-hero__image-column
+.editor-post-featured-image__container{height:100%;width:100%}.cosmos-split-hero__image-column
+.components-button{margin:20px}@media (max-width:767px){.cosmos-split-hero__inner{flex-direction:column;height:var(
+                --cosmos-split-hero-mobile-height,650px
+            );min-height:var(
+                --cosmos-split-hero-mobile-height,650px
+            )}.cosmos-split-hero__mobile-image-first .cosmos-split-hero__image-column{order:1}.cosmos-split-hero__mobile-image-first .cosmos-split-hero__content-column{order:2}.cosmos-split-hero__mobile-content-first .cosmos-split-hero__content-column{order:1}.cosmos-split-hero__mobile-content-first .cosmos-split-hero__image-column{order:2}.cosmos-split-hero__content-column,.cosmos-split-hero__image-column{flex-basis:50%;height:50%;width:100%}.cosmos-split-hero__content{padding:35px 25px}.cosmos-split-hero__title{font-size:calc(var(
+                    --cosmos-split-hero-title-size,
+                    52px
+                )*.65);margin-bottom:22px}.cosmos-split-hero__cta-editor{font-size:calc(var(
+                    --cosmos-split-hero-cta-size,
+                    16px
+                ));padding:var(
+                --cosmos-split-hero-cta-padding-y,14px
+            ) var(
+                --cosmos-split-hero-cta-padding-x,28px
+            )}}@media (min-width:768px) and (max-width:1024px){.cosmos-split-hero__content{padding:45px}.cosmos-split-hero__title{font-size:calc(var(
+                    --cosmos-split-hero-title-size,
+                    52px
+                )*.8)}}

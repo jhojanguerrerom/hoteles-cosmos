@@ -242,6 +242,18 @@ function hoteles_cosmos_register_blocks() {
     register_block_type(
         get_template_directory() . '/blocks/statistics-grid'
     );
+
+    register_block_type(
+        get_template_directory() . '/blocks/split-hero'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/booking-engine'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/card-grid'
+    );
 }
 
 add_action(

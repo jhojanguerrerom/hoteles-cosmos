@@ -1,0 +1,37 @@
+.cosmos-card-grid{box-sizing:border-box;margin-bottom:var(
+            --cosmos-card-grid-margin-bottom,50px
+        );margin-top:var(
+            --cosmos-card-grid-margin-top,50px
+        );max-width:100%;width:100%}.cosmos-card-grid__list{align-items:flex-start;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(
+            --cosmos-card-grid-gap,30px
+        );justify-content:center;width:100%}.cosmos-card-grid__card{align-items:center;box-sizing:border-box;color:inherit;cursor:pointer;display:flex;flex:0 0 calc(33.33333% - 20px);flex-direction:column;margin:0;max-width:calc(33.33333% - 20px);min-width:0;padding:0!important;position:relative;transition:transform .3s ease;width:100%}.cosmos-card-grid a.cosmos-card-grid__card,.cosmos-card-grid a.cosmos-card-grid__card:active,.cosmos-card-grid a.cosmos-card-grid__card:focus,.cosmos-card-grid a.cosmos-card-grid__card:hover,.cosmos-card-grid a.cosmos-card-grid__card:link,.cosmos-card-grid a.cosmos-card-grid__card:visited,.cosmos-card-grid__card{background:transparent!important;border:0 transparent!important;box-shadow:none!important;outline:none!important;text-decoration:none!important}.cosmos-card-grid__card:hover{transform:translateY(-4px)}.cosmos-card-grid__image-wrapper{aspect-ratio:var(
+            --cosmos-card-grid-image-ratio,4/3
+        );background:#eee;box-sizing:border-box;overflow:hidden;position:relative;width:100%}.cosmos-card-grid__image-wrapper img{border:0!important;border-radius:0!important;box-shadow:none!important;display:block;height:100%;margin:0;max-width:100%;object-fit:cover;object-position:center;padding:0;transition:transform .6s ease;width:100%}.cosmos-card-grid__card:hover
+.cosmos-card-grid__image-wrapper img{transform:scale(1.035)}.cosmos-card-grid__image-wrapper:after{background:linear-gradient(0deg,rgba(0,0,0,.58),transparent);bottom:0;content:"";height:48%;left:0;pointer-events:none;position:absolute;right:0;z-index:1}.cosmos-card-grid__text{bottom:0;box-sizing:border-box;font-weight:400;left:0;line-height:1.3;margin:0;overflow-wrap:break-word;padding:20px 24px;position:absolute;right:0;width:100%;z-index:2}.cosmos-card-grid__text p{margin:0;padding:0}.cosmos-card-grid__text strong{font-weight:700}.cosmos-card-grid__cta{align-items:center;background:transparent;border-color:var(
+            --cosmos-card-grid-cta-color,#111
+        )!important;border-radius:var(
+            --cosmos-card-grid-cta-border-radius,0
+        )!important;border-style:solid!important;border-width:var(
+            --cosmos-card-grid-cta-border-width,1px
+        )!important;box-shadow:none!important;box-sizing:border-box;display:flex;font-size:13px;font-weight:600;justify-content:center;line-height:1;margin-left:auto;margin-right:auto;margin-top:18px;min-height:44px;outline:none!important;padding:0 18px;text-align:center;transition:background-color .25s ease,color .25s ease,transform .25s ease;white-space:nowrap;width:var(
+            --cosmos-card-grid-cta-width,90%
+        )}.cosmos-card-grid__card:hover
+.cosmos-card-grid__cta,.cosmos-card-grid__cta:hover{background:currentColor;color:#fff!important}.cosmos-card-grid__empty{background:#f5f5f5;box-sizing:border-box;padding:50px 20px;text-align:center;width:100%}.cosmos-card-grid__add{display:flex;justify-content:center;margin-top:30px}.cosmos-card-grid__card--editor{cursor:default}.cosmos-card-grid__image-actions{align-items:center;display:flex;gap:8px;justify-content:center;margin-top:8px;width:100%}@media (max-width:1000px){.cosmos-card-grid__card{flex:0 0 calc((100% - var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    ))/2);max-width:calc((100% - var(
+                        --cosmos-card-grid-gap,
+                        30px
+                    ))/2)}}@media (max-width:767px){.cosmos-card-grid{margin-bottom:var(
+                --cosmos-card-grid-margin-bottom,40px
+            );margin-top:var(
+                --cosmos-card-grid-margin-top,40px
+            )}.cosmos-card-grid__list{gap:var(
+                --cosmos-card-grid-gap,20px
+            )}.cosmos-card-grid__card{flex:0 0 calc((100% - var(
+                        --cosmos-card-grid-gap,
+                        20px
+                    ))/2);max-width:calc((100% - var(
+                        --cosmos-card-grid-gap,
+                        20px
+                    ))/2)}.cosmos-card-grid__text{line-height:1.25;padding:14px}.cosmos-card-grid__cta{font-size:11px;margin-top:14px;min-height:40px;padding:0 10px}}@media (max-width:380px){.cosmos-card-grid__list{gap:14px}.cosmos-card-grid__card{flex:0 0 calc(50% - 7px);max-width:calc(50% - 7px)}.cosmos-card-grid__text{font-size:14px;padding:12px}.cosmos-card-grid__cta{font-size:10px;margin-top:12px;min-height:38px}}

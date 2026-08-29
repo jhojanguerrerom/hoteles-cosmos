@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/booking-engine",
+    "title": "Motor de reservas Cosmos",
+    "category": "cosmos",
+    "icon": "calendar-alt",
+    "description": "Motor de reservas para hoteles Cosmos y hoteles Hilton.",
+    "keywords": [
+        "reservas",
+        "booking",
+        "hotel",
+        "habitaciones",
+        "cosmos",
+        "hilton"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "marginTop": {
+            "type": "number",
+            "default": 30
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 30
+        },
+
+        "showShadow": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "borderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "contentWidth": {
+            "type": "string",
+            "default": "container"
+        },
+
+        "buttonText": {
+            "type": "string",
+            "default": "Reserve ahora"
+        },
+
+        "buttonBackgroundColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "buttonTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php",
+    "script": "file:./booking.js"
+}
