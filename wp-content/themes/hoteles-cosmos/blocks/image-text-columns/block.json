@@ -1,0 +1,186 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/image-text-columns",
+    "title": "Imagen y texto",
+    "category": "cosmos",
+    "icon": "columns",
+    "description": "Bloque de dos columnas con imagen, texto y botón.",
+    "keywords": [
+        "imagen",
+        "texto",
+        "columnas",
+        "boton",
+        "banner",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "containerMode": {
+            "type": "string",
+            "default": "container"
+        },
+
+        "imageWidth": {
+            "type": "number",
+            "default": 60
+        },
+
+        "textWidth": {
+            "type": "number",
+            "default": 40
+        },
+
+        "imageHeight": {
+            "type": "number",
+            "default": 450
+        },
+
+        "desktopOrder": {
+            "type": "string",
+            "default": "image-text"
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 50
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 50
+        },
+
+        "text": {
+            "type": "string",
+            "default": "Escribe tu texto aquí"
+        },
+
+        "textSize": {
+            "type": "number",
+            "default": 32
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "textWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "textBackgroundEnabled": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "textBackground": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "textPadding": {
+            "type": "number",
+            "default": 40
+        },
+
+        "buttonText": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "buttonUrl": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "buttonWidth": {
+            "type": "number",
+            "default": 70
+        },
+
+        "buttonHeight": {
+            "type": "number",
+            "default": 46
+        },
+
+        "buttonTextSize": {
+            "type": "number",
+            "default": 14
+        },
+
+        "buttonTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "buttonBackground": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "buttonBorderColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "buttonBorderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "buttonBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "buttonTextWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "buttonMarginTop": {
+            "type": "number",
+            "default": 25
+        },
+
+        "buttonAlign": {
+            "type": "string",
+            "default": "center"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

@@ -43,6 +43,31 @@
             "default": 34
         },
 
+        "circleBackground": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "circleBorderColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "circleBorderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "circleBorderRadius": {
+            "type": "number",
+            "default": 50
+        },
+
+        "circlePadding": {
+            "type": "number",
+            "default": 0
+        },
+
         "textSize": {
             "type": "number",
             "default": 16

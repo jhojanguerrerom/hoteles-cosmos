@@ -1,0 +1,486 @@
+/* =====================================================
+   BANNER
+===================================================== */
+
+.cosmos-image-text-banner {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin-top:
+        var(
+            --cosmos-banner-margin-top,
+            50px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-banner-margin-bottom,
+            50px
+        );
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   CONTENEDOR DE LA IMAGEN
+===================================================== */
+
+.cosmos-image-text-banner__background {
+
+    position: relative;
+
+    width: 100%;
+
+    height:
+        var(
+            --cosmos-banner-height,
+            450px
+        );
+
+    overflow: hidden;
+
+    display: flex;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image-text-banner__image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.cosmos-image-text-banner__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background: #000000;
+
+    opacity:
+        var(
+            --cosmos-banner-overlay,
+            0.25
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   CONTENEDOR GENERAL DEL SITIO
+===================================================== */
+
+.cosmos-image-text-banner__container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            1280px,
+            calc(100% - 48px)
+        );
+
+    height: 100%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    display: flex;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   POSICIONES
+===================================================== */
+
+
+/* ARRIBA */
+
+.position-top-left
+.cosmos-image-text-banner__container {
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+}
+
+
+.position-top-center
+.cosmos-image-text-banner__container {
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+}
+
+
+.position-top-right
+.cosmos-image-text-banner__container {
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+}
+
+
+/* CENTRO */
+
+.position-center-left
+.cosmos-image-text-banner__container {
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+}
+
+
+.position-center-center
+.cosmos-image-text-banner__container {
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.position-center-right
+.cosmos-image-text-banner__container {
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+}
+
+
+/* ABAJO */
+
+.position-bottom-left
+.cosmos-image-text-banner__container {
+
+    align-items: flex-end;
+
+    justify-content: flex-start;
+
+}
+
+
+.position-bottom-center
+.cosmos-image-text-banner__container {
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+}
+
+
+.position-bottom-right
+.cosmos-image-text-banner__container {
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-image-text-banner__text {
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding:
+        var(
+            --cosmos-banner-text-padding,
+            20px
+        );
+
+    box-sizing: border-box;
+
+    color:
+        var(
+            --cosmos-banner-text-color,
+            #ffffff
+        );
+
+    font-size:
+        var(
+            --cosmos-banner-text-size,
+            32px
+        );
+
+    font-weight:
+        var(
+            --cosmos-banner-text-weight,
+            400
+        );
+
+    line-height: 1.25;
+
+    text-align:
+        var(
+            --cosmos-banner-text-align,
+            center
+        );
+
+    word-break: normal;
+
+    overflow-wrap: break-word;
+
+}
+
+
+/* =====================================================
+   FONDO DEL TEXTO
+===================================================== */
+
+.cosmos-image-text-banner__text.has-background {
+
+    background:
+        var(
+            --cosmos-banner-text-background,
+            #000000
+        );
+
+}
+
+
+/* =====================================================
+   PÁRRAFOS
+===================================================== */
+
+.cosmos-image-text-banner__text p {
+
+    margin: 0;
+
+}
+
+
+.cosmos-image-text-banner__text p + p {
+
+    margin-top: 0.5em;
+
+}
+
+
+/* =====================================================
+   ENLACES
+===================================================== */
+
+.cosmos-image-text-banner__text a {
+
+    color: inherit;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-image-text-banner__empty {
+
+    width: 100%;
+
+    min-height:
+        var(
+            --cosmos-banner-height,
+            450px
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eeeeee;
+
+    color: #666666;
+
+}
+
+
+/* =====================================================
+   EDITOR
+===================================================== */
+
+.cosmos-image-text-banner
+.components-placeholder {
+
+    min-height: 300px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image-text-banner__container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-image-text-banner {
+
+        margin-top:
+            var(
+                --cosmos-banner-margin-top,
+                40px
+            );
+
+        margin-bottom:
+            var(
+                --cosmos-banner-margin-bottom,
+                40px
+            );
+
+    }
+
+
+    .cosmos-image-text-banner__background {
+
+        height:
+            max(
+                300px,
+                var(
+                    --cosmos-banner-height,
+                    450px
+                )
+            );
+
+    }
+
+
+    .cosmos-image-text-banner__container {
+
+        width:
+            calc(
+                100% - 30px
+            );
+
+    }
+
+
+    .cosmos-image-text-banner__text {
+
+        max-width: 100%;
+
+        font-size:
+            max(
+                20px,
+                var(
+                    --cosmos-banner-text-size,
+                    32px
+                )
+            );
+
+        padding:
+            var(
+                --cosmos-banner-text-padding,
+                20px
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PEQUEÑO
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .cosmos-image-text-banner__container {
+
+        width:
+            calc(
+                100% - 24px
+            );
+
+    }
+
+
+    .cosmos-image-text-banner__text {
+
+        font-size: 20px;
+
+        padding: 14px;
+
+    }
+
+}

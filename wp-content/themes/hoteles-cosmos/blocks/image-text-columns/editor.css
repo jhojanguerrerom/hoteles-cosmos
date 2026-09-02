@@ -1,0 +1,419 @@
+/* =====================================================
+   EDITOR
+===================================================== */
+
+.cosmos-image-text-columns {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.cosmos-image-text-columns__wrapper {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.cosmos-image-text-columns
+.container {
+
+    width: min(
+        1280px,
+        calc(100% - 48px)
+    );
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+/* =====================================================
+   FULL WIDTH
+===================================================== */
+
+.cosmos-image-text-columns__wrapper.is-full {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.cosmos-image-text-columns__inner {
+
+    display: flex;
+
+    width: 100%;
+
+    align-items: stretch;
+
+}
+
+
+/* =====================================================
+   ORDEN NORMAL
+   IMAGEN → TEXTO
+===================================================== */
+
+.cosmos-image-text-columns__wrapper.is-image-first
+.cosmos-image-text-columns__image {
+
+    order: 1;
+
+}
+
+
+.cosmos-image-text-columns__wrapper.is-image-first
+.cosmos-image-text-columns__content {
+
+    order: 2;
+
+}
+
+
+/* =====================================================
+   ORDEN INVERSO
+   TEXTO → IMAGEN
+===================================================== */
+
+.cosmos-image-text-columns__wrapper.is-text-first
+.cosmos-image-text-columns__content {
+
+    order: 1;
+
+}
+
+
+.cosmos-image-text-columns__wrapper.is-text-first
+.cosmos-image-text-columns__image {
+
+    order: 2;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image-text-columns__image {
+
+    flex: 0 0
+        var(
+            --cosmos-image-text-image-width,
+            60%
+        );
+
+    width:
+        var(
+            --cosmos-image-text-image-width,
+            60%
+        );
+
+    height:
+        var(
+            --cosmos-image-text-image-height,
+            450px
+        );
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.cosmos-image-text-columns__image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.cosmos-image-text-columns__content {
+
+    flex: 0 0
+        var(
+            --cosmos-image-text-text-width,
+            40%
+        );
+
+    width:
+        var(
+            --cosmos-image-text-text-width,
+            40%
+        );
+
+    min-height:
+        var(
+            --cosmos-image-text-image-height,
+            450px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    box-sizing: border-box;
+
+    padding:
+        var(
+            --cosmos-image-text-padding,
+            40px
+        );
+
+    background:
+        var(
+            --cosmos-image-text-background,
+            transparent
+        );
+
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-image-text-columns__text {
+
+    width: 100%;
+
+    color:
+        var(
+            --cosmos-image-text-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-image-text-size,
+            32px
+        );
+
+    font-weight:
+        var(
+            --cosmos-image-text-weight,
+            400
+        );
+
+    text-align:
+        var(
+            --cosmos-image-text-align,
+            center
+        );
+
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.cosmos-image-text-columns__button {
+
+    align-self:
+        var(
+            --cosmos-image-text-button-align-self,
+            center
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width:
+        var(
+            --cosmos-image-text-button-width,
+            70%
+        );
+
+    min-height:
+        var(
+            --cosmos-image-text-button-height,
+            46px
+        );
+
+    margin-top:
+        var(
+            --cosmos-image-text-button-margin-top,
+            25px
+        );
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    background:
+        var(
+            --cosmos-image-text-button-background,
+            #111111
+        );
+
+    color:
+        var(
+            --cosmos-image-text-button-color,
+            #ffffff
+        );
+
+    border:
+        var(
+            --cosmos-image-text-button-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-image-text-button-border-color,
+            #111111
+        );
+
+    border-radius:
+        var(
+            --cosmos-image-text-button-radius,
+            0px
+        );
+
+    font-size:
+        var(
+            --cosmos-image-text-button-size,
+            14px
+        );
+
+    font-weight:
+        var(
+            --cosmos-image-text-button-weight,
+            600
+        );
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-image-text-columns__placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height:
+        var(
+            --cosmos-image-text-image-height,
+            450px
+        );
+
+    border: 0;
+
+    background: #eeeeee;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image-text-columns
+    .container {
+
+        width: calc(100% - 40px);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .cosmos-image-text-columns
+    .container {
+
+        width: calc(100% - 30px);
+
+    }
+
+
+    .cosmos-image-text-columns__inner {
+
+        flex-direction: column;
+
+    }
+
+
+    /*
+     * IMPORTANTE:
+     * En mobile SIEMPRE
+     *
+     * 1. Imagen
+     * 2. Texto
+     */
+
+    .cosmos-image-text-columns__image {
+
+        order: 1 !important;
+
+        width: 100%;
+
+        flex: 0 0 auto;
+
+    }
+
+
+    .cosmos-image-text-columns__content {
+
+        order: 2 !important;
+
+        width: 100%;
+
+        flex: 0 0 auto;
+
+        min-height: auto;
+
+    }
+
+}

@@ -1,0 +1,456 @@
+/* =====================================================
+   BLOQUE - IMAGEN + TEXTO
+   ===================================================== */
+
+.cosmos-image-text {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   IMAGEN
+   ===================================================== */
+
+.cosmos-image-text__image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   IMAGEN REAL
+   ===================================================== */
+
+.cosmos-image-text__image-wrapper img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+}
+
+
+/* =====================================================
+   CONTAINER DEL TEXTO
+   ===================================================== */
+
+.cosmos-image-text__container {
+
+    position: absolute;
+
+    z-index: 2;
+
+    box-sizing: border-box;
+
+    max-width: 1280px;
+
+    width: calc(100% - 48px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   TEXTO
+   ===================================================== */
+
+.cosmos-image-text__text {
+
+    pointer-events: auto;
+
+    box-sizing: border-box;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 20px;
+
+    line-height: 1.4;
+
+    word-wrap: break-word;
+
+    overflow-wrap: break-word;
+
+}
+
+
+/* =====================================================
+   FONDO DEL TEXTO
+   ===================================================== */
+
+.cosmos-image-text__text.has-background {
+
+    background: rgba(255, 255, 255, 0.9);
+
+}
+
+
+/* =====================================================
+   POSICIÓN - ARRIBA
+   ===================================================== */
+
+.cosmos-image-text__container.position-top-left {
+
+    top: 0;
+
+    bottom: auto;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: flex-start;
+
+}
+
+
+.cosmos-image-text__container.position-top-center {
+
+    top: 0;
+
+    bottom: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+}
+
+
+.cosmos-image-text__container.position-top-right {
+
+    top: 0;
+
+    bottom: auto;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-start;
+
+}
+
+
+/* =====================================================
+   POSICIÓN - CENTRO
+   ===================================================== */
+
+.cosmos-image-text__container.position-center-left {
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+}
+
+
+.cosmos-image-text__container.position-center {
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.cosmos-image-text__container.position-center-right {
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+}
+
+
+/* =====================================================
+   POSICIÓN - ABAJO
+   ===================================================== */
+
+.cosmos-image-text__container.position-bottom-left {
+
+    bottom: 0;
+
+    top: auto;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: flex-end;
+
+}
+
+
+.cosmos-image-text__container.position-bottom-center {
+
+    bottom: 0;
+
+    top: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+}
+
+
+.cosmos-image-text__container.position-bottom-right {
+
+    bottom: 0;
+
+    top: auto;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-end;
+
+}
+
+
+/* =====================================================
+   RICH TEXT / WORDPRESS
+   ===================================================== */
+
+.cosmos-image-text__text .block-editor-rich-text__editable {
+
+    min-height: 30px;
+
+}
+
+
+.cosmos-image-text__text p {
+
+    margin-top: 0;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+   ===================================================== */
+
+.cosmos-image-text__placeholder {
+
+    width: 100%;
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eeeeee;
+
+    color: #666666;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER BOTÓN
+   ===================================================== */
+
+.cosmos-image-text__placeholder .components-button {
+
+    pointer-events: auto;
+
+}
+
+
+/* =====================================================
+   CONTROLES DE IMAGEN
+   ===================================================== */
+
+.cosmos-image-text__image-actions {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    z-index: 10;
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+/* =====================================================
+   BOTONES DE IMAGEN
+   ===================================================== */
+
+.cosmos-image-text__image-actions .components-button {
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =====================================================
+   SELECCIÓN DEL BLOQUE
+   ===================================================== */
+
+.wp-block-hoteles-cosmos-image-text {
+
+    width: 100%;
+
+    max-width: 100%;
+
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .cosmos-image-text__container {
+
+        width: calc(100% - 40px);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .cosmos-image-text__container {
+
+        width: calc(100% - 30px);
+
+    }
+
+
+    .cosmos-image-text__text {
+
+        padding: 14px;
+
+    }
+
+
+    .cosmos-image-text__placeholder {
+
+        min-height: 250px;
+
+    }
+
+
+    .cosmos-image-text__image-actions {
+
+        top: 10px;
+
+        right: 10px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PEQUEÑO
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .cosmos-image-text__container {
+
+        width: calc(100% - 20px);
+
+    }
+
+
+    .cosmos-image-text__text {
+
+        padding: 10px;
+
+    }
+
+}

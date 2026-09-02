@@ -3,7 +3,30 @@
 ===================================================== */
 
 .cosmos-icon-text {
+
     width: 100%;
+
+    max-width: none;
+
+}
+
+
+/* =====================================================
+   CONTENEDOR GENERAL
+===================================================== */
+
+.cosmos-icon-text .container {
+
+    width:
+        min(
+            1280px,
+            calc(100% - 48px)
+        );
+
+    margin-left: auto;
+
+    margin-right: auto;
+
 }
 
 
@@ -12,24 +35,33 @@
 ===================================================== */
 
 .cosmos-icon-text__grid {
+    border-style: none !important;
     display: grid;
 
-    grid-template-columns: repeat(
-        var(--cosmos-icon-columns, 6),
-        minmax(0, 1fr)
-    );
+    grid-template-columns:
+        repeat(
+            var(--cosmos-icon-columns, 1fr),
+            minmax(0, 1fr)
+        );
 
-    gap: var(--cosmos-icon-spacing);
+    gap:
+        var(
+            --cosmos-icon-spacing,
+            24px
+        );
 
     align-items: start;
 
-    /*
-     * Igual que en el frontend:
-     * mantiene el grupo centrado.
-     */
-    width: min(100%, 1100px);
+    width:
+        min(
+            100%,
+            1100px
+        );
+
     margin-left: auto;
+
     margin-right: auto;
+
 }
 
 
@@ -38,14 +70,21 @@
 ===================================================== */
 
 .cosmos-icon-text__item {
+
     min-width: 0;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
 
-    text-align: var(--cosmos-icon-text-align);
+    text-align:
+        var(
+            --cosmos-icon-text-align,
+            center
+        );
+
 }
 
 
@@ -54,29 +93,83 @@
 ===================================================== */
 
 .cosmos-icon-text__circle {
-    width: var(--cosmos-icon-circle-size);
-    height: var(--cosmos-icon-circle-size);
 
-    min-width: var(--cosmos-icon-circle-size);
-    min-height: var(--cosmos-icon-circle-size);
+    width:
+        var(
+            --cosmos-icon-circle-size,
+            80px
+        );
 
-    padding: 0;
+    height:
+        var(
+            --cosmos-icon-circle-size,
+            80px
+        );
 
-    border: 0;
-    border-radius: 50%;
+    min-width:
+        var(
+            --cosmos-icon-circle-size,
+            80px
+        );
 
-    background: #000000;
+    min-height:
+        var(
+            --cosmos-icon-circle-size,
+            80px
+        );
+
+    padding:
+        var(
+            --cosmos-icon-circle-padding,
+            0px
+        );
+
+    box-sizing: border-box;
+
+    border-style: solid !important;
+
+    border-width:
+        var(
+            --cosmos-icon-circle-border-width,
+            1px
+        ) !important;
+
+    border-color:
+        var(
+            --cosmos-icon-circle-border-color,
+            #000000
+        ) !important;
+
+    border-radius:
+        var(
+            --cosmos-icon-circle-radius,
+            50%
+        );
+
+    background:
+        var(
+            --cosmos-icon-circle-background,
+            #000000
+        );
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
-    margin: 0 auto 12px;
+
+    margin:
+        0 auto 12px;
+
+    cursor: pointer;
+
     transition:
         transform 0.25s ease,
         background-color 0.25s ease,
         box-shadow 0.25s ease;
+
 }
 
 
@@ -85,17 +178,10 @@
 ===================================================== */
 
 .cosmos-icon-text__circle:hover {
-    transform: scale(1.08);
 
-    background-color: #222222;
+    transform:
+        scale(1.08);
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-
-
-.cosmos-icon-text__circle:hover {
-    transform: scale(1.04);
 }
 
 
@@ -104,56 +190,127 @@
 ===================================================== */
 
 .cosmos-icon-text__circle img {
+
     display: block;
 
-    width: var(--cosmos-icon-size);
-    height: var(--cosmos-icon-size);
+    width:
+        var(
+            --cosmos-icon-size,
+            34px
+        );
+
+    height:
+        var(
+            --cosmos-icon-size,
+            34px
+        );
 
     max-width: none;
 
     object-fit: contain;
+
 }
 
 
 /* =====================================================
-   CÍRCULO VACÍO
+   ICONO VACÍO
 ===================================================== */
 
 .cosmos-icon-text__circle--empty {
+
     color: #ffffff;
 
     font-size: 32px;
+
     font-weight: 300;
 
-    background: #000000;
+    line-height: 1;
+
 }
 
 
 /* =====================================================
-   INPUT DE TEXTO
+   BOTÓN DEL CÍRCULO
 ===================================================== */
 
-.cosmos-icon-text__item .components-text-control__input {
-    width: 100%;
+button.cosmos-icon-text__circle {
 
-    text-align: var(--cosmos-icon-text-align);
+    appearance: none;
 
-    font-size: var(--cosmos-icon-text-size);
+    -webkit-appearance: none;
 
-    color: var(--cosmos-icon-text-color);
+    font-family: inherit;
 
-    font-weight: var(--cosmos-icon-text-weight);
+    line-height: normal;
+
 }
 
 
 /* =====================================================
-   ACCIONES DEL ICONO
+   ACCIONES DE IMAGEN
 ===================================================== */
 
 .cosmos-icon-text__image-actions {
-    text-align: center;
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
 
     margin-bottom: 8px;
+
+}
+
+
+/* =====================================================
+   TEXT CONTROL
+===================================================== */
+
+.cosmos-icon-text__item
+.components-base-control {
+
+    width: 100%;
+
+    margin-top: 0;
+
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-icon-text__text {
+
+    margin: 0;
+
+    color:
+        var(
+            --cosmos-icon-text-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-icon-text-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-icon-text-weight,
+            400
+        );
+
+    line-height: 1.45;
+
+    text-align:
+        var(
+            --cosmos-icon-text-align,
+            center
+        );
+
 }
 
 
@@ -163,13 +320,26 @@
 
 @media (max-width: 900px) {
 
+    .cosmos-icon-text .container {
+
+        width:
+            calc(
+                100% - 40px
+            );
+
+    }
+
+
     .cosmos-icon-text__grid {
+
         width: 100%;
 
-        grid-template-columns: repeat(
-            3,
-            minmax(0, 1fr)
-        );
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
     }
 
 }
@@ -181,23 +351,58 @@
 
 @media (max-width: 600px) {
 
-    .cosmos-icon-text__grid {
-        width: 100%;
+    .cosmos-icon-text .container {
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width:
+            calc(
+                100% - 30px
+            );
 
-        column-gap: var(--cosmos-icon-spacing);
-        row-gap: 40px;
     }
 
-    /* Si hay una cantidad impar, el último elemento queda centrado */
-    .cosmos-icon-text__item:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        justify-self: center;
+
+    .cosmos-icon-text__grid {
+
         width: 100%;
-        max-width: calc(
-            (100% - var(--cosmos-icon-spacing)) / 2
-        );
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        column-gap:
+            var(
+                --cosmos-icon-spacing,
+                24px
+            );
+
+        row-gap: 40px;
+
+    }
+
+
+    /*
+     * Si hay una cantidad impar,
+     * el último elemento queda centrado.
+     */
+
+    .cosmos-icon-text__item:last-child:nth-child(odd) {
+
+        grid-column: 1 / -1;
+
+        justify-self: center;
+
+        width: 100%;
+
+        max-width:
+            calc(
+                (
+                    100% -
+                    var(--cosmos-icon-spacing, 24px)
+                ) / 2
+            );
+
     }
 
 }

@@ -24,8 +24,16 @@ function Edit({ attributes, setAttributes }) {
 
     const {
         items,
+
         circleSize,
         iconSize,
+
+        circleBackground,
+        circleBorderColor,
+        circleBorderWidth,
+        circleBorderRadius,
+        circlePadding,
+
         textSize,
         textColor,
         textWeight,
@@ -52,6 +60,7 @@ function Edit({ attributes, setAttributes }) {
         setAttributes({
             items: newItems
         });
+
     };
 
 
@@ -68,16 +77,22 @@ function Edit({ attributes, setAttributes }) {
         }
 
         setAttributes({
+
             items: [
+
                 ...items,
+
                 {
                     iconId: 0,
                     iconUrl: '',
                     iconAlt: '',
                     text: 'Nuevo texto'
                 }
+
             ]
+
         });
+
     };
 
 
@@ -94,12 +109,14 @@ function Edit({ attributes, setAttributes }) {
         }
 
         const newItems = items.filter(
-            (_, itemIndex) => itemIndex !== index
+            (_, itemIndex) =>
+                itemIndex !== index
         );
 
         setAttributes({
             items: newItems
         });
+
     };
 
 
@@ -116,10 +133,18 @@ function Edit({ attributes, setAttributes }) {
         }
 
         updateItem(index, {
+
             iconId: media.id,
+
             iconUrl: media.url,
-            iconAlt: media.alt || media.title || ''
+
+            iconAlt:
+                media.alt ||
+                media.title ||
+                ''
+
         });
+
     };
 
 
@@ -138,11 +163,17 @@ function Edit({ attributes, setAttributes }) {
 
         <Fragment>
 
+
             {/* =================================================
                 CONTROLES DEL BLOQUE
             ================================================= */}
 
             <InspectorControls>
+
+
+                {/* =================================================
+                    ELEMENTOS
+                ================================================= */}
 
                 <PanelBody
                     title={__('Elementos', 'hoteles-cosmos')}
@@ -155,6 +186,7 @@ function Edit({ attributes, setAttributes }) {
                             'hoteles-cosmos'
                         )}
                     </p>
+
 
                     <Button
                         variant="primary"
@@ -173,11 +205,14 @@ function Edit({ attributes, setAttributes }) {
 
                 <PanelBody
                     title={__('Iconos', 'hoteles-cosmos')}
-                    initialOpen={false}
+                    initialOpen={true}
                 >
 
                     <RangeControl
-                        label={__('Tamaño del círculo', 'hoteles-cosmos')}
+                        label={__(
+                            'Tamaño del círculo',
+                            'hoteles-cosmos'
+                        )}
                         value={circleSize}
                         onChange={(value) =>
                             setAttributes({
@@ -189,8 +224,12 @@ function Edit({ attributes, setAttributes }) {
                         step={1}
                     />
 
+
                     <RangeControl
-                        label={__('Tamaño del icono', 'hoteles-cosmos')}
+                        label={__(
+                            'Tamaño del icono',
+                            'hoteles-cosmos'
+                        )}
                         value={iconSize}
                         onChange={(value) =>
                             setAttributes({
@@ -202,8 +241,105 @@ function Edit({ attributes, setAttributes }) {
                         step={1}
                     />
 
+
                     <RangeControl
-                        label={__('Espacio entre iconos', 'hoteles-cosmos')}
+                        label={__(
+                            'Border radius',
+                            'hoteles-cosmos'
+                        )}
+                        value={circleBorderRadius}
+                        onChange={(value) =>
+                            setAttributes({
+                                circleBorderRadius: value
+                            })
+                        }
+                        min={0}
+                        max={50}
+                        step={1}
+                    />
+
+
+                    <RangeControl
+                        label={__(
+                            'Grosor del borde',
+                            'hoteles-cosmos'
+                        )}
+                        value={circleBorderWidth}
+                        onChange={(value) =>
+                            setAttributes({
+                                circleBorderWidth: value
+                            })
+                        }
+                        min={0}
+                        max={10}
+                        step={1}
+                    />
+
+
+                    <RangeControl
+                        label={__(
+                            'Padding',
+                            'hoteles-cosmos'
+                        )}
+                        value={circlePadding}
+                        onChange={(value) =>
+                            setAttributes({
+                                circlePadding: value
+                            })
+                        }
+                        min={0}
+                        max={40}
+                        step={1}
+                    />
+
+
+                    <p>
+                        <strong>
+                            {__(
+                                'Color de fondo',
+                                'hoteles-cosmos'
+                            )}
+                        </strong>
+                    </p>
+
+
+                    <ColorPalette
+                        value={circleBackground}
+                        onChange={(value) =>
+                            setAttributes({
+                                circleBackground:
+                                    value || '#000000'
+                            })
+                        }
+                    />
+
+
+                    <p>
+                        <strong>
+                            {__(
+                                'Color del borde',
+                                'hoteles-cosmos'
+                            )}
+                        </strong>
+                    </p>
+
+
+                    <ColorPalette
+                        value={circleBorderColor}
+                        onChange={(value) =>
+                            setAttributes({
+                                circleBorderColor:
+                                    value || '#000000'
+                            })
+                        }
+                    />
+
+
+                    <RangeControl
+                        label={__(
+                            'Espacio entre iconos',
+                            'hoteles-cosmos'
+                        )}
                         value={spacing}
                         onChange={(value) =>
                             setAttributes({
@@ -228,7 +364,10 @@ function Edit({ attributes, setAttributes }) {
                 >
 
                     <RangeControl
-                        label={__('Tamaño del texto', 'hoteles-cosmos')}
+                        label={__(
+                            'Tamaño del texto',
+                            'hoteles-cosmos'
+                        )}
                         value={textSize}
                         onChange={(value) =>
                             setAttributes({
@@ -242,25 +381,45 @@ function Edit({ attributes, setAttributes }) {
 
 
                     <SelectControl
-                        label={__('Peso del texto', 'hoteles-cosmos')}
+                        label={__(
+                            'Peso del texto',
+                            'hoteles-cosmos'
+                        )}
                         value={textWeight}
                         options={[
+
                             {
-                                label: __('Normal', 'hoteles-cosmos'),
+                                label: __(
+                                    'Normal',
+                                    'hoteles-cosmos'
+                                ),
                                 value: '400'
                             },
+
                             {
-                                label: __('Medio', 'hoteles-cosmos'),
+                                label: __(
+                                    'Medio',
+                                    'hoteles-cosmos'
+                                ),
                                 value: '500'
                             },
+
                             {
-                                label: __('Seminegrita', 'hoteles-cosmos'),
+                                label: __(
+                                    'Seminegrita',
+                                    'hoteles-cosmos'
+                                ),
                                 value: '600'
                             },
+
                             {
-                                label: __('Negrita', 'hoteles-cosmos'),
+                                label: __(
+                                    'Negrita',
+                                    'hoteles-cosmos'
+                                ),
                                 value: '700'
                             }
+
                         ]}
                         onChange={(value) =>
                             setAttributes({
@@ -271,21 +430,37 @@ function Edit({ attributes, setAttributes }) {
 
 
                     <SelectControl
-                        label={__('Alineación del texto', 'hoteles-cosmos')}
+                        label={__(
+                            'Alineación del texto',
+                            'hoteles-cosmos'
+                        )}
                         value={textAlign}
                         options={[
+
                             {
-                                label: __('Izquierda', 'hoteles-cosmos'),
+                                label: __(
+                                    'Izquierda',
+                                    'hoteles-cosmos'
+                                ),
                                 value: 'left'
                             },
+
                             {
-                                label: __('Centro', 'hoteles-cosmos'),
+                                label: __(
+                                    'Centro',
+                                    'hoteles-cosmos'
+                                ),
                                 value: 'center'
                             },
+
                             {
-                                label: __('Derecha', 'hoteles-cosmos'),
+                                label: __(
+                                    'Derecha',
+                                    'hoteles-cosmos'
+                                ),
                                 value: 'right'
                             }
+
                         ]}
                         onChange={(value) =>
                             setAttributes({
@@ -297,15 +472,21 @@ function Edit({ attributes, setAttributes }) {
 
                     <p>
                         <strong>
-                            {__('Color del texto', 'hoteles-cosmos')}
+                            {__(
+                                'Color del texto',
+                                'hoteles-cosmos'
+                            )}
                         </strong>
                     </p>
+
 
                     <ColorPalette
                         value={textColor}
                         onChange={(value) =>
                             setAttributes({
-                                textColor: value || '#111111'
+                                textColor:
+                                    value ||
+                                    '#111111'
                             })
                         }
                     />
@@ -324,13 +505,43 @@ function Edit({ attributes, setAttributes }) {
                 <div
                     className="cosmos-icon-text__grid"
                     style={{
-                        '--cosmos-icon-circle-size': `${circleSize}px`,
-                        '--cosmos-icon-size': `${iconSize}px`,
-                        '--cosmos-icon-text-size': `${textSize}px`,
-                        '--cosmos-icon-text-color': textColor,
-                        '--cosmos-icon-text-weight': textWeight,
-                        '--cosmos-icon-text-align': textAlign,
-                        '--cosmos-icon-spacing': `${spacing}px`
+
+                        '--cosmos-icon-circle-size':
+                            `${circleSize}px`,
+
+                        '--cosmos-icon-size':
+                            `${iconSize}px`,
+
+                        '--cosmos-icon-circle-background':
+                            circleBackground,
+
+                        '--cosmos-icon-circle-border-color':
+                            circleBorderColor,
+
+                        '--cosmos-icon-circle-border-width':
+                            `${circleBorderWidth}px`,
+
+                        '--cosmos-icon-circle-radius':
+                            `${circleBorderRadius}%`,
+
+                        '--cosmos-icon-circle-padding':
+                            `${circlePadding}px`,
+
+                        '--cosmos-icon-text-size':
+                            `${textSize}px`,
+
+                        '--cosmos-icon-text-color':
+                            textColor,
+
+                        '--cosmos-icon-text-weight':
+                            textWeight,
+
+                        '--cosmos-icon-text-align':
+                            textAlign,
+
+                        '--cosmos-icon-spacing':
+                            `${spacing}px`
+
                     }}
                 >
 
@@ -341,6 +552,7 @@ function Edit({ attributes, setAttributes }) {
                             key={index}
                         >
 
+
                             {/* =================================================
                                 ICONO
                             ================================================= */}
@@ -348,11 +560,22 @@ function Edit({ attributes, setAttributes }) {
                             <MediaUploadCheck>
 
                                 <MediaUpload
+
                                     onSelect={(media) =>
-                                        selectIcon(index, media)
+                                        selectIcon(
+                                            index,
+                                            media
+                                        )
                                     }
-                                    allowedTypes={['image']}
-                                    value={item.iconId}
+
+                                    allowedTypes={[
+                                        'image'
+                                    ]}
+
+                                    value={
+                                        item.iconId
+                                    }
+
                                     render={({ open }) => (
 
                                         <div>
@@ -372,11 +595,16 @@ function Edit({ attributes, setAttributes }) {
                                                     >
 
                                                         <img
-                                                            src={item.iconUrl}
-                                                            alt={item.iconAlt}
+                                                            src={
+                                                                item.iconUrl
+                                                            }
+                                                            alt={
+                                                                item.iconAlt
+                                                            }
                                                         />
 
                                                     </button>
+
 
                                                     <div className="cosmos-icon-text__image-actions">
 
@@ -401,9 +629,11 @@ function Edit({ attributes, setAttributes }) {
                                                     className="cosmos-icon-text__circle cosmos-icon-text__circle--empty"
                                                     onClick={open}
                                                 >
+
                                                     <span>
                                                         +
                                                     </span>
+
                                                 </button>
 
                                             )}
@@ -411,6 +641,7 @@ function Edit({ attributes, setAttributes }) {
                                         </div>
 
                                     )}
+
                                 />
 
                             </MediaUploadCheck>
@@ -423,9 +654,12 @@ function Edit({ attributes, setAttributes }) {
                             <TextControl
                                 value={item.text}
                                 onChange={(value) =>
-                                    updateItem(index, {
-                                        text: value
-                                    })
+                                    updateItem(
+                                        index,
+                                        {
+                                            text: value
+                                        }
+                                    )
                                 }
                                 placeholder={__(
                                     'Texto',
@@ -447,7 +681,12 @@ function Edit({ attributes, setAttributes }) {
                                         removeItem(index)
                                     }
                                 >
-                                    {__('Eliminar', 'hoteles-cosmos')}
+
+                                    {__(
+                                        'Eliminar',
+                                        'hoteles-cosmos'
+                                    )}
+
                                 </Button>
 
                             )}
@@ -461,7 +700,9 @@ function Edit({ attributes, setAttributes }) {
             </div>
 
         </Fragment>
+
     );
+
 }
 
 
