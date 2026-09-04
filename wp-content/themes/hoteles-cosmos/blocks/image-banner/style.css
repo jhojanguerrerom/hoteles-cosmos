@@ -1,0 +1,567 @@
+/* =====================================================
+   BANNER
+===================================================== */
+
+.cosmos-image-banner {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    overflow-x: clip;
+}
+
+
+/*
+ * En caso de que WordPress/Gutenberg agregue
+ * algún ancho o margen al wrapper.
+ */
+
+.cosmos-image-banner.wp-block {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-left: 0;
+
+    margin-right: 0;
+}
+
+
+/* =====================================================
+   FONDO
+===================================================== */
+
+.cosmos-image-banner__background {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: 110vh;
+
+    min-height: 500px;
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.cosmos-image-banner__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background: var(
+        --cosmos-banner-overlay-color,
+        #000000
+    );
+
+    opacity: var(
+        --cosmos-banner-overlay-opacity,
+        0.35
+    );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   POSICIONAMIENTO
+===================================================== */
+
+.cosmos-image-banner__position {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: 100%;
+}
+
+
+/* =====================================================
+   GRID 2 × 2
+===================================================== */
+
+.cosmos-image-banner__grid {
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.cosmos-image-banner__content {
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    min-width: 0;
+
+    padding: var(
+        --cosmos-banner-content-padding,
+        0px
+    );
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   POSICIONES 2 × 2
+===================================================== */
+
+
+/* Arriba izquierda */
+
+.cosmos-image-banner__content.is-position-top-left {
+
+    grid-column: 1;
+
+    grid-row: 1;
+
+    justify-self: start;
+
+    align-self: start;
+}
+
+
+/* Arriba derecha */
+
+.cosmos-image-banner__content.is-position-top-right {
+
+    grid-column: 2;
+
+    grid-row: 1;
+
+    justify-self: end;
+
+    align-self: start;
+}
+
+
+/* Abajo izquierda */
+
+.cosmos-image-banner__content.is-position-bottom-left {
+
+    grid-column: 1;
+
+    grid-row: 2;
+
+    justify-self: start;
+
+    align-self: end;
+}
+
+
+/* Abajo derecha */
+
+.cosmos-image-banner__content.is-position-bottom-right {
+
+    grid-column: 2;
+
+    grid-row: 2;
+
+    justify-self: end;
+
+    align-self: end;
+}
+
+
+/* =====================================================
+   ALINEACIÓN DEL GRUPO
+===================================================== */
+
+.cosmos-image-banner__content.is-text-align-left {
+
+    align-items: flex-start;
+}
+
+
+.cosmos-image-banner__content.is-text-align-center {
+
+    align-items: center;
+}
+
+
+.cosmos-image-banner__content.is-text-align-right {
+
+    align-items: flex-end;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.cosmos-image-banner__text {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: var(
+        --cosmos-banner-text-color,
+        #ffffff
+    );
+
+    font-size: var(
+        --cosmos-banner-text-size,
+        48px
+    );
+
+    font-weight: var(
+        --cosmos-banner-text-weight,
+        700
+    );
+
+    line-height: 1.15;
+
+    text-align: var(
+        --cosmos-banner-text-align,
+        left
+    );
+
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+}
+
+
+/* =====================================================
+   RICH TEXT
+===================================================== */
+
+.cosmos-image-banner__text p {
+
+    margin-top: 0;
+
+    margin-bottom: 0;
+
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.cosmos-image-banner__button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    width: var(
+        --cosmos-banner-button-width,
+        180px
+    );
+
+    height: var(
+        --cosmos-banner-button-height,
+        48px
+    );
+
+    max-width: 100%;
+
+    margin-top: var(
+        --cosmos-banner-button-margin-top,
+        25px
+    );
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    background: var(
+        --cosmos-banner-button-background,
+        transparent
+    );
+
+    color: var(
+        --cosmos-banner-button-color,
+        #ffffff
+    );
+
+    border-style: solid;
+
+    border-width: var(
+        --cosmos-banner-button-border-width,
+        1px
+    );
+
+    border-color: var(
+        --cosmos-banner-button-border-color,
+        #ffffff
+    );
+
+    border-radius: var(
+        --cosmos-banner-button-radius,
+        0px
+    );
+
+    font-size: var(
+        --cosmos-banner-button-size,
+        14px
+    );
+
+    font-weight: var(
+        --cosmos-banner-button-weight,
+        600
+    );
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.cosmos-image-banner__button:hover {
+
+    opacity: 0.85;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.cosmos-image-banner__placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f0f0f0;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    /*
+     * Banner más compacto.
+     */
+
+    .cosmos-image-banner__background {
+
+        height: 65svh;
+
+        min-height: 0;
+    }
+
+
+    /*
+     * En móvil desaparece la lógica 2 × 2.
+     */
+
+    .cosmos-image-banner__grid {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 100%;
+    }
+
+
+    /*
+     * Grupo completo:
+     *
+     * TEXTO
+     * BOTÓN
+     */
+
+    .cosmos-image-banner__content {
+
+        width: calc(100% - 32px);
+
+        max-width: 650px;
+
+        min-width: 0;
+
+        padding: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /*
+     * Las posiciones desktop dejan
+     * de tener efecto.
+     */
+
+    .cosmos-image-banner__content.is-position-top-left,
+    .cosmos-image-banner__content.is-position-top-right,
+    .cosmos-image-banner__content.is-position-bottom-left,
+    .cosmos-image-banner__content.is-position-bottom-right {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+        justify-self: auto;
+
+        align-self: auto;
+    }
+
+
+    /*
+     * Texto siempre centrado.
+     */
+
+    .cosmos-image-banner__text {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        text-align: center;
+
+        font-size: clamp(
+            28px,
+            7vw,
+            var(--cosmos-banner-text-size, 48px)
+        );
+    }
+
+
+    /*
+     * Botón centrado con respecto
+     * al grupo de texto.
+     */
+
+    .cosmos-image-banner__button {
+
+        align-self: center;
+
+        max-width: 100%;
+    }
+}
+
+
+/* =====================================================
+   MÓVILES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .cosmos-image-banner__background {
+
+        height: 60svh;
+
+        min-height: 320px;
+    }
+
+
+    .cosmos-image-banner__content {
+
+        width: calc(100% - 24px);
+    }
+
+
+    .cosmos-image-banner__text {
+
+        font-size: clamp(
+            26px,
+            8vw,
+            var(--cosmos-banner-text-size, 48px)
+        );
+    }
+}

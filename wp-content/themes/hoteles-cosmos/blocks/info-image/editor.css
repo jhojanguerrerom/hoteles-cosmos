@@ -1,0 +1,336 @@
+.cosmos-contact-columns {
+    width: 100%;
+    max-width: 100%;
+    margin-top: var(--cosmos-contact-margin-top, 0px);
+    margin-bottom: var(--cosmos-contact-margin-bottom, 0px);
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: clip;
+}
+
+.cosmos-contact-columns__columns {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: var(--cosmos-contact-gap, 8px);
+    align-items: stretch;
+    box-sizing: border-box;
+}
+
+/* Texto primero */
+.cosmos-contact-columns__columns.is-first-text {
+    grid-template-columns:
+        calc(
+            var(--cosmos-contact-text-width, 60%)
+            - (var(--cosmos-contact-gap, 8px) / 2)
+        )
+        calc(
+            var(--cosmos-contact-image-width, 40%)
+            - (var(--cosmos-contact-gap, 8px) / 2)
+        );
+}
+
+/* Imagen primero */
+.cosmos-contact-columns__columns.is-first-image {
+    grid-template-columns:
+        calc(
+            var(--cosmos-contact-image-width, 40%)
+            - (var(--cosmos-contact-gap, 8px) / 2)
+        )
+        calc(
+            var(--cosmos-contact-text-width, 60%)
+            - (var(--cosmos-contact-gap, 8px) / 2)
+        );
+}
+
+/* Posición cuando el texto es primero */
+.cosmos-contact-columns__columns.is-first-text
+.cosmos-contact-columns__text {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cosmos-contact-columns__columns.is-first-text
+.cosmos-contact-columns__image {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Posición cuando la imagen es primero */
+.cosmos-contact-columns__columns.is-first-image
+.cosmos-contact-columns__image {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cosmos-contact-columns__columns.is-first-image
+.cosmos-contact-columns__text {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Columna de texto */
+.cosmos-contact-columns__text {
+    min-width: 0;
+    position: relative;
+    background: var(--cosmos-contact-text-background, #ffffff);
+    box-sizing: border-box;
+}
+
+/* Contenido */
+.cosmos-contact-columns__content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: var(--cosmos-contact-content-padding, 48px);
+}
+
+/* Etiqueta */
+.cosmos-contact-columns__tag {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    box-sizing: border-box;
+    padding: var(--cosmos-contact-tag-padding-y, 10px)
+        var(--cosmos-contact-tag-padding-x, 18px);
+    background: var(--cosmos-contact-tag-background, #000000);
+    color: var(--cosmos-contact-tag-color, #ffffff);
+    font-size: var(--cosmos-contact-tag-size, 14px);
+    font-weight: var(--cosmos-contact-tag-weight, 600);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.cosmos-contact-columns__tag.is-position-left {
+    left: 0;
+}
+
+.cosmos-contact-columns__tag.is-position-right {
+    right: 0;
+}
+
+/* Título */
+.cosmos-contact-columns__title {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 var(--cosmos-contact-title-margin-bottom, 30px);
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cosmos-contact-title-color, #000000);
+    font-size: var(--cosmos-contact-title-size, 36px);
+    font-weight: var(--cosmos-contact-title-weight, 700);
+    line-height: var(--cosmos-contact-title-line-height, 1.15);
+    text-align: var(--cosmos-contact-title-align, left);
+    overflow-wrap: break-word;
+}
+
+/* Contactos */
+.cosmos-contact-columns__contacts {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--cosmos-contact-contact-gap, 18px);
+    align-items: var(--cosmos-contact-align, flex-start);
+}
+
+.cosmos-contact-columns__contact {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    color: var(--cosmos-contact-color, #333333);
+    font-size: var(--cosmos-contact-size, 17px);
+    font-weight: var(--cosmos-contact-weight, 400);
+}
+
+.cosmos-contact-columns__icon {
+    flex: 0 0 auto;
+    width: var(--cosmos-contact-icon-size, 20px);
+    min-width: var(--cosmos-contact-icon-size, 20px);
+    height: var(--cosmos-contact-icon-size, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cosmos-contact-icon-color, #333333);
+    font-size: var(--cosmos-contact-icon-size, 20px);
+    line-height: 1;
+}
+
+.cosmos-contact-columns__contact-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: var(--cosmos-contact-align, left);
+}
+
+/* Botones */
+.cosmos-contact-columns__buttons {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--cosmos-contact-button-gap, 15px);
+}
+
+.cosmos-contact-columns__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 var(--cosmos-contact-button-width, 150px);
+    width: var(--cosmos-contact-button-width, 150px);
+    height: var(--cosmos-contact-button-height, 48px);
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background: var(--cosmos-contact-button-background, #000000);
+    color: var(--cosmos-contact-button-color, #ffffff);
+    border-style: solid;
+    border-width: var(--cosmos-contact-button-border-width, 1px);
+    border-color: var(--cosmos-contact-button-border-color, #000000);
+    border-radius: var(--cosmos-contact-button-radius, 6px);
+    font-size: var(--cosmos-contact-button-size, 16px);
+    font-weight: var(--cosmos-contact-button-weight, 600);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cosmos-contact-columns__button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* Columna de imagen */
+.cosmos-contact-columns__image {
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cosmos-contact-columns__image-preview {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.cosmos-contact-columns__image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eeeeee;
+    color: #555555;
+}
+
+/* Tablet / móvil */
+@media (max-width: 767px) {
+    .cosmos-contact-columns__columns {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .cosmos-contact-columns__columns.is-first-text
+    .cosmos-contact-columns__text {
+        order: 1;
+    }
+
+    .cosmos-contact-columns__columns.is-first-text
+    .cosmos-contact-columns__image {
+        order: 2;
+    }
+
+    .cosmos-contact-columns__columns.is-first-image
+    .cosmos-contact-columns__image {
+        order: 1;
+    }
+
+    .cosmos-contact-columns__columns.is-first-image
+    .cosmos-contact-columns__text {
+        order: 2;
+    }
+
+    .cosmos-contact-columns__image {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .cosmos-contact-columns__image-preview,
+    .cosmos-contact-columns__image-placeholder {
+        width: 100%;
+        height: 55vw;
+        min-height: 280px;
+        max-height: 500px;
+    }
+
+    .cosmos-contact-columns__text {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .cosmos-contact-columns__content {
+        padding: 70px 24px 50px;
+    }
+
+    .cosmos-contact-columns__title {
+        font-size: clamp(
+            28px,
+            8vw,
+            var(--cosmos-contact-title-size, 36px)
+        );
+        text-align: center;
+    }
+
+    .cosmos-contact-columns__contacts {
+        align-items: center;
+    }
+
+    .cosmos-contact-columns__contact {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cosmos-contact-columns__buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--cosmos-contact-button-gap, 15px);
+    }
+
+    .cosmos-contact-columns__button {
+        flex: 0 0 auto;
+        width: var(--cosmos-contact-button-width, 150px);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cosmos-contact-columns__image-preview,
+    .cosmos-contact-columns__image-placeholder {
+        height: 65vw;
+        min-height: 240px;
+    }
+
+    .cosmos-contact-columns__content {
+        padding: 60px 20px 40px;
+    }
+
+    .cosmos-contact-columns__title {
+        font-size: clamp(
+            26px,
+            9vw,
+            var(--cosmos-contact-title-size, 36px)
+        );
+    }
+}

@@ -1,0 +1,302 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/info-image",
+    "title": "Información + Imagen",
+    "category": "cosmos",
+    "icon": "id-alt",
+    "description": "Bloque de información con imagen, datos de contacto y botones.",
+    "keywords": [
+        "informacion",
+        "contacto",
+        "hotel",
+        "imagen",
+        "direccion",
+        "telefono",
+        "email"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "textWidth": {
+            "type": "number",
+            "default": 60
+        },
+
+        "columnGap": {
+            "type": "number",
+            "default": 8
+        },
+
+        "firstColumn": {
+            "type": "string",
+            "default": "text"
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 0
+        },
+
+        "textBackground": {
+            "type": "string",
+            "default": "#F5F1EA"
+        },
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imagePosition": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "tagEnabled": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "tagText": {
+            "type": "string",
+            "default": "CONTACTO"
+        },
+
+        "tagPosition": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "tagBackground": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "tagColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "tagSize": {
+            "type": "number",
+            "default": 12
+        },
+
+        "tagWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "tagPaddingHorizontal": {
+            "type": "number",
+            "default": 18
+        },
+
+        "tagPaddingVertical": {
+            "type": "number",
+            "default": 10
+        },
+
+        "title": {
+            "type": "string",
+            "default": "Contáctanos"
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#222222"
+        },
+
+        "titleSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "titleWeight": {
+            "type": "string",
+            "default": "700"
+        },
+
+        "titleAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "titleLineHeight": {
+            "type": "number",
+            "default": 1.15
+        },
+
+        "titleMarginBottom": {
+            "type": "number",
+            "default": 30
+        },
+
+        "infoAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "infoTextColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "infoTextSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "infoTextWeight": {
+            "type": "string",
+            "default": "400"
+        },
+
+        "infoIconColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "infoIconSize": {
+            "type": "number",
+            "default": 20
+        },
+
+        "infoItemSpacing": {
+            "type": "number",
+            "default": 14
+        },
+
+        "addressEnabled": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "address": {
+            "type": "string",
+            "default": "Carrera 43 # 10-25"
+        },
+
+        "phoneEnabled": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "phone": {
+            "type": "string",
+            "default": "+57 300 000 0000"
+        },
+
+        "emailEnabled": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "email": {
+            "type": "string",
+            "default": "reservas@hotel.com"
+        },
+
+        "buttonsCount": {
+            "type": "number",
+            "default": 2
+        },
+
+        "buttonGap": {
+            "type": "number",
+            "default": 16
+        },
+
+        "buttonWidth": {
+            "type": "number",
+            "default": 160
+        },
+
+        "buttonHeight": {
+            "type": "number",
+            "default": 46
+        },
+
+        "buttonTextSize": {
+            "type": "number",
+            "default": 14
+        },
+
+        "buttonTextWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "buttonTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "buttonBackground": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "buttonBorderColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "buttonBorderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "buttonBorderRadius": {
+            "type": "number",
+            "default": 4
+        },
+
+        "button1Text": {
+            "type": "string",
+            "default": "Reservar"
+        },
+
+        "button1Url": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "button2Text": {
+            "type": "string",
+            "default": "Contactar"
+        },
+
+        "button2Url": {
+            "type": "string",
+            "default": "#"
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}
