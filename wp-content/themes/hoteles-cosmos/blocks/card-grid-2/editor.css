@@ -1,0 +1,420 @@
+.cosmos-card-grid-2 {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-top:
+        var(
+            --cosmos-card-grid-2-margin-top,
+            40px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-card-grid-2-margin-bottom,
+            40px
+        );
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.cosmos-card-grid-2__cards {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.cosmos-card-grid-2__card {
+    width: calc(
+        (100% - 48px) / 3
+    );
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.cosmos-card-grid-2__image,
+.cosmos-card-grid-2__image-placeholder {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    min-height: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-color: #eeeeee;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+.cosmos-card-grid-2__image-placeholder {
+    color: #555555;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.cosmos-card-grid-2__title {
+    width: 100%;
+
+    margin-top: 18px;
+
+    margin-right: 0;
+
+    margin-bottom:
+        var(
+            --cosmos-card-title-margin-bottom,
+            18px
+        );
+
+    margin-left: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-card-title-color,
+            #222222
+        );
+
+    font-size:
+        var(
+            --cosmos-card-title-size,
+            24px
+        );
+
+    font-weight:
+        var(
+            --cosmos-card-title-weight,
+            700
+        );
+
+    line-height: 1.2;
+
+    text-align:
+        var(
+            --cosmos-card-title-align,
+            left
+        );
+
+    overflow-wrap: break-word;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.cosmos-card-grid-2__content {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 240px;
+
+    padding: 24px;
+
+    padding-bottom: 60px;
+
+    background:
+        var(
+            --cosmos-card-content-background,
+            #f5f1ea
+        );
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.cosmos-card-grid-2__description {
+    width: 100%;
+
+    margin: 0 0 24px;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-card-item-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-card-item-size,
+            15px
+        );
+
+    font-weight:
+        var(
+            --cosmos-card-item-weight,
+            400
+        );
+
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   ITEMS
+========================================= */
+
+.cosmos-card-grid-2__items {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(
+            --cosmos-card-item-spacing,
+            12px
+        );
+}
+
+
+/* =========================================
+   ITEM
+========================================= */
+
+.cosmos-card-grid-2__item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color:
+        var(
+            --cosmos-card-item-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-card-item-size,
+            15px
+        );
+
+    font-weight:
+        var(
+            --cosmos-card-item-weight,
+            400
+        );
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ICONOS
+========================================= */
+
+.cosmos-card-grid-2__item-icon {
+    flex: 0 0 20px;
+
+    width: 20px;
+
+    min-width: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.cosmos-card-grid-2__menu {
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================
+   REDES SOCIALES
+========================================= */
+
+.cosmos-card-grid-2__social {
+    position: absolute;
+
+    right: 24px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.cosmos-card-grid-2__social-link {
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+
+.cosmos-card-grid-2__social-link img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   ESTADO VACÍO
+========================================= */
+
+.cosmos-card-grid-2__empty {
+    width: 100%;
+
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 40px;
+
+    background: #f5f5f5;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ACCIONES DEL ADMIN
+========================================= */
+
+.cosmos-card-grid-2__card-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+}
+
+
+.cosmos-card-grid-2__card-actions .components-button {
+    flex: 1;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .cosmos-card-grid-2__cards {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+
+    .cosmos-card-grid-2__card {
+        width: 100%;
+    }
+
+
+    .cosmos-card-grid-2__image,
+    .cosmos-card-grid-2__image-placeholder {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .cosmos-card-grid-2__content {
+        padding: 24px;
+
+        padding-bottom: 60px;
+    }
+
+}

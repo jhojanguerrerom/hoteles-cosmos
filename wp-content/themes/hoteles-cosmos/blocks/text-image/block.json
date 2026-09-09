@@ -1,0 +1,167 @@
+{
+    "apiVersion": 3,
+    "name": "cosmos/text-image",
+    "title": "Texto + Imagen",
+    "category": "cosmos",
+    "icon": "columns",
+    "description": "Bloque de dos columnas a pantalla completa con texto, botones e imagen.",
+    "keywords": [
+        "texto",
+        "imagen",
+        "columnas",
+        "botones",
+        "banner"
+    ],
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "marginTop": {
+            "type": "number",
+            "default": 40
+        },
+        "marginBottom": {
+            "type": "number",
+            "default": 40
+        },
+
+        "textBackground": {
+            "type": "string",
+            "default": "#f5f1ea"
+        },
+
+        "title": {
+            "type": "string",
+            "default": "Título principal"
+        },
+        "titleColor": {
+            "type": "string",
+            "default": "#222222"
+        },
+        "titleSize": {
+            "type": "number",
+            "default": 42
+        },
+        "titleWeight": {
+            "type": "string",
+            "default": "700"
+        },
+        "titleAlign": {
+            "type": "string",
+            "default": "left"
+        },
+        "titleMarginBottom": {
+            "type": "number",
+            "default": 20
+        },
+
+        "description": {
+            "type": "string",
+            "default": "Escribe aquí el contenido de esta sección."
+        },
+        "descriptionColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+        "descriptionSize": {
+            "type": "number",
+            "default": 17
+        },
+        "descriptionWeight": {
+            "type": "string",
+            "default": "400"
+        },
+        "descriptionAlign": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "button1Enabled": {
+            "type": "boolean",
+            "default": true
+        },
+        "button1Text": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+        "button1Url": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "button2Enabled": {
+            "type": "boolean",
+            "default": false
+        },
+        "button2Text": {
+            "type": "string",
+            "default": "Ver más"
+        },
+        "button2Url": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "buttonBackground": {
+            "type": "string",
+            "default": "#222222"
+        },
+        "buttonColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "buttonSize": {
+            "type": "number",
+            "default": 15
+        },
+        "buttonWeight": {
+            "type": "string",
+            "default": "600"
+        },
+        "buttonPaddingVertical": {
+            "type": "number",
+            "default": 14
+        },
+        "buttonPaddingHorizontal": {
+            "type": "number",
+            "default": 28
+        },
+        "buttonBorderWidth": {
+            "type": "number",
+            "default": 0
+        },
+        "buttonBorderColor": {
+            "type": "string",
+            "default": "#222222"
+        },
+        "buttonRadius": {
+            "type": "number",
+            "default": 4
+        },
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+        "imagePosition": {
+            "type": "string",
+            "default": "center center"
+        },
+        "imageHeight": {
+            "type": "number",
+            "default": 600
+        }
+    },
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

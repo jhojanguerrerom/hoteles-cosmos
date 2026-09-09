@@ -237,6 +237,19 @@
 
 
 /* =====================================================
+   CONTENIDO
+===================================================== */
+
+.cosmos-image-text-banner__content {
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =====================================================
    TEXTO
 ===================================================== */
 
@@ -291,7 +304,7 @@
    FONDO DEL TEXTO
 ===================================================== */
 
-.cosmos-image-text-banner__text.has-background {
+.cosmos-image-text-banner__content.has-background {
 
     background:
         var(
@@ -327,6 +340,114 @@
 .cosmos-image-text-banner__text a {
 
     color: inherit;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cosmos-image-text-banner__cta-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+    padding: 0 20px 20px;
+
+}
+
+
+/* =====================================================
+   BOTÓN CTA
+===================================================== */
+
+.cosmos-image-text-banner__cta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background:
+        var(
+            --cosmos-banner-cta-background,
+            #ffffff
+        );
+
+    color:
+        var(
+            --cosmos-banner-cta-color,
+            #000000
+        );
+
+    font-size:
+        var(
+            --cosmos-banner-cta-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-banner-cta-weight,
+            600
+        );
+
+    border:
+        var(
+            --cosmos-banner-cta-border-width,
+            0px
+        )
+        solid
+        var(
+            --cosmos-banner-cta-border-color,
+            #ffffff
+        );
+
+    border-radius:
+        var(
+            --cosmos-banner-cta-border-radius,
+            4px
+        );
+
+    padding:
+        var(
+            --cosmos-banner-cta-padding-vertical,
+            12px
+        )
+        var(
+            --cosmos-banner-cta-padding-horizontal,
+            24px
+        );
+
+    text-decoration: none;
+
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.cosmos-image-text-banner__cta:hover {
+
+    opacity: 0.9;
+
+    transform: translateY(-1px);
 
 }
 
@@ -456,6 +577,26 @@
 
     }
 
+
+    .cosmos-image-text-banner__cta-wrapper {
+
+        padding-left: 14px;
+
+        padding-right: 14px;
+
+        padding-bottom: 14px;
+
+    }
+
+
+    .cosmos-image-text-banner__cta {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
 }
 
 
@@ -468,9 +609,7 @@
     .cosmos-image-text-banner__container {
 
         width:
-            calc(
-                100% - 24px
-            );
+            calc(100% - 24px);
 
     }
 

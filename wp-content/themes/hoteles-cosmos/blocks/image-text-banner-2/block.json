@@ -106,6 +106,66 @@
         "overlay": {
             "type": "number",
             "default": 25
+        },
+
+        "ctaEnabled": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "ctaText": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "ctaUrl": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "ctaBackground": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "ctaSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "ctaWeight": {
+            "type": "string",
+            "default": "600"
+        },
+
+        "ctaBorderColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaBorderWidth": {
+            "type": "number",
+            "default": 0
+        },
+
+        "ctaBorderRadius": {
+            "type": "number",
+            "default": 4
+        },
+
+        "ctaPaddingVertical": {
+            "type": "number",
+            "default": 12
+        },
+
+        "ctaPaddingHorizontal": {
+            "type": "number",
+            "default": 24
         }
 
     },

@@ -73,6 +73,60 @@ $overlay = isset($attributes['overlay'])
 
 /*
  * =====================================================
+ * CTA
+ * =====================================================
+ */
+
+$cta_enabled =
+    !empty($attributes['ctaEnabled']);
+
+$cta_text = isset($attributes['ctaText'])
+    ? $attributes['ctaText']
+    : 'Conoce más';
+
+$cta_url = isset($attributes['ctaUrl'])
+    ? $attributes['ctaUrl']
+    : '#';
+
+$cta_background = isset($attributes['ctaBackground'])
+    ? $attributes['ctaBackground']
+    : '#ffffff';
+
+$cta_color = isset($attributes['ctaColor'])
+    ? $attributes['ctaColor']
+    : '#000000';
+
+$cta_size = isset($attributes['ctaSize'])
+    ? intval($attributes['ctaSize'])
+    : 16;
+
+$cta_weight = isset($attributes['ctaWeight'])
+    ? $attributes['ctaWeight']
+    : '600';
+
+$cta_border_color = isset($attributes['ctaBorderColor'])
+    ? $attributes['ctaBorderColor']
+    : '#ffffff';
+
+$cta_border_width = isset($attributes['ctaBorderWidth'])
+    ? intval($attributes['ctaBorderWidth'])
+    : 0;
+
+$cta_border_radius = isset($attributes['ctaBorderRadius'])
+    ? intval($attributes['ctaBorderRadius'])
+    : 4;
+
+$cta_padding_vertical = isset($attributes['ctaPaddingVertical'])
+    ? intval($attributes['ctaPaddingVertical'])
+    : 12;
+
+$cta_padding_horizontal = isset($attributes['ctaPaddingHorizontal'])
+    ? intval($attributes['ctaPaddingHorizontal'])
+    : 24;
+
+
+/*
+ * =====================================================
  * VALIDACIONES
  * =====================================================
  */
@@ -122,6 +176,26 @@ if (
 ) {
 
     $text_weight = '400';
+
+}
+
+
+$allowed_cta_weights = array(
+    '400',
+    '500',
+    '600',
+    '700'
+);
+
+if (
+    !in_array(
+        $cta_weight,
+        $allowed_cta_weights,
+        true
+    )
+) {
+
+    $cta_weight = '600';
 
 }
 
@@ -186,6 +260,31 @@ $text_background_opacity = max(
     min(100, $text_background_opacity)
 );
 
+$cta_size = max(
+    10,
+    min(40, $cta_size)
+);
+
+$cta_border_width = max(
+    0,
+    min(10, $cta_border_width)
+);
+
+$cta_border_radius = max(
+    0,
+    min(50, $cta_border_radius)
+);
+
+$cta_padding_vertical = max(
+    0,
+    min(40, $cta_padding_vertical)
+);
+
+$cta_padding_horizontal = max(
+    0,
+    min(80, $cta_padding_horizontal)
+);
+
 
 /*
  * =====================================================
@@ -205,7 +304,16 @@ $style = sprintf(
      --cosmos-banner-text-align:%s;
      --cosmos-banner-text-padding:%dpx;
      --cosmos-banner-text-background:%s;
-     --cosmos-banner-text-background-opacity:%f;',
+     --cosmos-banner-text-background-opacity:%f;
+     --cosmos-banner-cta-background:%s;
+     --cosmos-banner-cta-color:%s;
+     --cosmos-banner-cta-size:%dpx;
+     --cosmos-banner-cta-weight:%s;
+     --cosmos-banner-cta-border-color:%s;
+     --cosmos-banner-cta-border-width:%dpx;
+     --cosmos-banner-cta-border-radius:%dpx;
+     --cosmos-banner-cta-padding-vertical:%dpx;
+     --cosmos-banner-cta-padding-horizontal:%dpx;',
 
     $banner_height,
 
@@ -235,7 +343,33 @@ $style = sprintf(
         $text_background
     ),
 
-    $text_background_opacity / 100
+    $text_background_opacity / 100,
+
+    esc_attr(
+        $cta_background
+    ),
+
+    esc_attr(
+        $cta_color
+    ),
+
+    $cta_size,
+
+    esc_attr(
+        $cta_weight
+    ),
+
+    esc_attr(
+        $cta_border_color
+    ),
+
+    $cta_border_width,
+
+    $cta_border_radius,
+
+    $cta_padding_vertical,
+
+    $cta_padding_horizontal
 
 );
 
@@ -300,28 +434,68 @@ $style = sprintf(
                 "
             >
 
-                <?php if ($text) : ?>
-
-                    <div
-                        class="
-                            cosmos-image-text-banner__text
-                            <?php
-                            echo $text_background_enabled
-                                ? 'has-background'
-                                : '';
-                            ?>
-                        "
-                    >
-
+                <div
+                    class="
+                        cosmos-image-text-banner__content
                         <?php
-                        echo wp_kses_post(
-                            $text
-                        );
+                        echo $text_background_enabled
+                            ? 'has-background'
+                            : '';
                         ?>
+                    "
+                >
 
-                    </div>
+                    <?php if ($text) : ?>
 
-                <?php endif; ?>
+                        <div
+                            class="
+                                cosmos-image-text-banner__text
+                            "
+                        >
+
+                            <?php
+                            echo wp_kses_post(
+                                $text
+                            );
+                            ?>
+
+                        </div>
+
+                    <?php endif; ?>
+
+
+                    <?php if ($cta_enabled && $cta_text) : ?>
+
+                        <div
+                            class="
+                                cosmos-image-text-banner__cta-wrapper
+                            "
+                        >
+
+                            <a
+                                class="
+                                    cosmos-image-text-banner__cta
+                                "
+                                href="<?php
+                                    echo esc_url(
+                                        $cta_url
+                                    );
+                                ?>"
+                            >
+
+                                <?php
+                                echo esc_html(
+                                    $cta_text
+                                );
+                                ?>
+
+                            </a>
+
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
 
             </div>
 

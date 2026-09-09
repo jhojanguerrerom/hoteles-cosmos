@@ -270,6 +270,14 @@ function hoteles_cosmos_register_blocks() {
     register_block_type(
         get_template_directory() . '/blocks/info-image'
     );
+
+    register_block_type(
+        get_template_directory() . '/blocks/card-grid-2'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/text-image'
+    );
 }
 
 add_action(

@@ -1,0 +1,78 @@
+{
+    "apiVersion": 3,
+    "name": "cosmos/card-grid-2",
+    "title": "Card Grid",
+    "category": "cosmos",
+    "icon": "grid-view",
+    "description": "Grid de cards para hoteles con imagen, información, menú, ubicación, horario y redes sociales.",
+    "keywords": [
+        "cards",
+        "hoteles",
+        "grid",
+        "lugares"
+    ],
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "marginTop": {
+            "type": "number",
+            "default": 40
+        },
+        "marginBottom": {
+            "type": "number",
+            "default": 40
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#222222"
+        },
+        "titleSize": {
+            "type": "number",
+            "default": 24
+        },
+        "titleWeight": {
+            "type": "string",
+            "default": "700"
+        },
+        "titleAlign": {
+            "type": "string",
+            "default": "left"
+        },
+        "titleMarginBottom": {
+            "type": "number",
+            "default": 18
+        },
+
+        "contentBackground": {
+            "type": "string",
+            "default": "#f5f1ea"
+        },
+        "itemColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+        "itemSize": {
+            "type": "number",
+            "default": 15
+        },
+        "itemWeight": {
+            "type": "string",
+            "default": "400"
+        },
+        "itemSpacing": {
+            "type": "number",
+            "default": 12
+        },
+
+        "cards": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

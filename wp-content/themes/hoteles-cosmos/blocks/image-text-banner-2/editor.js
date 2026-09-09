@@ -48,7 +48,20 @@ function Edit({ attributes, setAttributes }) {
         marginBottom,
 
         bannerHeight,
-        overlay
+        overlay,
+
+        ctaEnabled,
+        ctaText,
+        ctaUrl,
+        ctaBackground,
+        ctaColor,
+        ctaSize,
+        ctaWeight,
+        ctaBorderColor,
+        ctaBorderWidth,
+        ctaBorderRadius,
+        ctaPaddingVertical,
+        ctaPaddingHorizontal
 
     } = attributes;
 
@@ -139,6 +152,38 @@ function Edit({ attributes, setAttributes }) {
 
         '--cosmos-text-bg-opacity':
             textBackgroundOpacity / 100
+
+    };
+
+
+    /*
+     * =====================================================
+     * ESTILOS DEL CTA
+     * =====================================================
+     */
+
+    const ctaStyle = {
+
+        backgroundColor:
+            ctaBackground,
+
+        color:
+            ctaColor,
+
+        fontSize:
+            `${ctaSize}px`,
+
+        fontWeight:
+            ctaWeight,
+
+        border:
+            `${ctaBorderWidth}px solid ${ctaBorderColor}`,
+
+        borderRadius:
+            `${ctaBorderRadius}px`,
+
+        padding:
+            `${ctaPaddingVertical}px ${ctaPaddingHorizontal}px`
 
     };
 
@@ -771,6 +816,367 @@ function Edit({ attributes, setAttributes }) {
 
 
                 {/* =================================================
+                    CTA
+                ================================================= */}
+
+                <PanelBody
+
+                    title={__(
+                        'CTA',
+                        'hoteles-cosmos'
+                    )}
+
+                    initialOpen={false}
+
+                >
+
+                    <ToggleControl
+
+                        label={__(
+                            'Mostrar CTA',
+                            'hoteles-cosmos'
+                        )}
+
+                        checked={
+                            ctaEnabled
+                        }
+
+                        onChange={(value) =>
+                            setAttributes({
+                                ctaEnabled:
+                                    value
+                            })
+                        }
+
+                    />
+
+
+                    {ctaEnabled && (
+
+                        <>
+
+                            <TextControl
+
+                                label={__(
+                                    'Texto del botón',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaText
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaText:
+                                            value
+                                    })
+                                }
+
+                            />
+
+
+                            <TextControl
+
+                                label={__(
+                                    'URL del botón',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaUrl
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaUrl:
+                                            value
+                                    })
+                                }
+
+                            />
+
+
+                            <p>
+                                <strong>
+                                    {__(
+                                        'Color de fondo',
+                                        'hoteles-cosmos'
+                                    )}
+                                </strong>
+                            </p>
+
+
+                            <ColorPalette
+
+                                value={
+                                    ctaBackground
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaBackground:
+                                            value ||
+                                            '#ffffff'
+                                    })
+                                }
+
+                            />
+
+
+                            <p>
+                                <strong>
+                                    {__(
+                                        'Color del texto',
+                                        'hoteles-cosmos'
+                                    )}
+                                </strong>
+                            </p>
+
+
+                            <ColorPalette
+
+                                value={
+                                    ctaColor
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaColor:
+                                            value ||
+                                            '#000000'
+                                    })
+                                }
+
+                            />
+
+
+                            <RangeControl
+
+                                label={__(
+                                    'Tamaño del texto',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaSize
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaSize:
+                                            value
+                                    })
+                                }
+
+                                min={10}
+
+                                max={40}
+
+                                step={1}
+
+                            />
+
+
+                            <SelectControl
+
+                                label={__(
+                                    'Estilo de fuente',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaWeight
+                                }
+
+                                options={[
+
+                                    {
+                                        label: __(
+                                            'Normal',
+                                            'hoteles-cosmos'
+                                        ),
+                                        value: '400'
+                                    },
+
+                                    {
+                                        label: __(
+                                            'Medio',
+                                            'hoteles-cosmos'
+                                        ),
+                                        value: '500'
+                                    },
+
+                                    {
+                                        label: __(
+                                            'Seminegrita',
+                                            'hoteles-cosmos'
+                                        ),
+                                        value: '600'
+                                    },
+
+                                    {
+                                        label: __(
+                                            'Negrita',
+                                            'hoteles-cosmos'
+                                        ),
+                                        value: '700'
+                                    }
+
+                                ]}
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaWeight:
+                                            value
+                                    })
+                                }
+
+                            />
+
+
+                            <p>
+                                <strong>
+                                    {__(
+                                        'Color del borde',
+                                        'hoteles-cosmos'
+                                    )}
+                                </strong>
+                            </p>
+
+
+                            <ColorPalette
+
+                                value={
+                                    ctaBorderColor
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaBorderColor:
+                                            value ||
+                                            '#ffffff'
+                                    })
+                                }
+
+                            />
+
+
+                            <RangeControl
+
+                                label={__(
+                                    'Grosor del borde',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaBorderWidth
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaBorderWidth:
+                                            value
+                                    })
+                                }
+
+                                min={0}
+
+                                max={10}
+
+                                step={1}
+
+                            />
+
+
+                            <RangeControl
+
+                                label={__(
+                                    'Border radius',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaBorderRadius
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaBorderRadius:
+                                            value
+                                    })
+                                }
+
+                                min={0}
+
+                                max={50}
+
+                                step={1}
+
+                            />
+
+
+                            <RangeControl
+
+                                label={__(
+                                    'Padding vertical',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaPaddingVertical
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaPaddingVertical:
+                                            value
+                                    })
+                                }
+
+                                min={0}
+
+                                max={40}
+
+                                step={1}
+
+                            />
+
+
+                            <RangeControl
+
+                                label={__(
+                                    'Padding horizontal',
+                                    'hoteles-cosmos'
+                                )}
+
+                                value={
+                                    ctaPaddingHorizontal
+                                }
+
+                                onChange={(value) =>
+                                    setAttributes({
+                                        ctaPaddingHorizontal:
+                                            value
+                                    })
+                                }
+
+                                min={0}
+
+                                max={80}
+
+                                step={1}
+
+                            />
+
+                        </>
+
+                    )}
+
+                </PanelBody>
+
+
+                {/* =================================================
                     ESPACIADO
                 ================================================= */}
 
@@ -860,7 +1266,34 @@ function Edit({ attributes, setAttributes }) {
                         `${marginBottom}px`,
 
                     '--cosmos-banner-overlay':
-                        overlay / 100
+                        overlay / 100,
+
+                    '--cosmos-banner-cta-background':
+                        ctaBackground,
+
+                    '--cosmos-banner-cta-color':
+                        ctaColor,
+
+                    '--cosmos-banner-cta-size':
+                        `${ctaSize}px`,
+
+                    '--cosmos-banner-cta-weight':
+                        ctaWeight,
+
+                    '--cosmos-banner-cta-border-color':
+                        ctaBorderColor,
+
+                    '--cosmos-banner-cta-border-width':
+                        `${ctaBorderWidth}px`,
+
+                    '--cosmos-banner-cta-border-radius':
+                        `${ctaBorderRadius}px`,
+
+                    '--cosmos-banner-cta-padding-vertical':
+                        `${ctaPaddingVertical}px`,
+
+                    '--cosmos-banner-cta-padding-horizontal':
+                        `${ctaPaddingHorizontal}px`
                 }}
             >
 
@@ -899,35 +1332,80 @@ function Edit({ attributes, setAttributes }) {
                             }
                         >
 
-                            <RichText
-
-                                tagName="div"
-
+                            <div
                                 className={
-                                    'cosmos-image-text-banner__text'
+                                    `cosmos-image-text-banner__content`
+                                    + (
+                                        textBackgroundEnabled
+                                            ? ' has-background'
+                                            : ''
+                                    )
                                 }
+                            >
 
-                                value={
-                                    text
-                                }
+                                <RichText
 
-                                onChange={(value) =>
-                                    setAttributes({
-                                        text:
-                                            value
-                                    })
-                                }
+                                    tagName="div"
 
-                                placeholder={__(
-                                    'Escribe tu texto...',
-                                    'hoteles-cosmos'
+                                    className={
+                                        'cosmos-image-text-banner__text'
+                                    }
+
+                                    value={
+                                        text
+                                    }
+
+                                    onChange={(value) =>
+                                        setAttributes({
+                                            text:
+                                                value
+                                        })
+                                    }
+
+                                    placeholder={__(
+                                        'Escribe tu texto...',
+                                        'hoteles-cosmos'
+                                    )}
+
+                                    style={
+                                        textStyle
+                                    }
+
+                                />
+
+
+                                {ctaEnabled && (
+
+                                    <div
+                                        className={
+                                            'cosmos-image-text-banner__cta-wrapper'
+                                        }
+                                    >
+
+                                        <a
+                                            href={
+                                                ctaUrl || '#'
+                                            }
+                                            className={
+                                                'cosmos-image-text-banner__cta'
+                                            }
+                                            style={
+                                                ctaStyle
+                                            }
+                                            onClick={(event) =>
+                                                event.preventDefault()
+                                            }
+                                        >
+
+                                            {ctaText}
+
+                                        </a>
+
+                                    </div>
+
                                 )}
 
-                                style={
-                                    textStyle
-                                }
-
-                            />
+                            </div>
 
                         </div>
 
