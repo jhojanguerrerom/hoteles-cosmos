@@ -1,0 +1,11 @@
+.cosmos-news-grid {
+	width: 100%;
+}
+
+.cosmos-news-grid__cards {
+	pointer-events: none;
+}
+
+.editor-styles-wrapper .cosmos-news-grid__button {
+	pointer-events: none;
+}

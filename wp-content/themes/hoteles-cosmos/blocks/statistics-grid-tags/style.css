@@ -1,0 +1,486 @@
+/*
+ * =====================================================
+ * CONTENEDOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding-top:
+        var(
+            --cosmos-statistics-padding-top,
+            20px
+        );
+
+    padding-bottom:
+        var(
+            --cosmos-statistics-padding-bottom,
+            20px
+        );
+
+    background:
+        var(
+            --cosmos-statistics-background,
+            transparent
+        );
+}
+
+
+/*
+ * =====================================================
+ * FILAS
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__row {
+
+    display: grid;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    column-gap:
+        var(
+            --cosmos-statistics-column-gap,
+            0px
+        );
+
+    position: relative;
+}
+
+
+/*
+ * =====================================================
+ * FILA SUPERIOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__row--top {
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-statistics-columns, 1),
+            minmax(0, 1fr)
+        );
+}
+
+
+/*
+ * =====================================================
+ * FILA INFERIOR
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__row--bottom {
+
+    grid-template-columns:
+        repeat(
+            var(--cosmos-statistics-columns, 1),
+            minmax(0, 1fr)
+        );
+
+    margin-top:
+        var(
+            --cosmos-statistics-row-gap,
+            0px
+        );
+}
+
+
+/*
+ * =====================================================
+ * ITEM
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__item {
+
+    position: relative;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding:
+        25px
+        20px;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * LÍNEAS VERTICALES
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__item
++ .cosmos-statistics-grid-tags__item {
+
+    border-left:
+        var(--cosmos-statistics-line-width, 1px)
+        solid
+        var(--cosmos-statistics-line-color, #dddddd);
+}
+
+
+/*
+ * =====================================================
+ * LÍNEA HORIZONTAL ENTRE FILAS
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__row--bottom
+.cosmos-statistics-grid-tags__item {
+
+    border-top:
+        var(--cosmos-statistics-line-width, 1px)
+        solid
+        var(--cosmos-statistics-line-color, #dddddd);
+}
+
+
+/*
+ * =====================================================
+ * NÚMERO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__number {
+
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    color:
+        var(
+            --cosmos-statistics-number-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-statistics-number-size,
+            42px
+        );
+
+    font-weight:
+        var(
+            --cosmos-statistics-number-weight,
+            700
+        );
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+/*
+ * =====================================================
+ * VALOR ANIMADO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__number-value {
+
+    display: inline-block;
+
+    min-width: 0;
+}
+
+
+/*
+ * =====================================================
+ * PREFIJO / SUFIJO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__prefix,
+.cosmos-statistics-grid-tags__suffix {
+
+    font: inherit;
+}
+
+
+/*
+ * =====================================================
+ * TEXTO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__text {
+
+    margin-top: 8px;
+
+    color:
+        var(
+            --cosmos-statistics-text-color,
+            #666666
+        );
+
+    font-size:
+        var(
+            --cosmos-statistics-text-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-statistics-text-weight,
+            400
+        );
+
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * TAG
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__tag {
+
+    display: block;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin-top: 12px;
+
+    box-sizing: border-box;
+
+    color:
+        var(
+            --cosmos-statistics-tag-color,
+            #ffffff
+        );
+
+    background:
+        var(
+            --cosmos-statistics-tag-background,
+            #111111
+        );
+
+    border-radius:
+        var(
+            --cosmos-statistics-tag-radius,
+            20px
+        );
+
+    padding:
+        var(
+            --cosmos-statistics-tag-padding-y,
+            6px
+        )
+        var(
+            --cosmos-statistics-tag-padding-x,
+            14px
+        );
+
+    font-size:
+        var(
+            --cosmos-statistics-tag-size,
+            13px
+        );
+
+    font-weight:
+        var(
+            --cosmos-statistics-tag-weight,
+            500
+        );
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * ALINEACIÓN DEL TAG
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags__tag--left {
+
+    margin-left: 0;
+
+    margin-right: auto;
+}
+
+
+.cosmos-statistics-grid-tags__tag--center {
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.cosmos-statistics-grid-tags__tag--right {
+
+    margin-left: auto;
+
+    margin-right: 0;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-statistics-grid-tags__item {
+
+        padding:
+            22px 15px;
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-statistics-grid-tags__item {
+
+        padding:
+            20px 10px;
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * NÚMERO
+     * ---------------------------------------------
+     */
+
+    .cosmos-statistics-grid-tags__number {
+
+        font-size:
+            calc(
+                var(--cosmos-statistics-number-size, 42px)
+                * 0.75
+            );
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * TEXTO
+     * ---------------------------------------------
+ */
+
+    .cosmos-statistics-grid-tags__text {
+
+        font-size:
+            calc(
+                var(--cosmos-statistics-text-size, 16px)
+                * 0.9
+            );
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * FILAS
+     * ---------------------------------------------
+ */
+
+    .cosmos-statistics-grid-tags__row {
+
+        grid-template-columns:
+            repeat(
+                1,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * LÍNEAS VERTICALES
+     * ---------------------------------------------
+ */
+
+    .cosmos-statistics-grid-tags__item
+    + .cosmos-statistics-grid-tags__item {
+
+        border-left:
+            var(--cosmos-statistics-line-width, 1px)
+            solid
+            var(--cosmos-statistics-line-color, #dddddd);
+    }
+
+
+    /*
+     * ---------------------------------------------
+     * TAG
+     * ---------------------------------------------
+ */
+
+    .cosmos-statistics-grid-tags__tag {
+
+        max-width: 90%;
+
+        white-space: normal;
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * ANCHO CONTAINER
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags--container {
+
+    max-width:
+        var(--wp--style--global--content-size);
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/*
+ * =====================================================
+ * ANCHO COMPLETO
+ * =====================================================
+ */
+
+.cosmos-statistics-grid-tags--full {
+
+    width: 100%;
+
+    max-width: none;
+}

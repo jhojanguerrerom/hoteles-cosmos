@@ -171,6 +171,8 @@
 
     object-fit: cover;
 
+    object-position: top;
+
     margin: 0;
 
     border-radius:
@@ -235,6 +237,10 @@
     box-sizing: border-box;
 }
 
+.cosmos-image-carousel__text a{
+  font-size: 14px;
+  font-weight: 400;
+}
 
 /*
  * =====================================================

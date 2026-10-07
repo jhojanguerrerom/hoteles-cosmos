@@ -1,0 +1,104 @@
+/*
+|--------------------------------------------------------------------------
+| CONTROLES DE ICONOS
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icon-control {
+    padding: 15px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    background: #f8f8f8;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CABECERA DEL CONTROL
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icon-control__header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PREVISUALIZACIÓN DEL ICONO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icon-control__preview {
+    display: block;
+
+    width: 80px;
+    height: 80px;
+
+    margin-bottom: 12px;
+
+    object-fit: contain;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PREVISUALIZACIÓN DE IMAGEN PRINCIPAL
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-info-icons-image__image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 0;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTENIDO DEL EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-info-icons-image__content {
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ICONOS EN EL EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-info-icons-image__icons {
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTONES DE MEDIA
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icon-control .components-button {
+    margin-top: 4px;
+}

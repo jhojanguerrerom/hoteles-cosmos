@@ -1,0 +1,260 @@
+/*
+ * =====================================================
+ * IMAGE CTA
+ * =====================================================
+ */
+
+.cosmos-image-cta {
+
+    width: 100%;
+
+    margin-top:
+        var(
+            --cosmos-image-cta-margin-top,
+            50px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-image-cta-margin-bottom,
+            50px
+        );
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CONTAINER
+ * =====================================================
+ *
+ * Utiliza el ancho global del contenido de WordPress.
+ */
+
+.cosmos-image-cta__container {
+
+    width: calc(100% - 40px);
+
+    max-width:
+        var(
+            --wp--style--global--content-size,
+            1200px
+        );
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * GRID
+ * =====================================================
+ */
+
+.cosmos-image-cta__grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        var(
+            --cosmos-image-cta-gap,
+            30px
+        );
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CARD
+ * =====================================================
+ */
+
+.cosmos-image-cta__card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-image-cta__image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        var(
+            --cosmos-image-cta-image-aspect-ratio,
+            4 / 3
+        );
+
+    overflow: hidden;
+
+    background: #f1f1f1;
+
+    box-sizing: border-box;
+}
+
+
+.cosmos-image-cta__image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/*
+ * =====================================================
+ * BOTÓN CTA
+ * =====================================================
+ */
+
+.cosmos-image-cta__button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 10px;
+    min-height:
+        var(
+            --cosmos-image-cta-button-height,
+            55px
+        );
+
+    padding:
+        10px
+        16px;
+
+    box-sizing: border-box;
+
+    background:
+        var(
+            --cosmos-image-cta-button-background,
+            #111111
+        );
+
+    color:
+        var(
+            --cosmos-image-cta-button-color,
+            #ffffff
+        );
+
+    border:
+        var(
+            --cosmos-image-cta-button-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-image-cta-button-border-color,
+            #111111
+        );
+
+    border-radius:
+        var(
+            --cosmos-image-cta-button-radius,
+            0px
+        );
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+
+/*
+ * =====================================================
+ * HOVER
+ * =====================================================
+ */
+
+.cosmos-image-cta__button:hover {
+
+    opacity: 0.9;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-image-cta__grid {
+
+        gap:
+            var(
+                --cosmos-image-cta-gap,
+                30px
+            );
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-image-cta__grid {
+
+        gap:
+            var(
+                --cosmos-image-cta-gap,
+                20px
+            );
+    }
+
+}

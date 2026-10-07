@@ -1,0 +1,34 @@
+.cosmos-banner-carousel{max-width:100%;position:relative}.cosmos-banner-carousel,.cosmos-banner-carousel__slide,.cosmos-banner-carousel__slides{box-sizing:border-box;width:100%}.cosmos-banner-carousel__slide{background:#eee;margin-bottom:30px;min-height:var(
+            --cosmos-banner-height,520px
+        );overflow:hidden;position:relative}.cosmos-banner-carousel__image-editor{cursor:pointer;height:100%;inset:0;position:absolute;width:100%;z-index:1}.cosmos-banner-carousel__image-editor img{display:block;height:100%;margin:0;object-fit:cover;width:100%}.cosmos-banner-carousel__placeholder{align-items:center;background:#eee;border:2px dashed #aaa;box-sizing:border-box;color:#666;display:flex;font-size:16px;height:100%;justify-content:center;min-height:300px;width:100%}.cosmos-banner-carousel__overlay{background:rgba(0,0,0,var(
+                --cosmos-banner-overlay,.35
+            ));inset:0;pointer-events:none;position:absolute;z-index:2}.cosmos-banner-carousel__content{box-sizing:border-box;display:flex;flex-direction:column;gap:20px;max-width:80%;pointer-events:auto;position:absolute;z-index:10}.cosmos-banner-carousel__position--top-left
+.cosmos-banner-carousel__content{align-items:flex-start;right:50px;text-align:right;top:50px}.cosmos-banner-carousel__position--top-center
+.cosmos-banner-carousel__content{align-items:center;right:50%;text-align:center;top:50px;transform:translateX(50%)}.cosmos-banner-carousel__position--top-right
+.cosmos-banner-carousel__content{align-items:flex-end;left:50px;text-align:left;top:50px}.cosmos-banner-carousel__position--center-left
+.cosmos-banner-carousel__content{align-items:flex-start;right:50px;text-align:right;top:50%;transform:translateY(-50%)}.cosmos-banner-carousel__position--center-center
+.cosmos-banner-carousel__content{align-items:center;right:50%;text-align:center;top:50%;transform:translate(50%,-50%)}.cosmos-banner-carousel__position--center-right
+.cosmos-banner-carousel__content{align-items:flex-end;left:50px;text-align:left;top:50%;transform:translateY(-50%)}.cosmos-banner-carousel__position--bottom-left
+.cosmos-banner-carousel__content{align-items:flex-start;bottom:50px;right:50px;text-align:right}.cosmos-banner-carousel__position--bottom-center
+.cosmos-banner-carousel__content{align-items:center;bottom:50px;right:50%;text-align:center;transform:translateX(50%)}.cosmos-banner-carousel__position--bottom-right
+.cosmos-banner-carousel__content{align-items:flex-end;bottom:50px;left:50px;text-align:left}.cosmos-banner-carousel__title{box-sizing:border-box;color:var(
+            --cosmos-banner-title-color,#fff
+        );cursor:text;font-size:var(
+            --cosmos-banner-title-size,42px
+        );font-weight:var(
+            --cosmos-banner-title-weight,600
+        );line-height:1.15;margin:0;min-height:1.2em;min-width:80px;padding:0;pointer-events:auto;text-align:inherit}.cosmos-banner-carousel__cta-preview{align-items:center;display:flex;min-height:45px;pointer-events:auto}.cosmos-banner-carousel__button{align-items:center;background:var(
+            --cosmos-banner-cta-background,#000
+        );border:var(
+            --cosmos-banner-cta-border-width,1px
+        ) solid var(
+            --cosmos-banner-cta-border,#fff
+        );border-radius:var(
+            --cosmos-banner-cta-radius,0
+        );box-sizing:border-box;color:var(
+            --cosmos-banner-cta-text,#fff
+        );display:inline-flex;font-size:15px;justify-content:center;line-height:1.2;padding:var(
+            --cosmos-banner-cta-padding-y,12px
+        ) var(
+            --cosmos-banner-cta-padding-x,28px
+        )}.cosmos-banner-carousel__button--transparent{background:transparent}.cosmos-banner-carousel__cta-hidden{color:hsla(0,0%,100%,.65);font-size:12px;font-style:italic}.cosmos-banner-carousel__slide-settings{background:#f7f7f7;border:1px solid #ddd;box-sizing:border-box;margin-top:15px;padding:20px;position:relative;z-index:20}.cosmos-banner-carousel__add{margin-top:20px;padding-bottom:20px;text-align:center}.cosmos-banner-carousel__arrow{pointer-events:none}@media (max-width:767px){.cosmos-banner-carousel__content{max-width:calc(100% - 80px)}.cosmos-banner-carousel__position--top-left .cosmos-banner-carousel__content{right:30px;top:30px}.cosmos-banner-carousel__position--top-center .cosmos-banner-carousel__content{top:30px}.cosmos-banner-carousel__position--top-right .cosmos-banner-carousel__content{left:30px;top:30px}.cosmos-banner-carousel__position--center-left .cosmos-banner-carousel__content{right:30px}.cosmos-banner-carousel__position--center-right .cosmos-banner-carousel__content{left:30px}.cosmos-banner-carousel__position--bottom-left .cosmos-banner-carousel__content{bottom:30px;right:30px}.cosmos-banner-carousel__position--bottom-center .cosmos-banner-carousel__content{bottom:30px}.cosmos-banner-carousel__position--bottom-right .cosmos-banner-carousel__content{bottom:30px;left:30px}}

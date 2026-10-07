@@ -1,0 +1,761 @@
+/*
+ * =====================================================
+ * CONTENEDOR PRINCIPAL
+ * =====================================================
+ */
+
+.cosmos-info-carousel {
+
+    position: relative;
+
+    width: calc(100% - 40px);
+
+    max-width: 100%;
+
+    margin-top:
+        var(
+            --cosmos-info-margin-top,
+            50px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-info-margin-bottom,
+            50px
+        );
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CONTAINER DEL SITIO
+ * =====================================================
+ */
+
+.cosmos-info-carousel--container {
+
+    max-width:
+        var(
+            --wp--style--global--content-size,
+            1200px
+        );
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/*
+ * =====================================================
+ * FULL
+ * =====================================================
+ */
+
+.cosmos-info-carousel--full {
+
+    width: 100%;
+
+    max-width: none;
+}
+
+
+/*
+ * =====================================================
+ * VIEWPORT
+ * =====================================================
+ */
+
+.cosmos-info-carousel__viewport {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TRACK
+ * =====================================================
+ */
+
+.cosmos-info-carousel__track {
+
+    display: flex;
+
+    align-items: stretch;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    gap:
+        var(
+            --cosmos-info-card-gap,
+            30px
+        );
+
+    transition:
+        transform 0.6s ease;
+
+    will-change: transform;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CARD
+ * =====================================================
+ */
+
+.cosmos-info-carousel__card {
+
+    position: relative;
+
+    flex:
+        0 0
+        calc(
+            (100% - (var(--cosmos-info-card-gap, 30px) * 3))
+            / 4
+        );
+
+    width:
+        calc(
+            (100% - (var(--cosmos-info-card-gap, 30px) * 3))
+            / 4
+        );
+
+    min-width: 0;
+
+    height: auto;
+
+    min-height: 100%;
+
+    padding:
+        var(
+            --cosmos-info-card-padding,
+            30px
+        );
+
+    background:
+        var(
+            --cosmos-info-card-background,
+            #ffffff
+        );
+
+    border:
+        var(
+            --cosmos-info-card-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-info-card-border,
+            #dddddd
+        );
+
+    border-radius:
+        var(
+            --cosmos-info-card-radius,
+            0px
+        );
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/*
+ * =====================================================
+ * CARD SIN FONDO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__card--transparent {
+
+    background: transparent;
+}
+
+
+/*
+ * =====================================================
+ * CABECERA
+ * =====================================================
+ */
+
+.cosmos-info-carousel__header {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap:
+        var(
+            --cosmos-info-icon-title-gap,
+            15px
+        );
+
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * ICONO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__icon {
+
+    display: block;
+
+    width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    height:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    min-width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    object-fit: contain;
+
+    margin: 0;
+
+    padding: 0;
+
+    flex-shrink: 0;
+}
+
+
+/*
+ * =====================================================
+ * BOTÓN DE ICONO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__icon-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    height:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    min-width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+.cosmos-info-carousel__icon-button span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    border:
+        1px dashed
+        #999999;
+
+    color: #777777;
+
+    font-size: 22px;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TÍTULO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__title {
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-info-title-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-info-title-size,
+            22px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-title-weight,
+            600
+        );
+
+    line-height: 1.2;
+
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
+}
+
+
+/*
+ * =====================================================
+ * LISTA
+ * =====================================================
+ */
+
+.cosmos-info-carousel__list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(
+            --cosmos-info-list-gap,
+            8px
+        );
+
+    width: 100%;
+
+    margin:
+        25px
+        0
+        0;
+
+    padding-left: 20px;
+
+    color:
+        var(
+            --cosmos-info-list-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-info-list-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-list-weight,
+            400
+        );
+
+    line-height: 1.5;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * ITEM DE LISTA
+ * =====================================================
+ */
+
+.cosmos-info-carousel__list-item {
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-info-list-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-info-list-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-list-weight,
+            400
+        );
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/*
+ * =====================================================
+ * CONTENEDOR DE FLECHAS
+ * =====================================================
+ */
+
+.cosmos-info-carousel__arrows {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * FLECHAS
+ * =====================================================
+ */
+
+.cosmos-info-carousel__arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 21;
+
+    margin: 0;
+
+    padding: 0;
+
+    transform:
+        translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    background:
+        var(
+            --cosmos-info-arrow-background,
+            transparent
+        );
+
+    color:
+        var(
+            --cosmos-info-arrow-color,
+            #000000
+        );
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        var(
+            --cosmos-info-arrow-size,
+            42px
+        );
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    pointer-events: auto;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/*
+ * =====================================================
+ * FLECHA ANTERIOR
+ * =====================================================
+ *
+ * Se posiciona dentro del espacio lateral
+ * del bloque, pero fuera de la primera card.
+ */
+
+.cosmos-info-carousel__arrow--prev {
+
+    left: -20px;
+}
+
+
+/*
+ * =====================================================
+ * FLECHA SIGUIENTE
+ * =====================================================
+ */
+
+.cosmos-info-carousel__arrow--next {
+
+    right: -20px;
+}
+
+
+/*
+ * =====================================================
+ * HOVER
+ * =====================================================
+ */
+
+.cosmos-info-carousel__arrow:hover {
+
+    opacity: 0.9;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/*
+ * =====================================================
+ * FOCUS
+ * =====================================================
+ */
+
+.cosmos-info-carousel__arrow:focus {
+
+    outline: none;
+
+    outline-offset: 3px;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-info-carousel__card {
+
+        flex:
+            0 0
+            calc(
+                (100% - var(--cosmos-info-card-gap, 30px))
+                / 2
+            );
+
+        width:
+            calc(
+                (100% - var(--cosmos-info-card-gap, 30px))
+                / 2
+            );
+    }
+
+
+    /*
+     * En tablet las flechas se mantienen
+     * ligeramente fuera de las cards.
+     */
+
+    .cosmos-info-carousel__arrow--prev {
+
+        left: -15px;
+    }
+
+
+    .cosmos-info-carousel__arrow--next {
+
+        right: -15px;
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-info-carousel {
+
+        width: 100%;
+    }
+
+
+    .cosmos-info-carousel__track {
+
+        gap:
+            var(
+                --cosmos-info-card-gap,
+                20px
+            );
+    }
+
+
+    .cosmos-info-carousel__card {
+
+        flex:
+            0 0 100%;
+
+        width: 100%;
+
+        padding:
+            var(
+                --cosmos-info-card-padding,
+                30px
+            );
+    }
+
+
+    .cosmos-info-carousel__title {
+
+        font-size:
+            clamp(
+                18px,
+                5vw,
+                var(
+                    --cosmos-info-title-size,
+                    22px
+                )
+            );
+    }
+
+
+    /*
+     * =================================================
+     * FLECHAS EN MOBILE
+     * =================================================
+     *
+     * En móvil las flechas entran dentro
+     * del área de la card.
+     */
+
+    .cosmos-info-carousel__arrow {
+
+        width:
+            calc(
+                var(
+                    --cosmos-info-arrow-size,
+                    42px
+                )
+                * 0.8
+            );
+
+        height:
+            calc(
+                var(
+                    --cosmos-info-arrow-size,
+                    42px
+                )
+                * 0.8
+            );
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-info-arrow-size,
+                    42px
+                )
+                * 0.5
+            );
+
+        background:
+            var(
+                --cosmos-info-arrow-background,
+                transparent
+            );
+    }
+
+
+    .cosmos-info-carousel__arrow--prev {
+
+        left: 8px;
+    }
+
+
+    .cosmos-info-carousel__arrow--next {
+
+        right: 8px;
+    }
+
+}

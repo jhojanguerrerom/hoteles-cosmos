@@ -1,0 +1,134 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/info-icons-image",
+    "title": "Información + Iconos + Imagen",
+    "category": "cosmos",
+    "icon": "format-image",
+    "description": "Bloque con título, descripción, hasta cinco iconos y una imagen inferior superpuesta.",
+    "keywords": [
+        "información",
+        "iconos",
+        "imagen",
+        "cosmos",
+        "servicios"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+
+        "description": {
+            "type": "string",
+            "default": ""
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "descriptionColor": {
+            "type": "string",
+            "default": "#555555"
+        },
+
+        "titleFontSize": {
+            "type": "number",
+            "default": 36
+        },
+
+        "descriptionFontSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#F5F5F5"
+        },
+
+        "paddingTop": {
+            "type": "number",
+            "default": 70
+        },
+
+        "paddingBottom": {
+            "type": "number",
+            "default": 90
+        },
+
+        "titleMarginBottom": {
+            "type": "number",
+            "default": 20
+        },
+
+        "descriptionMarginBottom": {
+            "type": "number",
+            "default": 40
+        },
+
+        "icons": {
+            "type": "array",
+            "default": []
+        },
+
+        "iconSize": {
+            "type": "number",
+            "default": 80
+        },
+
+        "iconBackgroundColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+
+        "iconGap": {
+            "type": "number",
+            "default": 20
+        },
+
+        "iconBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageId": {
+            "type": "number",
+            "default": 0
+        },
+
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageAlt": {
+            "type": "string",
+            "default": ""
+        },
+
+        "imageMarginTop": {
+            "type": "number",
+            "default": -50
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

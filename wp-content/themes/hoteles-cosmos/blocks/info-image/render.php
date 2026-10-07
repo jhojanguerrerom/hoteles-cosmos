@@ -485,7 +485,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             <div class="cosmos-info-image__info-item">
 
                                 <span class="cosmos-info-image__icon">
-                                    ⌖
+                                    📍
                                 </span>
 
                                 <span class="cosmos-info-image__info-text">
@@ -502,7 +502,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             <div class="cosmos-info-image__info-item">
 
                                 <span class="cosmos-info-image__icon">
-                                    ☎
+                                    📞
                                 </span>
 
                                 <span class="cosmos-info-image__info-text">
@@ -519,7 +519,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
                             <div class="cosmos-info-image__info-item">
 
                                 <span class="cosmos-info-image__icon">
-                                    ✉
+                                   ✉️
                                 </span>
 
                                 <span class="cosmos-info-image__info-text">

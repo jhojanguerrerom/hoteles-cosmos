@@ -1,0 +1,453 @@
+/*
+|--------------------------------------------------------------------------
+| BLOQUE
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content {
+
+    width: 100%;
+
+    margin-top:
+        var(
+            --cosmos-content-margin-top,
+            50px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-content-margin-bottom,
+            50px
+        );
+
+    background:
+        var(
+            --cosmos-content-background,
+            #FFFFFF
+        );
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTAINER
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content--container {
+
+    width: 100%;
+
+    max-width:
+        var(
+            --wp--style--global--content-size,
+            1200px
+        );
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| FULL WIDTH
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content--full {
+
+    width: 100%;
+
+    max-width: none;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTENIDO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__inner {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    /*
+    |--------------------------------------------------------------------------
+    | EVITAR COLAPSO DE MÁRGENES
+    |--------------------------------------------------------------------------
+    |
+    | Permite que los márgenes de los elementos internos
+    | permanezcan dentro del fondo del bloque.
+    |
+    */
+
+    display: flow-root;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ALINEACIÓN
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content--align-left {
+
+    text-align: left;
+}
+
+
+.cosmos-content--align-center {
+
+    text-align: center;
+}
+
+
+.cosmos-content--align-right {
+
+    text-align: right;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TAG
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__tag {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top:
+        var(
+            --cosmos-content-tag-margin-top,
+            0px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-content-tag-margin-bottom,
+            20px
+        );
+
+    padding:
+        var(--cosmos-content-tag-padding-top)
+        var(--cosmos-content-tag-padding-right)
+        var(--cosmos-content-tag-padding-bottom)
+        var(--cosmos-content-tag-padding-left);
+
+    color:
+        var(
+            --cosmos-content-tag-color,
+            #111111
+        );
+
+    background:
+        var(
+            --cosmos-content-tag-background,
+            #F5F5F5
+        );
+
+    font-size:
+        var(
+            --cosmos-content-tag-size,
+            12px
+        );
+
+    font-weight:
+        var(
+            --cosmos-content-tag-weight,
+            600
+        );
+
+    line-height: 1;
+
+    border-radius:
+        var(
+            --cosmos-content-tag-radius,
+            0px
+        );
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TÍTULO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__title {
+
+    margin-top:
+        var(
+            --cosmos-content-title-margin-top,
+            0px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-content-title-margin-bottom,
+            20px
+        );
+
+    color:
+        var(
+            --cosmos-content-title-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-content-title-size,
+            42px
+        );
+
+    font-weight:
+        var(
+            --cosmos-content-title-weight,
+            600
+        );
+
+    line-height:
+        var(
+            --cosmos-content-title-line-height,
+            1.2
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| DESCRIPCIÓN
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__description {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:
+        var(
+            --cosmos-content-description-margin-top,
+            0px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-content-description-margin-bottom,
+            25px
+        );
+
+    color:
+        var(
+            --cosmos-content-description-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-content-description-size,
+            18px
+        );
+
+    font-weight:
+        var(
+            --cosmos-content-description-weight,
+            400
+        );
+
+    line-height:
+        var(
+            --cosmos-content-description-line-height,
+            1.5
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTÓN - CONTENEDOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__button-wrapper {
+
+    display: block;
+
+    margin-top:
+        var(
+            --cosmos-content-button-margin-top,
+            0px
+        );
+
+    margin-bottom:
+        var(
+            --cosmos-content-button-margin-bottom,
+            0px
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTÓN
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__button {
+
+    display: inline-block;
+
+    padding:
+        var(--cosmos-content-button-padding-top)
+        var(--cosmos-content-button-padding-right)
+        var(--cosmos-content-button-padding-bottom)
+        var(--cosmos-content-button-padding-left);
+
+    color:
+        var(
+            --cosmos-content-button-color,
+            #FFFFFF
+        );
+
+    background:
+        var(
+            --cosmos-content-button-background,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-content-button-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-content-button-weight,
+            500
+        );
+
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    border:
+        var(--cosmos-content-button-border-width)
+        solid
+        var(--cosmos-content-button-border-color);
+
+    border-radius:
+        var(--cosmos-content-button-radius);
+
+    box-sizing: border-box;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTÓN - HOVER
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__button:hover {
+
+    color:
+        var(
+            --cosmos-content-button-hover-color,
+            #FFFFFF
+        );
+
+    background:
+        var(
+            --cosmos-content-button-hover-background,
+            #333333
+        );
+
+    border-color:
+        var(
+            --cosmos-content-button-hover-background,
+            #333333
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTÓN - FOCUS
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-content__button:focus-visible {
+
+    outline:
+        2px
+        solid
+        currentColor;
+
+    outline-offset: 3px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| RESPONSIVE
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 1024px) {
+
+    .cosmos-content__title {
+
+        font-size:
+            clamp(
+                30px,
+                5vw,
+                var(--cosmos-content-title-size)
+            );
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .cosmos-content__title {
+
+        font-size:
+            clamp(
+                26px,
+                8vw,
+                var(--cosmos-content-title-size)
+            );
+    }
+
+
+    .cosmos-content__description {
+
+        font-size:
+            clamp(
+                15px,
+                4vw,
+                var(--cosmos-content-description-size)
+            );
+    }
+
+}

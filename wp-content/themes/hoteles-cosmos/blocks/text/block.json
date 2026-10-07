@@ -89,6 +89,16 @@
         "containerWidth": {
             "type": "string",
             "default": "container"
+        },
+
+        "marginTop": {
+          "type": "number",
+          "default": 0
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 0
         }
     },
 

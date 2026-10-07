@@ -1,0 +1,455 @@
+/*
+ * =====================================================
+ * EDITOR
+ * =====================================================
+ */
+
+.cosmos-info-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * VIEWPORT
+ * =====================================================
+ */
+
+.cosmos-info-carousel__viewport {
+
+    width: 100%;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TRACK
+ * =====================================================
+ */
+
+.cosmos-info-carousel__track {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    align-items: stretch;
+
+    width: 100%;
+
+    gap:
+        var(
+            --cosmos-info-card-gap,
+            30px
+        );
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CARD
+ * =====================================================
+ */
+
+.cosmos-info-carousel__card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 100%;
+
+    padding:
+        var(
+            --cosmos-info-card-padding,
+            30px
+        );
+
+    background:
+        var(
+            --cosmos-info-card-background,
+            #ffffff
+        );
+
+    border:
+        var(
+            --cosmos-info-card-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-info-card-border,
+            #dddddd
+        );
+
+    border-radius:
+        var(
+            --cosmos-info-card-radius,
+            0px
+        );
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/*
+ * =====================================================
+ * CABECERA
+ * =====================================================
+ */
+
+.cosmos-info-carousel__header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(
+            --cosmos-info-icon-title-gap,
+            15px
+        );
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * ICONO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__icon {
+
+    display: block;
+
+    width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    height:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    min-width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/*
+ * =====================================================
+ * BOTÓN ICONO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__icon-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    height:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    min-width:
+        var(
+            --cosmos-info-icon-size,
+            42px
+        );
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+.cosmos-info-carousel__icon-button span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    border:
+        1px dashed
+        #999999;
+
+    color: #777777;
+
+    font-size: 22px;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TÍTULO
+ * =====================================================
+ */
+
+.cosmos-info-carousel__title {
+
+    flex: 1;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-info-title-color,
+            #111111
+        );
+
+    font-size:
+        var(
+            --cosmos-info-title-size,
+            22px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-title-weight,
+            600
+        );
+
+    line-height: 1.2;
+
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
+}
+
+
+/*
+ * =====================================================
+ * LISTA
+ * =====================================================
+ */
+
+.cosmos-info-carousel__list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(
+            --cosmos-info-list-gap,
+            8px
+        );
+
+    width: 100%;
+
+    margin:
+        25px
+        0
+        0;
+
+    padding-left: 20px;
+
+    color:
+        var(
+            --cosmos-info-list-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-info-list-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-list-weight,
+            400
+        );
+
+    line-height: 1.5;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * ITEM
+ * =====================================================
+ */
+
+.cosmos-info-carousel__list-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-info-list-color,
+            #333333
+        );
+
+    font-size:
+        var(
+            --cosmos-info-list-size,
+            16px
+        );
+
+    font-weight:
+        var(
+            --cosmos-info-list-weight,
+            400
+        );
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/*
+ * =====================================================
+ * CONTROLES DE CARD
+ * =====================================================
+ */
+
+.cosmos-info-carousel__card-controls {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+}
+
+
+/*
+ * =====================================================
+ * AÑADIR CARD
+ * =====================================================
+ */
+
+.cosmos-info-carousel__add {
+
+    margin-top: 25px;
+
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-info-carousel__track {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-info-carousel__track {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}

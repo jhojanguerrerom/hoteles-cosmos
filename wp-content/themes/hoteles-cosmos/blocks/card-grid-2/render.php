@@ -316,9 +316,14 @@ $facebook_icon =
                                 <?php if ($menu_url) : ?>
 
                                     <a
+                                        target="_blank"
                                         href="<?php echo esc_url($menu_url); ?>"
                                         class="cosmos-card-grid-2__item cosmos-card-grid-2__menu"
                                     >
+                                        <span class="cosmos-card-grid-2__item-icon">
+                                            📄
+                                        </span>
+                                        
                                         <span>
                                             <?php echo esc_html($menu_text); ?>
                                         </span>
@@ -327,6 +332,10 @@ $facebook_icon =
                                 <?php else : ?>
 
                                     <div class="cosmos-card-grid-2__item cosmos-card-grid-2__menu">
+
+                                        <span class="cosmos-card-grid-2__item-icon">
+                                            📄
+                                        </span>
 
                                         <span>
                                             <?php echo esc_html($menu_text); ?>
@@ -344,7 +353,7 @@ $facebook_icon =
                                 <div class="cosmos-card-grid-2__item">
 
                                     <span class="cosmos-card-grid-2__item-icon">
-                                        ⌖
+                                        📍
                                     </span>
 
                                     <span>
@@ -361,7 +370,7 @@ $facebook_icon =
                                 <div class="cosmos-card-grid-2__item">
 
                                     <span class="cosmos-card-grid-2__item-icon">
-                                        ◷
+                                        🕙
                                     </span>
 
                                     <span>

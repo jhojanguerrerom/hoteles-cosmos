@@ -48,7 +48,9 @@ function Edit({ attributes, setAttributes }) {
         textAlign,
         paragraphAlign,
 
-        containerWidth
+        containerWidth,
+        marginTop,
+        marginBottom
     } = attributes;
 
 
@@ -62,7 +64,11 @@ function Edit({ attributes, setAttributes }) {
         className: [
             'cosmos-text',
             `cosmos-text--${containerWidth}`
-        ].join(' ')
+        ].join(' '),
+        style: {
+            marginTop: `${marginTop}px`,
+            marginBottom: `${marginBottom}px`
+        }
     });
 
 
@@ -406,6 +412,41 @@ function Edit({ attributes, setAttributes }) {
                                 containerWidth: value
                             })
                         }
+                    />
+
+                </PanelBody>
+
+                {/* ======================================
+                    ESPACIADO
+                ======================================= */}
+
+                <PanelBody
+                    title={__('Espaciado', 'hoteles-cosmos')}
+                    initialOpen={false}
+                >
+
+                    <RangeControl
+                        label={__('Margen superior', 'hoteles-cosmos')}
+                        value={marginTop}
+                        onChange={(value) =>
+                            setAttributes({
+                                marginTop: value
+                            })
+                        }
+                        min={0}
+                        max={200}
+                    />
+
+                    <RangeControl
+                        label={__('Margen inferior', 'hoteles-cosmos')}
+                        value={marginBottom}
+                        onChange={(value) =>
+                            setAttributes({
+                                marginBottom: value
+                            })
+                        }
+                        min={0}
+                        max={200}
                     />
 
                 </PanelBody>

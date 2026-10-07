@@ -271,6 +271,7 @@ $wrapper_attributes =
 
                 <a
                     class="cosmos-cta__link"
+                    target="_blank"
                     href="<?php echo esc_url($url); ?>"
                 >
 

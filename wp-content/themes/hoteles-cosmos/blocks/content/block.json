@@ -1,0 +1,293 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/content",
+    "version": "1.0.0",
+    "title": "Contenido Cosmos",
+    "category": "cosmos",
+    "icon": "align-wide",
+    "description": "Bloque flexible de contenido con tag, título, descripción y botón.",
+    "textdomain": "hoteles-cosmos",
+
+    "attributes": {
+
+        "width": {
+            "type": "string",
+            "default": "container"
+        },
+
+        "alignment": {
+            "type": "string",
+            "default": "left"
+        },
+
+        "backgroundColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+
+        "marginTop": {
+            "type": "number",
+            "default": 50
+        },
+
+        "marginBottom": {
+            "type": "number",
+            "default": 50
+        },
+
+
+        "showTag": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "tagText": {
+            "type": "string",
+            "default": "TAG"
+        },
+
+        "tagColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "tagBackground": {
+            "type": "string",
+            "default": "#F5F5F5"
+        },
+
+        "tagFontSize": {
+            "type": "number",
+            "default": 12
+        },
+
+        "tagFontWeight": {
+            "type": "number",
+            "default": 600
+        },
+
+        "tagPaddingTop": {
+            "type": "number",
+            "default": 6
+        },
+
+        "tagPaddingRight": {
+            "type": "number",
+            "default": 12
+        },
+
+        "tagPaddingBottom": {
+            "type": "number",
+            "default": 6
+        },
+
+        "tagPaddingLeft": {
+            "type": "number",
+            "default": 12
+        },
+
+        "tagMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "tagMarginBottom": {
+            "type": "number",
+            "default": 20
+        },
+
+        "tagBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+
+        "showTitle": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "title": {
+            "type": "string",
+            "default": "Título principal"
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "titleFontSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "titleFontWeight": {
+            "type": "number",
+            "default": 600
+        },
+
+        "titleLineHeight": {
+            "type": "number",
+            "default": 1.2
+        },
+
+        "titleMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "titleMarginBottom": {
+            "type": "number",
+            "default": 20
+        },
+
+
+        "showDescription": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "description": {
+            "type": "string",
+            "default": "Descripción del contenido."
+        },
+
+        "descriptionColor": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "descriptionFontSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "descriptionFontWeight": {
+            "type": "number",
+            "default": 400
+        },
+
+        "descriptionLineHeight": {
+            "type": "number",
+            "default": 1.5
+        },
+
+        "descriptionMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "descriptionMarginBottom": {
+            "type": "number",
+            "default": 25
+        },
+
+
+        "showButton": {
+            "type": "boolean",
+            "default": false
+        },
+
+        "buttonText": {
+            "type": "string",
+            "default": "Conoce más"
+        },
+
+        "buttonUrl": {
+            "type": "string",
+            "default": "#"
+        },
+
+        "buttonTarget": {
+            "type": "string",
+            "default": "_self"
+        },
+
+        "buttonColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+
+        "buttonBackground": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "buttonHoverColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+
+        "buttonHoverBackground": {
+            "type": "string",
+            "default": "#333333"
+        },
+
+        "buttonFontSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "buttonFontWeight": {
+            "type": "number",
+            "default": 500
+        },
+
+        "buttonPaddingTop": {
+            "type": "number",
+            "default": 12
+        },
+
+        "buttonPaddingRight": {
+            "type": "number",
+            "default": 24
+        },
+
+        "buttonPaddingBottom": {
+            "type": "number",
+            "default": 12
+        },
+
+        "buttonPaddingLeft": {
+            "type": "number",
+            "default": 24
+        },
+
+        "buttonBorderColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "buttonBorderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "buttonBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "buttonMarginTop": {
+            "type": "number",
+            "default": 0
+        },
+
+        "buttonMarginBottom": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css",
+    "render": "file:./render.php"
+}

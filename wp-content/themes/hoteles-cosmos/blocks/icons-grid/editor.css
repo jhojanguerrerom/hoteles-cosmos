@@ -1,0 +1,193 @@
+/*
+|--------------------------------------------------------------------------
+| CONTROLES DEL EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__control {
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+    background: #f8f8f8;
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CABECERA
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__control-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PREVISUALIZACIÓN
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__control-preview {
+    display: block;
+
+    width: 80px;
+
+    height: 80px;
+
+    margin-bottom: 12px;
+
+    object-fit: contain;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| BOTONES
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__control .components-button {
+    margin-top: 4px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| GRID DEL EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__items {
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTENEDOR DEL EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__item {
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ICONO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__icon {
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+}
+
+
+.cosmos-icons-grid__icon img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TEXTO EDITABLE
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text {
+    display: block;
+
+    width: 100%;
+
+    min-height: 1.4em;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 10;
+
+    cursor: text;
+}
+
+
+.cosmos-icons-grid__text:focus {
+    outline: none;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PLACEHOLDER DEL TEXTO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text[data-rich-text-placeholder] {
+    opacity: 0.65;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PÁRRAFOS
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text p {
+    margin-top: 0;
+
+    margin-bottom: 0;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MENSAJE VACÍO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__empty {
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px dashed #ccc;
+
+    color: #666;
+
+    box-sizing: border-box;
+}

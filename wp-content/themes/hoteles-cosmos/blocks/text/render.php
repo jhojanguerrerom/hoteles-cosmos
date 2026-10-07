@@ -34,6 +34,8 @@ $paragraph_weight = intval($attributes['paragraphFontWeight'] ?? 400);
 
 $text_align = $attributes['textAlign'] ?? 'left';
 $paragraph_align = $attributes['paragraphAlign'] ?? 'left';
+$margin_top = intval($attributes['marginTop'] ?? 0);
+$margin_bottom = intval($attributes['marginBottom'] ?? 0);
 
 
 $title = $attributes['title'] ?? '';
@@ -42,7 +44,12 @@ $paragraph = $attributes['paragraph'] ?? '';
 
 $wrapper_attributes = get_block_wrapper_attributes(
     array(
-        'class' => implode(' ', $classes)
+        'class' => implode(' ', $classes),
+        'style' => sprintf(
+            'margin-top: %dpx; margin-bottom: %dpx;',
+            $margin_top,
+            $margin_bottom
+        )
     )
 );
 

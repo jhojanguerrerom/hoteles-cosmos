@@ -1,0 +1,117 @@
+{
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/property-cards",
+    "title": "Cards de propiedades",
+    "category": "cosmos",
+    "icon": "admin-home",
+    "description": "Cards de propiedades con imagen, texto, metros cuadrados e iconos.",
+    "keywords": [
+        "cards",
+        "propiedades",
+        "hoteles",
+        "habitaciones",
+        "metros cuadrados",
+        "iconos"
+    ],
+    "textdomain": "hoteles-cosmos",
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+    "attributes": {
+
+        "cards": {
+            "type": "array",
+            "default": []
+        },
+
+        "contentWidth": {
+            "type": "string",
+            "default": "container"
+        },
+
+        "overlayTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "overlayTextSize": {
+            "type": "number",
+            "default": 24
+        },
+
+        "overlayTextWeight": {
+            "type": "number",
+            "default": 700
+        },
+
+        "barBackgroundColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "areaLabelColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "areaLabelSize": {
+            "type": "number",
+            "default": 20
+        },
+
+        "areaLabelWeight": {
+            "type": "number",
+            "default": 700
+        },
+
+        "iconSize": {
+            "type": "number",
+            "default": 28
+        },
+
+        "iconGap": {
+            "type": "number",
+            "default": 12
+        },
+
+        "valueColor": {
+            "type": "string",
+            "default": "#111111"
+        },
+
+        "valueSize": {
+            "type": "number",
+            "default": 16
+        },
+
+        "valueWeight": {
+            "type": "number",
+            "default": 500
+        },
+
+        "imageAspectRatio": {
+            "type": "string",
+            "default": "4/3"
+        },
+
+        "imageBarGap": {
+            "type": "number",
+            "default": 10
+        },
+
+        "cardGap": {
+            "type": "number",
+            "default": 30
+        },
+
+        "valueGap": {
+            "type": "number",
+            "default": 10
+        }
+    },
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

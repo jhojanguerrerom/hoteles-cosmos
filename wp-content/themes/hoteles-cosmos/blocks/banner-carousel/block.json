@@ -1,0 +1,132 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/banner-carousel",
+    "title": "Banner Carrusel Cosmos",
+    "category": "cosmos",
+    "icon": "slides",
+    "description": "Carrusel de banners con título, CTA, flechas y reproducción automática.",
+    "keywords": [
+        "banner",
+        "carrusel",
+        "carousel",
+        "slider",
+        "hero",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+
+        "slides": {
+            "type": "array",
+            "default": [
+                {
+                    "id": 0,
+                    "url": "",
+                    "alt": "",
+                    "title": "",
+                    "ctaText": "Conoce más",
+                    "ctaUrl": "",
+                    "position": "center-center"
+                }
+            ]
+        },
+
+        "bannerHeight": {
+            "type": "number",
+            "default": 520
+        },
+
+        "overlay": {
+            "type": "number",
+            "default": 35
+        },
+
+        "titleFontSize": {
+            "type": "number",
+            "default": 42
+        },
+
+        "titleColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "titleWeight": {
+            "type": "number",
+            "default": 600
+        },
+
+        "ctaTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaBackground": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "ctaHasBackground": {
+            "type": "boolean",
+            "default": true
+        },
+
+        "ctaBorderColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "ctaBorderWidth": {
+            "type": "number",
+            "default": 1
+        },
+
+        "ctaBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "ctaPaddingVertical": {
+            "type": "number",
+            "default": 12
+        },
+
+        "ctaPaddingHorizontal": {
+            "type": "number",
+            "default": 28
+        },
+
+        "arrowColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+
+        "arrowBackground": {
+            "type": "string",
+            "default": "rgba(0,0,0,0.35)"
+        },
+
+        "arrowSize": {
+            "type": "number",
+            "default": 46
+        },
+
+        "showArrows": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "viewScript": "file:./view.js",
+    "render": "file:./render.php"
+}

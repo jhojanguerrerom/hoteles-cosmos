@@ -164,7 +164,7 @@
 
 .cosmos-card-grid-2__description {
     width: 100%;
-
+    min-height: 42px;
     margin: 0 0 24px;
 
     padding: 0;
@@ -218,10 +218,10 @@
 
 .cosmos-card-grid-2__item {
     width: 100%;
-
+  
     display: flex;
 
-    align-items: flex-start;
+    align-items: center;
 
     gap: 10px;
 
@@ -260,7 +260,7 @@
 .cosmos-card-grid-2__item-icon {
     flex: 0 0 20px;
 
-    width: 20px;
+    width: 30px;
 
     min-width: 20px;
 
@@ -273,6 +273,11 @@
     line-height: 1;
 }
 
+.cosmos-card-grid-2__item-icon img{
+  width: 30px !important;
+  height: 30px !important;
+}
+
 
 /* =========================================
    MENÚ
@@ -280,7 +285,7 @@
 
 .cosmos-card-grid-2__menu {
     text-decoration: underline;
-
+    align-items: center;
     text-underline-offset: 3px;
 }
 

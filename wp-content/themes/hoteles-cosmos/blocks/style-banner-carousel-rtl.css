@@ -1,0 +1,62 @@
+.cosmos-banner-carousel{margin:0;max-width:100%;padding:0}.cosmos-banner-carousel,.cosmos-banner-carousel__viewport{box-sizing:border-box;overflow:hidden;position:relative;width:100%}.cosmos-banner-carousel__viewport{height:var(
+            --cosmos-banner-height,520px
+        )}.cosmos-banner-carousel__track{display:flex;height:100%;margin:0;padding:0;transition:transform .6s ease;width:100%;will-change:transform}.cosmos-banner-carousel__slide{box-sizing:border-box;flex:0 0 100%;height:100%;min-width:100%;overflow:hidden;position:relative;width:100%}.cosmos-banner-carousel__image{display:block;height:100%;inset:0;margin:0;object-fit:cover;object-position:center;padding:0;position:absolute;width:100%;z-index:1}.cosmos-banner-carousel__overlay{background:rgba(0,0,0,var(
+                --cosmos-banner-overlay,.35
+            ));height:100%;inset:0;pointer-events:none;position:absolute;width:100%;z-index:2}.cosmos-banner-carousel__content{box-sizing:border-box;display:flex;flex-direction:column;gap:20px;max-width:80%;position:absolute;z-index:3}.cosmos-banner-carousel__position--top-left
+.cosmos-banner-carousel__content{align-items:flex-start;right:50px;text-align:right;top:50px}.cosmos-banner-carousel__position--top-center
+.cosmos-banner-carousel__content{align-items:center;right:50%;text-align:center;top:50px;transform:translateX(50%)}.cosmos-banner-carousel__position--top-right
+.cosmos-banner-carousel__content{align-items:flex-end;left:50px;text-align:left;top:50px}.cosmos-banner-carousel__position--center-left
+.cosmos-banner-carousel__content{align-items:flex-start;right:50px;text-align:right;top:50%;transform:translateY(-50%)}.cosmos-banner-carousel__position--center-center
+.cosmos-banner-carousel__content{align-items:center;right:50%;text-align:center;top:50%;transform:translate(50%,-50%)}.cosmos-banner-carousel__position--center-right
+.cosmos-banner-carousel__content{align-items:flex-end;left:50px;text-align:left;top:50%;transform:translateY(-50%)}.cosmos-banner-carousel__position--bottom-left
+.cosmos-banner-carousel__content{align-items:flex-start;bottom:50px;right:50px;text-align:right}.cosmos-banner-carousel__position--bottom-center
+.cosmos-banner-carousel__content{align-items:center;bottom:50px;right:50%;text-align:center;transform:translateX(50%)}.cosmos-banner-carousel__position--bottom-right
+.cosmos-banner-carousel__content{align-items:flex-end;bottom:50px;left:50px;text-align:left}.cosmos-banner-carousel__title{box-sizing:border-box;color:var(
+            --cosmos-banner-title-color,#fff
+        );font-size:var(
+            --cosmos-banner-title-size,42px
+        );font-weight:var(
+            --cosmos-banner-title-weight,600
+        );line-height:1.15;margin:0;max-width:100%;padding:0;text-align:inherit}.cosmos-banner-carousel__button{align-items:center;background:var(
+            --cosmos-banner-cta-background,#000
+        );border:var(
+            --cosmos-banner-cta-border-width,1px
+        ) solid var(
+            --cosmos-banner-cta-border,#fff
+        );border-radius:var(
+            --cosmos-banner-cta-radius,0
+        );box-sizing:border-box;color:var(
+            --cosmos-banner-cta-text,#fff
+        );display:inline-flex;font-size:15px;font-weight:500;justify-content:center;line-height:1.2;padding:var(
+            --cosmos-banner-cta-padding-y,12px
+        ) var(
+            --cosmos-banner-cta-padding-x,28px
+        );text-decoration:none;transition:opacity .2s ease,transform .2s ease,background-color .2s ease;width:fit-content}.cosmos-banner-carousel__button--transparent{background:transparent}.cosmos-banner-carousel__button:hover{color:var(
+            --cosmos-banner-cta-text,#fff
+        );opacity:.9;text-decoration:none;transform:translateY(-2px)}.cosmos-banner-carousel__arrow{align-items:center;background:var(
+            --cosmos-banner-arrow-background,rgba(0,0,0,.35)
+        );border:0;border-radius:50%;color:var(
+            --cosmos-banner-arrow-color,#fff
+        );cursor:pointer;display:flex;font-family:Arial,sans-serif;font-size:calc(var(
+                --cosmos-banner-arrow-size,
+                46px
+            )*.65);font-weight:400;height:var(
+            --cosmos-banner-arrow-size,46px
+        );justify-content:center;line-height:1;margin:0;padding:0;position:absolute;top:50%;transform:translateY(-50%);transition:opacity .2s ease,transform .2s ease;width:var(
+            --cosmos-banner-arrow-size,46px
+        );z-index:10}.cosmos-banner-carousel__arrow--prev{right:25px}.cosmos-banner-carousel__arrow--next{left:25px}.cosmos-banner-carousel__arrow:hover{opacity:.9;transform:translateY(-50%) scale(1.08)}.cosmos-banner-carousel__arrow:focus{outline:2px solid currentColor;outline-offset:3px}@media (max-width:1024px){.cosmos-banner-carousel__viewport{height:min(var(
+                    --cosmos-banner-height,520px
+                ),600px)}.cosmos-banner-carousel__content{max-width:82%}.cosmos-banner-carousel__position--top-left .cosmos-banner-carousel__content{right:35px;top:35px}.cosmos-banner-carousel__position--top-right .cosmos-banner-carousel__content{left:35px;top:35px}.cosmos-banner-carousel__position--center-left .cosmos-banner-carousel__content{right:35px}.cosmos-banner-carousel__position--center-right .cosmos-banner-carousel__content{left:35px}.cosmos-banner-carousel__position--bottom-left .cosmos-banner-carousel__content{bottom:35px;right:35px}.cosmos-banner-carousel__position--bottom-right .cosmos-banner-carousel__content{bottom:35px;left:35px}.cosmos-banner-carousel__arrow--prev{right:18px}.cosmos-banner-carousel__arrow--next{left:18px}}@media (max-width:767px){.cosmos-banner-carousel__viewport{height:max(420px,min(var(
+                        --cosmos-banner-height,520px
+                    ),600px))}.cosmos-banner-carousel__content{max-width:calc(100% - 100px)}.cosmos-banner-carousel__title{font-size:clamp(24px,7vw,var(
+                    --cosmos-banner-title-size,42px
+                ))}.cosmos-banner-carousel__position--top-left .cosmos-banner-carousel__content{right:25px;top:30px}.cosmos-banner-carousel__position--top-center .cosmos-banner-carousel__content{top:30px}.cosmos-banner-carousel__position--top-right .cosmos-banner-carousel__content{left:25px;top:30px}.cosmos-banner-carousel__position--center-left .cosmos-banner-carousel__content{right:25px}.cosmos-banner-carousel__position--center-right .cosmos-banner-carousel__content{left:25px}.cosmos-banner-carousel__position--bottom-left .cosmos-banner-carousel__content{bottom:30px;right:25px}.cosmos-banner-carousel__position--bottom-center .cosmos-banner-carousel__content{bottom:30px}.cosmos-banner-carousel__position--bottom-right .cosmos-banner-carousel__content{bottom:30px;left:25px}.cosmos-banner-carousel__arrow{font-size:calc(var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                )*.5);height:calc(var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                )*.78);width:calc(var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                )*.78)}.cosmos-banner-carousel__arrow--prev{right:10px}.cosmos-banner-carousel__arrow--next{left:10px}.cosmos-banner-carousel__button{font-size:14px}}

@@ -1,0 +1,265 @@
+/*
+|--------------------------------------------------------------------------
+| BLOQUE
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid {
+    width: 100%;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| GRID
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__items {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(0, 1fr)
+    );
+
+    align-items: stretch;
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTENEDOR COMPLETO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__item {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 165px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding: 25px 15px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ICONO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__icon {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| IMAGEN
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__icon img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PLACEHOLDER DEL ICONO EN EDITOR
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__icon-placeholder {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 1px dashed #aaa;
+
+    color: #777;
+
+    font-size: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TEXTO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text {
+    display: block;
+
+    width: 100%;
+
+    min-height: 1.4em;
+
+    box-sizing: border-box;
+
+    line-height: 1.4;
+
+    word-wrap: break-word;
+
+    overflow-wrap: break-word;
+
+    white-space: normal;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PÁRRAFOS GENERADOS DENTRO DEL TEXTO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text p {
+    margin-top: 0;
+
+    margin-bottom: 0;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PLACEHOLDER DEL RICHTEXT
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__text[data-empty="true"] {
+    min-height: 1.4em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MENSAJE VACÍO
+|--------------------------------------------------------------------------
+*/
+
+.cosmos-icons-grid__empty {
+    width: 100%;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px dashed #ccc;
+
+    color: #666;
+
+    box-sizing: border-box;
+
+    grid-column: 1 / -1;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TABLET
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 1024px) {
+
+    .cosmos-icons-grid__items {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MÓVIL
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+
+    .cosmos-icons-grid__items {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+    .cosmos-icons-grid__item {
+        padding: 20px 10px;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MÓVIL PEQUEÑO
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 400px) {
+
+    .cosmos-icons-grid__items {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+    }
+
+}

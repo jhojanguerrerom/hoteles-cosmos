@@ -27,7 +27,6 @@ function hoteles_cosmos_setup() {
 
 add_action('after_setup_theme', 'hoteles_cosmos_setup');
 
-
 /**
  * =========================================================
  * CSS Y JAVASCRIPT
@@ -36,12 +35,39 @@ add_action('after_setup_theme', 'hoteles_cosmos_setup');
 
 function hoteles_cosmos_assets() {
 
+    /*
+     * -----------------------------------------------------
+     * FUENTES GOTHAM
+     * -----------------------------------------------------
+     */
+
+    wp_enqueue_style(
+        'hoteles-cosmos-fonts',
+        get_template_directory_uri() . '/assets/css/fonts.css',
+        array(),
+        '1.0.0'
+    );
+
+
+    /*
+     * -----------------------------------------------------
+     * CSS PRINCIPAL
+     * -----------------------------------------------------
+     */
+
     wp_enqueue_style(
         'hoteles-cosmos-style',
         get_stylesheet_uri(),
-        array(),
-        '1.0.4'
+        array('hoteles-cosmos-fonts'),
+        '1.0.5'
     );
+
+
+    /*
+     * -----------------------------------------------------
+     * JAVASCRIPT
+     * -----------------------------------------------------
+     */
 
     wp_enqueue_script(
         'hoteles-cosmos-main',
@@ -52,7 +78,10 @@ function hoteles_cosmos_assets() {
     );
 }
 
-add_action('wp_enqueue_scripts', 'hoteles_cosmos_assets');
+add_action(
+    'wp_enqueue_scripts',
+    'hoteles_cosmos_assets'
+);
 
 
 /**
@@ -178,7 +207,12 @@ function hoteles_cosmos_block_categories($block_categories, $editor_context) {
     return $block_categories;
 }
 
-add_filter('block_categories_all', 'hoteles_cosmos_block_categories', 10, 2);
+add_filter(
+    'block_categories_all',
+    'hoteles_cosmos_block_categories',
+    10,
+    2
+);
 
 
 function hoteles_cosmos_register_blocks() {
@@ -277,6 +311,42 @@ function hoteles_cosmos_register_blocks() {
 
     register_block_type(
         get_template_directory() . '/blocks/text-image'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/news-grid'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/banner-carousel'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/statistics-grid-tags'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/info-icons-image'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/icons-grid'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/property-cards'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/image-cta'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/info-carousel'
+    );
+
+    register_block_type(
+        get_template_directory() . '/blocks/content'
     );
 }
 

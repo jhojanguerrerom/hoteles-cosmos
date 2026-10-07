@@ -1,0 +1,841 @@
+/*
+ * =====================================================
+ * CONTENEDOR PRINCIPAL
+ * =====================================================
+ */
+
+.cosmos-banner-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * VIEWPORT
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__viewport {
+
+    position: relative;
+
+    width: 100%;
+
+    height:
+        var(
+            --cosmos-banner-height,
+            520px
+        );
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * TRACK
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__track {
+
+    display: flex;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    transition:
+        transform 0.6s ease;
+
+    will-change: transform;
+}
+
+
+/*
+ * =====================================================
+ * SLIDE
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__slide {
+
+    position: relative;
+
+    flex:
+        0 0 100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__image {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/*
+ * =====================================================
+ * OVERLAY
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            var(
+                --cosmos-banner-overlay,
+                0.35
+            )
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/*
+ * =====================================================
+ * CONTENIDO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__content {
+
+    position: absolute;
+
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    max-width: 80%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * POSICIONES
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__position--top-left
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    left: 50px;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--top-center
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--top-right
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    right: 50px;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+.cosmos-banner-carousel__position--center-left
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    left: 50px;
+
+    transform: translateY(-50%);
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--center-center
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--center-right
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    right: 50px;
+
+    transform: translateY(-50%);
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+.cosmos-banner-carousel__position--bottom-left
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    left: 50px;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--bottom-center
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--bottom-right
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    right: 50px;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+/*
+ * =====================================================
+ * TÍTULO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__title {
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-banner-title-color,
+            #ffffff
+        );
+
+    font-size:
+        var(
+            --cosmos-banner-title-size,
+            42px
+        );
+
+    font-weight:
+        var(
+            --cosmos-banner-title-weight,
+            600
+        );
+
+    line-height: 1.15;
+
+    text-align: inherit;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * CTA
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    color:
+        var(
+            --cosmos-banner-cta-text,
+            #ffffff
+        );
+
+    background:
+        var(
+            --cosmos-banner-cta-background,
+            #000000
+        );
+
+    border:
+        var(
+            --cosmos-banner-cta-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-banner-cta-border,
+            #ffffff
+        );
+
+    border-radius:
+        var(
+            --cosmos-banner-cta-radius,
+            0px
+        );
+
+    padding:
+        var(
+            --cosmos-banner-cta-padding-y,
+            12px
+        )
+        var(
+            --cosmos-banner-cta-padding-x,
+            28px
+        );
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    box-sizing: border-box;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/*
+ * =====================================================
+ * CTA SIN FONDO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__button--transparent {
+
+    background: transparent;
+}
+
+
+/*
+ * =====================================================
+ * HOVER CTA
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__button:hover {
+
+    opacity: 0.9;
+
+    transform: translateY(-2px);
+
+    color:
+        var(
+            --cosmos-banner-cta-text,
+            #ffffff
+        );
+
+    text-decoration: none;
+}
+
+
+/*
+ * =====================================================
+ * FLECHAS
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    width:
+        var(
+            --cosmos-banner-arrow-size,
+            46px
+        );
+
+    height:
+        var(
+            --cosmos-banner-arrow-size,
+            46px
+        );
+
+    margin: 0;
+
+    padding: 0;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(
+            --cosmos-banner-arrow-background,
+            rgba(0, 0, 0, 0.35)
+        );
+
+    color:
+        var(
+            --cosmos-banner-arrow-color,
+            #ffffff
+        );
+
+    font-family: Arial, sans-serif;
+
+    font-size:
+        calc(
+            var(
+                --cosmos-banner-arrow-size,
+                46px
+            ) * 0.65
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/*
+ * =====================================================
+ * FLECHA IZQUIERDA
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow--prev {
+
+    left: 25px;
+}
+
+
+/*
+ * =====================================================
+ * FLECHA DERECHA
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow--next {
+
+    right: 25px;
+}
+
+
+/*
+ * =====================================================
+ * HOVER FLECHAS
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow:hover {
+
+    opacity: 0.9;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/*
+ * =====================================================
+ * FOCUS
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow:focus {
+
+    outline: 2px solid currentColor;
+
+    outline-offset: 3px;
+}
+
+
+/*
+ * =====================================================
+ * TABLET
+ * =====================================================
+ */
+
+@media (max-width: 1024px) {
+
+    .cosmos-banner-carousel__viewport {
+
+        height:
+            min(
+                var(
+                    --cosmos-banner-height,
+                    520px
+                ),
+                600px
+            );
+    }
+
+
+    .cosmos-banner-carousel__content {
+
+        max-width: 82%;
+    }
+
+
+    .cosmos-banner-carousel__position--top-left
+    .cosmos-banner-carousel__content {
+
+        top: 35px;
+
+        left: 35px;
+    }
+
+
+    .cosmos-banner-carousel__position--top-right
+    .cosmos-banner-carousel__content {
+
+        top: 35px;
+
+        right: 35px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-left
+    .cosmos-banner-carousel__content {
+
+        left: 35px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-right
+    .cosmos-banner-carousel__content {
+
+        right: 35px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-left
+    .cosmos-banner-carousel__content {
+
+        bottom: 35px;
+
+        left: 35px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-right
+    .cosmos-banner-carousel__content {
+
+        bottom: 35px;
+
+        right: 35px;
+    }
+
+
+    .cosmos-banner-carousel__arrow--prev {
+
+        left: 18px;
+    }
+
+
+    .cosmos-banner-carousel__arrow--next {
+
+        right: 18px;
+    }
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-banner-carousel__viewport {
+
+        height:
+            max(
+                420px,
+                min(
+                    var(
+                        --cosmos-banner-height,
+                        520px
+                    ),
+                    600px
+                )
+            );
+    }
+
+
+    .cosmos-banner-carousel__content {
+
+        max-width: calc(100% - 100px);
+    }
+
+
+    .cosmos-banner-carousel__title {
+
+        font-size:
+            clamp(
+                24px,
+                7vw,
+                var(
+                    --cosmos-banner-title-size,
+                    42px
+                )
+            );
+    }
+
+
+    .cosmos-banner-carousel__position--top-left
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+
+        left: 25px;
+    }
+
+
+    .cosmos-banner-carousel__position--top-center
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--top-right
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+
+        right: 25px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-left
+    .cosmos-banner-carousel__content {
+
+        left: 25px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-right
+    .cosmos-banner-carousel__content {
+
+        right: 25px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-left
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+
+        left: 25px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-center
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-right
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+
+        right: 25px;
+    }
+
+
+    .cosmos-banner-carousel__arrow {
+
+        width:
+            calc(
+                var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                ) * 0.78
+            );
+
+        height:
+            calc(
+                var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                ) * 0.78
+            );
+
+        font-size:
+            calc(
+                var(
+                    --cosmos-banner-arrow-size,
+                    46px
+                ) * 0.50
+            );
+    }
+
+
+    .cosmos-banner-carousel__arrow--prev {
+
+        left: 10px;
+    }
+
+
+    .cosmos-banner-carousel__arrow--next {
+
+        right: 10px;
+    }
+
+
+    .cosmos-banner-carousel__button {
+
+        font-size: 14px;
+    }
+}

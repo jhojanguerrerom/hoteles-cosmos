@@ -1,0 +1,83 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/icons-grid",
+    "title": "Grid de Iconos",
+    "category": "cosmos",
+    "icon": "screenoptions",
+    "description": "Bloque de hasta seis iconos con texto personalizable.",
+    "keywords": [
+        "iconos",
+        "servicios",
+        "grid",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "items": {
+            "type": "array",
+            "default": []
+        },
+
+        "iconSize": {
+            "type": "number",
+            "default": 80
+        },
+
+        "iconBackgroundColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+
+        "iconBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+
+        "iconGap": {
+            "type": "number",
+            "default": 30
+        },
+
+        "textColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+
+        "textFontSize": {
+            "type": "number",
+            "default": 18
+        },
+
+        "textAlign": {
+            "type": "string",
+            "default": "center"
+        },
+
+        "textMarginTop": {
+            "type": "number",
+            "default": 15
+        },
+
+        "paddingTop": {
+            "type": "number",
+            "default": 30
+        },
+
+        "paddingBottom": {
+            "type": "number",
+            "default": 30
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}

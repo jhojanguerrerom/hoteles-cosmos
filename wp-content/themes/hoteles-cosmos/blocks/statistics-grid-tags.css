@@ -1,0 +1,17 @@
+.cosmos-statistics-grid-tags{box-sizing:border-box;position:relative;width:100%}.cosmos-statistics-tags-editor-item{border-bottom:1px solid #e0e0e0;margin-bottom:20px;padding-bottom:20px}.cosmos-statistics-tags-editor-header{align-items:center;display:flex;justify-content:space-between;margin-bottom:12px}.cosmos-statistics-grid-tags
+.block-editor-rich-text__editable{min-height:1em}.cosmos-statistics-grid-tags__number{cursor:default}.cosmos-statistics-grid-tags__tag{background:var(
+            --cosmos-statistics-tag-background,#111
+        );border-radius:var(
+            --cosmos-statistics-tag-radius,20px
+        );box-sizing:border-box;color:var(
+            --cosmos-statistics-tag-color,#fff
+        );display:block;font-size:var(
+            --cosmos-statistics-tag-size,13px
+        );font-weight:var(
+            --cosmos-statistics-tag-weight,500
+        );line-height:1.2;margin-top:12px;max-width:100%;padding:var(
+            --cosmos-statistics-tag-padding-y,6px
+        ) var(
+            --cosmos-statistics-tag-padding-x,14px
+        );pointer-events:none;-webkit-user-select:none;user-select:none;white-space:nowrap;width:fit-content}.cosmos-statistics-grid-tags__tag--left{margin-left:0;margin-right:auto}.cosmos-statistics-grid-tags__tag--center{margin-left:auto;margin-right:auto}.cosmos-statistics-grid-tags__tag--right{margin-left:auto;margin-right:0}.cosmos-statistics-grid-tags__text
+[data-rich-text-placeholder]{opacity:.5}@media (max-width:767px){.cosmos-statistics-grid-tags__item{padding:20px 10px}.cosmos-statistics-grid-tags__tag{max-width:90%;white-space:normal}}

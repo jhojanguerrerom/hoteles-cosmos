@@ -1,0 +1,618 @@
+/*
+ * =====================================================
+ * EDITOR
+ * =====================================================
+ */
+
+.cosmos-banner-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * SLIDES
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__slides {
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * SLIDE
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__slide {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        var(
+            --cosmos-banner-height,
+            520px
+        );
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background: #eeeeee;
+}
+
+
+/*
+ * =====================================================
+ * IMAGEN
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__image-editor {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
+
+
+.cosmos-banner-carousel__image-editor img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    margin: 0;
+}
+
+
+/*
+ * =====================================================
+ * PLACEHOLDER
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eeeeee;
+
+    border:
+        2px dashed
+        #aaa;
+
+    color: #666;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * OVERLAY
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            var(
+                --cosmos-banner-overlay,
+                0.35
+            )
+        );
+
+    z-index: 2;
+
+    /*
+     * IMPORTANTE:
+     * El overlay no debe bloquear el clic
+     * de la imagen ni del contenido.
+     */
+    pointer-events: none;
+}
+
+
+/*
+ * =====================================================
+ * CONTENIDO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__content {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    max-width: 80%;
+
+    box-sizing: border-box;
+
+    /*
+     * MUY IMPORTANTE:
+     * Permite editar el RichText.
+     */
+    pointer-events: auto;
+}
+
+
+/*
+ * =====================================================
+ * POSICIONES
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__position--top-left
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    left: 50px;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--top-center
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--top-right
+.cosmos-banner-carousel__content {
+
+    top: 50px;
+
+    right: 50px;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+.cosmos-banner-carousel__position--center-left
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    left: 50px;
+
+    transform: translateY(-50%);
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--center-center
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--center-right
+.cosmos-banner-carousel__content {
+
+    top: 50%;
+
+    right: 50px;
+
+    transform: translateY(-50%);
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+.cosmos-banner-carousel__position--bottom-left
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    left: 50px;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+.cosmos-banner-carousel__position--bottom-center
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.cosmos-banner-carousel__position--bottom-right
+.cosmos-banner-carousel__content {
+
+    bottom: 50px;
+
+    right: 50px;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+/*
+ * =====================================================
+ * TÍTULO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__title {
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(
+            --cosmos-banner-title-color,
+            #ffffff
+        );
+
+    font-size:
+        var(
+            --cosmos-banner-title-size,
+            42px
+        );
+
+    font-weight:
+        var(
+            --cosmos-banner-title-weight,
+            600
+        );
+
+    line-height: 1.15;
+
+    text-align: inherit;
+
+    min-width: 80px;
+
+    min-height: 1.2em;
+
+    box-sizing: border-box;
+
+    /*
+     * Permite seleccionar y editar el título.
+     */
+    pointer-events: auto;
+
+    cursor: text;
+}
+
+
+/*
+ * =====================================================
+ * CTA PREVIEW
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__cta-preview {
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    pointer-events: auto;
+}
+
+
+/*
+ * =====================================================
+ * CTA
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        var(
+            --cosmos-banner-cta-text,
+            #ffffff
+        );
+
+    background:
+        var(
+            --cosmos-banner-cta-background,
+            #000000
+        );
+
+    border:
+        var(
+            --cosmos-banner-cta-border-width,
+            1px
+        )
+        solid
+        var(
+            --cosmos-banner-cta-border,
+            #ffffff
+        );
+
+    border-radius:
+        var(
+            --cosmos-banner-cta-radius,
+            0px
+        );
+
+    padding:
+        var(
+            --cosmos-banner-cta-padding-y,
+            12px
+        )
+        var(
+            --cosmos-banner-cta-padding-x,
+            28px
+        );
+
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    box-sizing: border-box;
+}
+
+
+.cosmos-banner-carousel__button--transparent {
+
+    background: transparent;
+}
+
+
+/*
+ * =====================================================
+ * CTA OCULTO
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__cta-hidden {
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.65
+    );
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+
+/*
+ * =====================================================
+ * CONFIGURACIÓN DEL SLIDE
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__slide-settings {
+
+    position: relative;
+
+    z-index: 20;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: #f7f7f7;
+
+    border:
+        1px solid
+        #dddddd;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * =====================================================
+ * AÑADIR
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__add {
+
+    margin-top: 20px;
+
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+
+/*
+ * =====================================================
+ * EVITAR INTERACCIÓN DE FLECHAS
+ * =====================================================
+ */
+
+.cosmos-banner-carousel__arrow {
+
+    pointer-events: none;
+}
+
+
+/*
+ * =====================================================
+ * MOBILE
+ * =====================================================
+ */
+
+@media (max-width: 767px) {
+
+    .cosmos-banner-carousel__content {
+
+        max-width: calc(100% - 80px);
+    }
+
+
+    .cosmos-banner-carousel__position--top-left
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+
+        left: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--top-center
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--top-right
+    .cosmos-banner-carousel__content {
+
+        top: 30px;
+
+        right: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-left
+    .cosmos-banner-carousel__content {
+
+        left: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--center-right
+    .cosmos-banner-carousel__content {
+
+        right: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-left
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+
+        left: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-center
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+    }
+
+
+    .cosmos-banner-carousel__position--bottom-right
+    .cosmos-banner-carousel__content {
+
+        bottom: 30px;
+
+        right: 30px;
+    }
+
+}

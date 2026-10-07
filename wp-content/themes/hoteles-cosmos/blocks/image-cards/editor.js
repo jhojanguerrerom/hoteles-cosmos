@@ -118,23 +118,18 @@ registerBlockType('hoteles-cosmos/image-cards', {
 
                                 onSelect={(media) => {
 
-                                    updateCard(
-                                        0,
-                                        'imageUrl',
-                                        media.url
-                                    );
+                                    const newCards = [...cards];
 
-                                    updateCard(
-                                        0,
-                                        'imageId',
-                                        media.id
-                                    );
+                                    newCards[0] = {
+                                        ...newCards[0],
+                                        imageUrl: media.url,
+                                        imageId: media.id,
+                                        imageAlt: media.alt || ''
+                                    };
 
-                                    updateCard(
-                                        0,
-                                        'imageAlt',
-                                        media.alt || ''
-                                    );
+                                    setAttributes({
+                                        cards: newCards
+                                    });
 
                                 }}
 
@@ -184,23 +179,18 @@ registerBlockType('hoteles-cosmos/image-cards', {
 
                                 onSelect={(media) => {
 
-                                    updateCard(
-                                        1,
-                                        'imageUrl',
-                                        media.url
-                                    );
+                                    const newCards = [...cards];
 
-                                    updateCard(
-                                        1,
-                                        'imageId',
-                                        media.id
-                                    );
+                                    newCards[1] = {
+                                        ...newCards[1],
+                                        imageUrl: media.url,
+                                        imageId: media.id,
+                                        imageAlt: media.alt || ''
+                                    };
 
-                                    updateCard(
-                                        1,
-                                        'imageAlt',
-                                        media.alt || ''
-                                    );
+                                    setAttributes({
+                                        cards: newCards
+                                    });
 
                                 }}
 
@@ -250,23 +240,18 @@ registerBlockType('hoteles-cosmos/image-cards', {
 
                                 onSelect={(media) => {
 
-                                    updateCard(
-                                        2,
-                                        'imageUrl',
-                                        media.url
-                                    );
+                                    const newCards = [...cards];
 
-                                    updateCard(
-                                        2,
-                                        'imageId',
-                                        media.id
-                                    );
+                                    newCards[2] = {
+                                        ...newCards[2],
+                                        imageUrl: media.url,
+                                        imageId: media.id,
+                                        imageAlt: media.alt || ''
+                                    };
 
-                                    updateCard(
-                                        2,
-                                        'imageAlt',
-                                        media.alt || ''
-                                    );
+                                    setAttributes({
+                                        cards: newCards
+                                    });
 
                                 }}
 
@@ -316,23 +301,18 @@ registerBlockType('hoteles-cosmos/image-cards', {
 
                                 onSelect={(media) => {
 
-                                    updateCard(
-                                        3,
-                                        'imageUrl',
-                                        media.url
-                                    );
+                                    const newCards = [...cards];
 
-                                    updateCard(
-                                        3,
-                                        'imageId',
-                                        media.id
-                                    );
+                                    newCards[3] = {
+                                        ...newCards[3],
+                                        imageUrl: media.url,
+                                        imageId: media.id,
+                                        imageAlt: media.alt || ''
+                                    };
 
-                                    updateCard(
-                                        3,
-                                        'imageAlt',
-                                        media.alt || ''
-                                    );
+                                    setAttributes({
+                                        cards: newCards
+                                    });
 
                                 }}
 

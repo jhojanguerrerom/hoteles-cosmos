@@ -1,0 +1,122 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hoteles-cosmos/news-grid",
+    "title": "Noticias",
+    "category": "cosmos",
+    "icon": "admin-post",
+    "description": "Muestra automáticamente las entradas de WordPress como tarjetas de noticias.",
+    "keywords": [
+        "noticias",
+        "blog",
+        "entradas",
+        "posts",
+        "cosmos"
+    ],
+    "textdomain": "hoteles-cosmos",
+
+    "supports": {
+        "anchor": true,
+        "html": false
+    },
+
+    "attributes": {
+        "postsPerPage": {
+            "type": "number",
+            "default": 6
+        },
+        "titleFontSize": {
+            "type": "number",
+            "default": 22
+        },
+        "titleColor": {
+            "type": "string",
+            "default": "#222222"
+        },
+        "titleWeight": {
+            "type": "string",
+            "default": "600"
+        },
+        "titleAlignment": {
+            "type": "string",
+            "default": "left"
+        },
+        "descriptionFontSize": {
+            "type": "number",
+            "default": 16
+        },
+        "descriptionColor": {
+            "type": "string",
+            "default": "#555555"
+        },
+        "descriptionWeight": {
+            "type": "string",
+            "default": "400"
+        },
+        "descriptionAlignment": {
+            "type": "string",
+            "default": "left"
+        },
+        "buttonText": {
+            "type": "string",
+            "default": "Leer noticia"
+        },
+        "buttonTextColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "buttonBackground": {
+            "type": "string",
+            "default": "#000000"
+        },
+        "buttonBorderColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+        "buttonBorderWidth": {
+            "type": "number",
+            "default": 0
+        },
+        "buttonBorderRadius": {
+            "type": "number",
+            "default": 4
+        },
+        "buttonAlignment": {
+            "type": "string",
+            "default": "left"
+        },
+        "buttonPaddingVertical": {
+            "type": "number",
+            "default": 12
+        },
+        "buttonPaddingHorizontal": {
+            "type": "number",
+            "default": 24
+        },
+        "cardBackground": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "cardBorderRadius": {
+            "type": "number",
+            "default": 0
+        },
+        "cardGap": {
+            "type": "number",
+            "default": 24
+        },
+        "marginTop": {
+            "type": "number",
+            "default": 0
+        },
+        "marginBottom": {
+            "type": "number",
+            "default": 0
+        }
+    },
+
+    "editorScript": "file:./build/editor.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php"
+}
