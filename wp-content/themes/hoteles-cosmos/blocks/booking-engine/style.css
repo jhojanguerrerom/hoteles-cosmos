@@ -1,3 +1,4 @@
+
 /*
  * =====================================================
  * CONTENEDOR
@@ -5,32 +6,22 @@
  */
 
 .cosmos-booking-engine {
-
     width: 100%;
-
     box-sizing: border-box;
 
-    margin-top:
-        var(
-            --cosmos-booking-margin-top,
-            30px
-        );
-
-    margin-bottom:
-        var(
-            --cosmos-booking-margin-bottom,
-            30px
-        );
+    margin-top: var(--cosmos-booking-margin-top, 30px);
+    margin-bottom: var(--cosmos-booking-margin-bottom, 30px);
 
     background: #ffffff;
-
-    border-radius:
-        var(
-            --cosmos-booking-border-radius,
-            0px
-        );
+    border-radius: var(--cosmos-booking-border-radius, 0px);
 
     overflow: visible;
+    position: relative;
+
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        border-radius 0.25s ease;
 }
 
 
@@ -41,43 +32,78 @@
  */
 
 .cosmos-booking-engine--shadow {
-
-    box-shadow:
-        0 8px 30px
-        rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
 }
 
 
 /*
  * =====================================================
- * CONTAINER
+ * ANCHO DEL CONTENEDOR
  * =====================================================
  */
 
 .cosmos-booking-engine--container {
-
-    max-width:
-        var(
-            --wp--style--global--content-size
-        );
-
+    max-width: var(--wp--style--global--content-size);
     margin-left: auto;
-
     margin-right: auto;
+}
+
+.cosmos-booking-engine--full {
+    width: 100%;
+    max-width: none;
 }
 
 
 /*
  * =====================================================
- * FULL
+ * BARRA STICKY
  * =====================================================
  */
 
-.cosmos-booking-engine--full {
+.cosmos-booking-engine.is-sticky {
+    position: fixed;
+
+    top: 76px;
+    left: 0;
 
     width: 100%;
-
     max-width: none;
+
+    margin: 0 !important;
+
+    z-index: 999;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    backdrop-filter: blur(14px) saturate(150%);
+
+    border-radius: 0;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+}
+
+/*
+ * Contenedor de ancho limitado cuando está sticky.
+ */
+
+.cosmos-booking-engine.is-sticky.cosmos-booking-engine--container {
+    width: auto;
+    max-width: var(--wp--style--global--content-size);
+}
+
+/*
+ * Espacio reservado por JavaScript para evitar
+ * saltos de contenido al activar el sticky.
+ */
+
+.cosmos-booking-engine__sticky-spacer {
+    display: none;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
 }
 
 
@@ -88,20 +114,18 @@
  */
 
 .cosmos-booking-engine__form {
-
     width: 100%;
-
     box-sizing: border-box;
 
     padding: 20px;
 
     display: flex;
-
     flex-direction: row;
-
     align-items: flex-end;
 
     gap: 12px;
+
+    margin: 0;
 }
 
 
@@ -112,13 +136,10 @@
  */
 
 .cosmos-booking-engine__field {
-
     flex: 1 1 0;
-
     min-width: 0;
 
     display: flex;
-
     flex-direction: column;
 
     gap: 7px;
@@ -132,22 +153,18 @@
  */
 
 .cosmos-booking-engine__field--small {
-
-    flex:
-        0 0 105px;
+    flex: 0 0 105px;
 }
 
 
 /*
  * =====================================================
- * LABEL
+ * ETIQUETAS
  * =====================================================
  */
 
 .cosmos-booking-engine__field label {
-
     display: block;
-
     width: 100%;
 
     margin: 0;
@@ -155,54 +172,42 @@
     color: #555555;
 
     font-size: 12px;
-
     font-weight: 600;
-
     line-height: 1.2;
 }
 
 
 /*
  * =====================================================
- * SELECT / INPUT
+ * SELECT E INPUTS
  * =====================================================
  */
 
 .cosmos-booking-engine__field select,
 .cosmos-booking-engine__field input {
-
     display: block;
 
     width: 100%;
-
+    min-width: 0;
     height: 48px;
 
     box-sizing: border-box;
 
     margin: 0;
+    padding: 0 14px;
 
-    padding:
-        0 14px;
-
-    border:
-        1px solid #dddddd;
-
+    border: 1px solid #dddddd;
     border-radius: 0;
 
-    background: #ffffff;
-
+    background-color: #ffffff;
     color: #111111;
 
     font-family: inherit;
-
     font-size: 14px;
-
     font-weight: 400;
-
-    line-height: 48px;
+    line-height: normal;
 
     outline: none;
-
     appearance: none;
 
     transition:
@@ -218,9 +223,7 @@
  */
 
 .cosmos-booking-engine__field select {
-
     padding-right: 38px;
-
     cursor: pointer;
 
     background-image:
@@ -239,51 +242,48 @@
         calc(100% - 17px) 20px,
         calc(100% - 12px) 20px;
 
-    background-size:
-        5px 5px,
-        5px 5px;
-
+    background-size: 5px 5px;
     background-repeat: no-repeat;
 }
 
 
 /*
  * =====================================================
- * DATE
+ * FECHAS Y NÚMEROS
  * =====================================================
  */
 
 .cosmos-booking-engine__field input[type="date"] {
-
     cursor: pointer;
 }
 
-
-/*
- * =====================================================
- * NUMBER
- * =====================================================
- */
-
 .cosmos-booking-engine__field input[type="number"] {
-
     text-align: center;
 }
 
 
 /*
  * =====================================================
- * FOCUS
+ * FOCO
  * =====================================================
  */
 
 .cosmos-booking-engine__field select:focus,
 .cosmos-booking-engine__field input:focus {
-
     border-color: #111111;
+    box-shadow: 0 0 0 1px #111111;
+}
 
-    box-shadow:
-        0 0 0 1px #111111;
+
+/*
+ * =====================================================
+ * ERRORES
+ * =====================================================
+ */
+
+.cosmos-booking-engine__field.has-error select,
+.cosmos-booking-engine__field.has-error input {
+    border-color: #cc0000;
 }
 
 
@@ -294,53 +294,39 @@
  */
 
 .cosmos-booking-engine__button {
-
-    flex:
-        0 0 auto;
+    flex: 0 0 auto;
 
     width: auto;
-
     min-width: 145px;
-
     height: 48px;
 
     box-sizing: border-box;
 
     margin: 0;
-
-    padding:
-        0 28px;
+    padding: 0 28px;
 
     border: 0;
-
     border-radius: 0;
 
-    background:
-        var(
-            --cosmos-booking-button-background,
-            #111111
-        );
+    background: var(
+        --cosmos-booking-button-background,
+        #111111
+    );
 
-    color:
-        var(
-            --cosmos-booking-button-color,
-            #ffffff
-        );
+    color: var(
+        --cosmos-booking-button-color,
+        #ffffff
+    );
 
     font-family: inherit;
-
     font-size: 14px;
-
     font-weight: 600;
-
-    line-height: 48px;
+    line-height: normal;
 
     white-space: nowrap;
-
     text-align: center;
 
     cursor: pointer;
-
     appearance: none;
 
     transition:
@@ -348,121 +334,329 @@
         transform 0.2s ease;
 }
 
-
 .cosmos-booking-engine__button:hover {
-
     opacity: 0.9;
-
-    transform:
-        translateY(-1px);
+    transform: translateY(-1px);
 }
-
 
 .cosmos-booking-engine__button:active {
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 
 /*
  * =====================================================
- * ERROR
- * =====================================================
- */
-
-.cosmos-booking-engine__field.has-error
-select,
-.cosmos-booking-engine__field.has-error
-input {
-
-    border-color: #cc0000;
-}
-
-
-/*
- * =====================================================
- * TABLET
+ * TABLET Y PANTALLAS MEDIANAS
  * =====================================================
  */
 
 @media (max-width: 1100px) {
-
     .cosmos-booking-engine__form {
-
         gap: 8px;
-
         padding: 15px;
     }
 
-
     .cosmos-booking-engine__field--small {
-
         flex-basis: 75px;
     }
 
-
     .cosmos-booking-engine__button {
-
         min-width: 125px;
-
-        padding:
-            0 18px;
+        padding: 0 18px;
     }
-
 }
 
 
 /*
  * =====================================================
- * MOBILE
+ * MÓVIL
  * =====================================================
  */
 
 @media (max-width: 767px) {
 
+    /*
+     * Cuadrícula de seis columnas.
+     * Hotel: seis columnas.
+     * Entrada y salida: tres columnas cada una.
+     * Contadores: dos columnas cada uno.
+     */
+
     .cosmos-booking-engine__form {
+        display: grid;
 
-        flex-direction: column;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
 
-        align-items: stretch;
+        align-items: end;
 
-        gap: 12px;
-
-        padding: 20px;
+        gap: 8px 6px;
+        padding: 10px;
     }
 
+    /*
+     * Configuración base de todos los campos.
+     */
 
-    .cosmos-booking-engine__field,
-    .cosmos-booking-engine__field--small {
+    .cosmos-booking-engine__field {
+        grid-column: 1 / -1;
 
         width: 100%;
+        min-width: 0;
 
-        flex:
-            0 0 auto;
+        flex: none;
+        gap: 4px;
     }
 
+    /*
+     * FILA 1: HOTEL
+     * Ocupa todo el ancho.
+     */
+
+    .cosmos-booking-engine__field:has(select[name="hotel"]) {
+        grid-column: 1 / -1;
+    }
+
+    /*
+     * FILA 2: ENTRADA Y SALIDA
+     * Cada campo ocupa exactamente la mitad.
+     */
+
+    .cosmos-booking-engine__field:has(input[name="datein"]) {
+        grid-column: span 3;
+    }
+
+    .cosmos-booking-engine__field:has(input[name="dateout"]) {
+        grid-column: span 3;
+    }
+
+    /*
+     * FILA 3: HABITACIONES, ADULTOS Y NIÑOS
+     */
+
+    .cosmos-booking-engine__field--small {
+        grid-column: span 2;
+
+        width: 100%;
+        min-width: 0;
+
+        flex: none;
+    }
+
+    /*
+     * ETIQUETAS
+     */
+
+    .cosmos-booking-engine__field label {
+        font-size: 10px;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    /*
+     * CONTROLES
+     */
 
     .cosmos-booking-engine__field select,
     .cosmos-booking-engine__field input {
+        width: 100%;
+        min-width: 0;
+        height: 38px;
 
-        height: 48px;
+        padding: 0 6px;
 
-        line-height: 48px;
+        font-size: 12px;
     }
 
+    /*
+     * SELECT DEL HOTEL
+     */
+
+    .cosmos-booking-engine__field select[name="hotel"] {
+        padding-right: 22px;
+
+        background-position:
+            calc(100% - 10px) 15px,
+            calc(100% - 5px) 15px;
+
+        background-size: 4px 4px;
+    }
+
+    /*
+     * FECHAS
+     * Reduce el relleno para evitar desbordamientos
+     * en pantallas estrechas.
+     */
+
+    .cosmos-booking-engine__field input[type="date"] {
+        padding-left: 4px;
+        padding-right: 2px;
+        font-size: 11px;
+    }
+
+    /*
+     * CONTADORES
+     */
+
+    .cosmos-booking-engine__field input[type="number"] {
+        text-align: center;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    /*
+     * BOTÓN: fila completa.
+     */
 
     .cosmos-booking-engine__button {
+        grid-column: 1 / -1;
 
         width: 100%;
-
-        height: 50px;
-
         min-width: 0;
+        height: 40px;
 
-        line-height: 50px;
+        margin: 0;
+        padding: 0 10px;
 
-        margin-top: 5px;
+        font-size: 13px;
     }
 
+
+    /*
+     * =========================================
+     * STICKY EN MÓVIL
+     * =========================================
+     */
+
+    .cosmos-booking-engine.is-sticky {
+        top: 76px;
+
+        width: 100%;
+        max-width: none;
+
+        padding: 0;
+
+        border-radius: 0 0 8px 8px;
+
+        background: rgba(255, 255, 255, 0.94);
+
+        -webkit-backdrop-filter: blur(12px) saturate(150%);
+        backdrop-filter: blur(12px) saturate(150%);
+    }
+
+    /*
+     * Mantiene las mismas filas, con menos separación.
+     */
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__form {
+        display: grid;
+
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+
+        gap: 5px 6px;
+        padding: 6px 8px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field {
+        gap: 2px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field label {
+        font-size: 9px;
+        line-height: 1.1;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field input {
+        height: 32px;
+
+        padding-left: 4px;
+        padding-right: 4px;
+
+        font-size: 11px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field select[name="hotel"] {
+        padding-right: 17px;
+
+        background-position:
+            calc(100% - 8px) 12px,
+            calc(100% - 3px) 12px;
+
+        background-size: 4px 4px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field input[type="date"] {
+        padding-left: 2px;
+        padding-right: 0;
+        font-size: 10px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__button {
+        height: 34px;
+
+        margin: 0;
+
+        font-size: 12px;
+    }
+}
+
+
+/*
+ * =====================================================
+ * MÓVILES MUY ESTRECHOS
+ * =====================================================
+ */
+
+@media (max-width: 360px) {
+
+    .cosmos-booking-engine__form {
+        gap: 7px 5px;
+        padding: 8px 6px;
+    }
+
+    .cosmos-booking-engine__field label {
+        font-size: 9px;
+    }
+
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine__field input {
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 11px;
+    }
+
+    .cosmos-booking-engine__field input[type="date"] {
+        font-size: 10px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__form {
+        gap: 4px;
+        padding: 5px 6px;
+    }
+}
+
+
+/*
+ * =====================================================
+ * RESPETO POR MOVIMIENTO REDUCIDO
+ * =====================================================
+ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cosmos-booking-engine,
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine__field input,
+    .cosmos-booking-engine__button {
+        transition: none;
+    }
 }

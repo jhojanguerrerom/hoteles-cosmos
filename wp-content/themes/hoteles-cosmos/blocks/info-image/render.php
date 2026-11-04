@@ -189,6 +189,38 @@ $title_margin_bottom = isset($attributes['titleMarginBottom'])
 
 
 /*
+ * DESCRIPCIÓN
+ */
+
+$description = isset($attributes['description'])
+    ? $attributes['description']
+    : '';
+
+$description_color = isset($attributes['descriptionColor'])
+    ? $attributes['descriptionColor']
+    : '#333333';
+
+$description_size = isset($attributes['descriptionSize'])
+    ? absint($attributes['descriptionSize'])
+    : 16;
+
+$description_align = isset($attributes['descriptionAlign'])
+    ? $attributes['descriptionAlign']
+    : 'left';
+
+$allowed_description_alignments = array(
+    'left',
+    'center',
+    'right',
+    'justify'
+);
+
+if (!in_array($description_align, $allowed_description_alignments, true)) {
+    $description_align = 'left';
+}
+
+
+/*
  * INFORMACIÓN
  */
 
@@ -345,6 +377,10 @@ $style = sprintf(
      --cosmos-info-title-line-height:%s;
      --cosmos-info-title-margin-bottom:%dpx;
 
+     --cosmos-info-description-color:%s;
+     --cosmos-info-description-size:%dpx;
+     --cosmos-info-description-align:%s;
+
      --cosmos-info-align:%s;
      --cosmos-info-text-color:%s;
      --cosmos-info-text-size:%dpx;
@@ -385,6 +421,10 @@ $style = sprintf(
     esc_attr($title_align),
     esc_attr($title_line_height),
     $title_margin_bottom,
+
+    esc_attr($description_color),
+    $description_size,
+    esc_attr($description_align),
 
     esc_attr($info_align),
     esc_attr($info_text_color),
@@ -473,6 +513,14 @@ $wrapper_attributes = get_block_wrapper_attributes(
                     <div class="cosmos-info-image__title">
                         <?php echo wp_kses_post($title); ?>
                     </div>
+
+                    <?php if (trim($description) !== '') : ?>
+
+                        <div class="cosmos-info-image__description">
+                            <?php echo wp_kses_post($description); ?>
+                        </div>
+
+                    <?php endif; ?>
 
 
                     <!-- INFORMACIÓN -->

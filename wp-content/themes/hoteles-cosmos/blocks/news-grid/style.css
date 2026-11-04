@@ -33,6 +33,7 @@
 	object-fit: cover;
 	margin: 0;
 	transition: transform 0.3s ease;
+  object-position: right;
 }
 
 .cosmos-news-grid__image-link:hover .cosmos-news-grid__image {

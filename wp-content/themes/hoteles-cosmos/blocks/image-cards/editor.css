@@ -1,166 +1,170 @@
+
 /* =====================================================
    HOTELES COSMOS
    IMAGE CARDS
    GUTENBERG EDITOR
 ===================================================== */
 
-
-/* =====================================================
-   BLOQUE
-===================================================== */
+/* BLOQUE */
 
 .wp-block-hoteles-cosmos-image-cards {
-
     position: relative;
-
     width: 100%;
     max-width: 100%;
-
     box-sizing: border-box;
-
-    margin-top: var(--cosmos-block-margin-top);
-    margin-bottom: var(--cosmos-block-margin-bottom);
-
+    margin-top: var(--cosmos-block-margin-top, 0);
+    margin-bottom: var(--cosmos-block-margin-bottom, 0);
     clear: both;
-
     isolation: isolate;
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
+/* CONTAINER */
 
 .wp-block-hoteles-cosmos-image-cards > .container {
-
     width: min(1280px, calc(100% - 48px));
-
     max-width: 1280px;
-
     margin-left: auto;
     margin-right: auto;
-
     box-sizing: border-box;
 }
 
+/* GRID */
 
-/* =====================================================
-   GRID
-===================================================== */
-
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__grid {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__grid {
     position: relative;
-
+    display: grid;
+    grid-template-columns: repeat(var(--cosmos-card-columns, 4), minmax(0, 1fr));
+    gap: var(--cosmos-card-gap, 24px);
     width: 100%;
     max-width: 100%;
-
     box-sizing: border-box;
-
     z-index: 1;
 }
 
+/* CARD */
 
-/* =====================================================
-   CARD
-===================================================== */
-
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__card {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__card {
     position: relative;
-
     z-index: 1;
-
+    width: 100%;
+    min-width: 0;
+    height: var(--cosmos-card-height, 560px);
     overflow: hidden;
-
     box-sizing: border-box;
-
+    background-color: #222;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     isolation: isolate;
 }
 
+/* CONTENIDO */
 
-/* =====================================================
-   CONTENIDO
-===================================================== */
-
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__content {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__content {
     position: absolute;
-
     inset: 0;
-
     z-index: 2;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
+/* TÍTULO Y DESCRIPCIÓN */
 
-/* =====================================================
-   RICHTEXT
-===================================================== */
-
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__title,
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__description {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__title,
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__description {
     outline: none;
+    overflow-wrap: anywhere;
 }
 
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__title-area,
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__description-area {
+    width: 100%;
+    min-width: 0;
+    flex: 0 0 auto;
+}
 
-/* Evita márgenes automáticos de Gutenberg */
-
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__title p {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__title {
     margin: 0;
 }
 
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__title p {
+    margin: 0;
+}
 
-.wp-block-hoteles-cosmos-image-cards
-.cosmos-image-cards__description p {
-
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__description p {
     margin-top: 0;
 }
 
+.wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__description p:last-child {
+    margin-bottom: 0;
+}
 
-/* =====================================================
-   TABLET
-===================================================== */
+/* TABLET */
 
 @media (max-width: 900px) {
-
     .wp-block-hoteles-cosmos-image-cards > .container {
-
         width: calc(100% - 40px);
-
         max-width: none;
     }
 
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__content {
+        padding: 25px;
+    }
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* MOBILE */
 
 @media (max-width: 600px) {
-
     .wp-block-hoteles-cosmos-image-cards {
-
         width: 100%;
         max-width: 100%;
     }
 
-
     .wp-block-hoteles-cosmos-image-cards > .container {
-
         width: calc(100% - 32px);
-
         max-width: none;
     }
 
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--cosmos-card-gap, 24px);
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__card {
+        height: 420px;
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__content {
+        padding: 20px;
+    }
+}
+
+/* MOBILE MUY PEQUEÑO */
+
+@media (max-width: 380px) {
+    .wp-block-hoteles-cosmos-image-cards > .container {
+        width: calc(100% - 24px);
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__grid {
+        gap: 10px;
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__card {
+        height: 380px;
+    }
+
+    .wp-block-hoteles-cosmos-image-cards .cosmos-image-cards__content {
+        padding: 15px;
+    }
 }

@@ -1,3 +1,4 @@
+
 import { registerBlockType } from '@wordpress/blocks';
 
 import {
@@ -18,64 +19,125 @@ import {
 
 import { Fragment } from '@wordpress/element';
 
+/*
+ * =====================================================
+ * UTILIDADES
+ * =====================================================
+ */
+
+const MIN_CARDS = 2;
+const MAX_CARDS = 6;
+
+const createCard = (index) => ({
+    imageUrl: '',
+    imageId: 0,
+    imageAlt: '',
+    title: `Título de la card ${index + 1}`,
+    description: `Descripción de la card ${index + 1}.`
+});
+
+const normalizeCards = (cards) => {
+    const normalized = Array.isArray(cards)
+        ? cards.slice(0, MAX_CARDS).map((card, index) => ({
+            ...createCard(index),
+            ...(card || {})
+        }))
+        : [];
+
+    while (normalized.length < MIN_CARDS) {
+        normalized.push(createCard(normalized.length));
+    }
+
+    return normalized;
+};
+
+/*
+ * =====================================================
+ * REGISTRO DEL BLOQUE
+ * =====================================================
+ */
 
 registerBlockType('hoteles-cosmos/image-cards', {
-
     edit: ({ attributes, setAttributes }) => {
-
         const {
             cards,
-
             cardHeight,
             cardGap,
             overlay,
-
             titleColor,
             titleSize,
             titleWeight,
             titleAlign,
-
             descriptionColor,
             descriptionSize,
             descriptionWeight,
             descriptionAlign,
-
             blockMarginTop,
             blockMarginBottom
         } = attributes;
 
+        const safeCards = normalizeCards(cards);
 
         /*
-         * =====================================================
-         * ACTUALIZAR UNA CARD
-         * =====================================================
+         * Actualizar uno o varios campos de una tarjeta.
          */
-
         const updateCard = (index, property, value) => {
+            const nextCards = [...safeCards];
 
-            const newCards = [...cards];
+            if (typeof property === 'object' && property !== null) {
+                nextCards[index] = {
+                    ...nextCards[index],
+                    ...property
+                };
+            } else {
+                nextCards[index] = {
+                    ...nextCards[index],
+                    [property]: value
+                };
+            }
 
-            newCards[index] = {
-                ...newCards[index],
-                [property]: value
-            };
+            setAttributes({ cards: nextCards });
+        };
+
+        /*
+         * Añadir tarjeta, hasta un máximo de 6.
+         */
+        const addCard = () => {
+            if (safeCards.length >= MAX_CARDS) {
+                return;
+            }
 
             setAttributes({
-                cards: newCards
+                cards: [
+                    ...safeCards,
+                    createCard(safeCards.length)
+                ]
             });
         };
 
+        /*
+         * Eliminar tarjeta, manteniendo un mínimo de 2.
+         */
+        const removeCard = (index) => {
+            if (safeCards.length <= MIN_CARDS) {
+                return;
+            }
+
+            setAttributes({
+                cards: safeCards.filter((_, cardIndex) => cardIndex !== index)
+            });
+        };
 
         /*
          * =====================================================
-         * VARIABLES DEL BLOQUE
+         * VARIABLES CSS
          * =====================================================
          */
 
         const blockProps = useBlockProps({
             className: 'cosmos-image-cards',
-
             style: {
+                '--cosmos-card-columns': safeCards.length,
                 '--cosmos-card-height': `${cardHeight}px`,
                 '--cosmos-card-gap': `${cardGap}px`,
                 '--cosmos-card-overlay': overlay / 100,
@@ -95,273 +157,131 @@ registerBlockType('hoteles-cosmos/image-cards', {
             }
         });
 
-
         return (
             <Fragment>
-
                 <InspectorControls>
-
-                    {/* =================================================
-                        CARD 1
-                    ================================================= */}
+                    {/* ADMINISTRAR TARJETAS */}
 
                     <PanelBody
-                        title="Card 1"
+                        title={`Administrar tarjetas (${safeCards.length}/${MAX_CARDS})`}
                         initialOpen={true}
                     >
-
-                        <MediaUploadCheck>
-
-                            <MediaUpload
-                                allowedTypes={['image']}
-                                value={cards[0]?.imageId || 0}
-
-                                onSelect={(media) => {
-
-                                    const newCards = [...cards];
-
-                                    newCards[0] = {
-                                        ...newCards[0],
-                                        imageUrl: media.url,
-                                        imageId: media.id,
-                                        imageAlt: media.alt || ''
-                                    };
-
-                                    setAttributes({
-                                        cards: newCards
-                                    });
-
-                                }}
-
-                                render={({ open }) => (
-
-                                    <Button
-                                        variant="secondary"
-                                        onClick={open}
-                                        style={{
-                                            width: '100%',
-                                            justifyContent: 'center',
-                                            marginBottom: '12px'
-                                        }}
-                                    >
-                                        {cards[0]?.imageUrl
-                                            ? 'Cambiar imagen'
-                                            : 'Seleccionar imagen'
-                                        }
-                                    </Button>
-
-                                )}
-                            />
-
-                        </MediaUploadCheck>
-
                         <p>
-                            El título y la descripción se editan directamente sobre la card.
+                            Puedes tener entre {MIN_CARDS} y {MAX_CARDS} tarjetas.
+                            Las columnas se ajustan automáticamente al número de tarjetas.
                         </p>
 
+                        <Button
+                            variant="primary"
+                            onClick={addCard}
+                            disabled={safeCards.length >= MAX_CARDS}
+                            style={{
+                                width: '100%',
+                                justifyContent: 'center',
+                                marginBottom: '12px'
+                            }}
+                        >
+                            Añadir tarjeta
+                        </Button>
+
+                        {safeCards.length >= MAX_CARDS && (
+                            <p>
+                                Has alcanzado el máximo de {MAX_CARDS} tarjetas.
+                            </p>
+                        )}
                     </PanelBody>
 
+                    {/* CONFIGURACIÓN INDIVIDUAL DE CADA TARJETA */}
 
-                    {/* =================================================
-                        CARD 2
-                    ================================================= */}
+                    {safeCards.map((card, index) => (
+                        <PanelBody
+                            key={`card-panel-${index}`}
+                            title={`Card ${index + 1}`}
+                            initialOpen={false}
+                        >
+                            <MediaUploadCheck>
+                                <MediaUpload
+                                    allowedTypes={['image']}
+                                    value={card.imageId || 0}
+                                    onSelect={(media) => {
+                                        updateCard(index, {
+                                            imageUrl: media.url || '',
+                                            imageId: media.id || 0,
+                                            imageAlt: media.alt || ''
+                                        });
+                                    }}
+                                    render={({ open }) => (
+                                        <Button
+                                            variant="secondary"
+                                            onClick={open}
+                                            style={{
+                                                width: '100%',
+                                                justifyContent: 'center',
+                                                marginBottom: '12px'
+                                            }}
+                                        >
+                                            {card.imageUrl
+                                                ? 'Cambiar imagen'
+                                                : 'Seleccionar imagen'}
+                                        </Button>
+                                    )}
+                                />
+                            </MediaUploadCheck>
 
-                    <PanelBody
-                        title="Card 2"
-                        initialOpen={false}
-                    >
-
-                        <MediaUploadCheck>
-
-                            <MediaUpload
-                                allowedTypes={['image']}
-                                value={cards[1]?.imageId || 0}
-
-                                onSelect={(media) => {
-
-                                    const newCards = [...cards];
-
-                                    newCards[1] = {
-                                        ...newCards[1],
-                                        imageUrl: media.url,
-                                        imageId: media.id,
-                                        imageAlt: media.alt || ''
-                                    };
-
-                                    setAttributes({
-                                        cards: newCards
-                                    });
-
-                                }}
-
-                                render={({ open }) => (
-
-                                    <Button
-                                        variant="secondary"
-                                        onClick={open}
+                            {card.imageUrl && (
+                                <div style={{ marginBottom: '12px' }}>
+                                    <img
+                                        src={card.imageUrl}
+                                        alt={card.imageAlt || ''}
                                         style={{
+                                            display: 'block',
                                             width: '100%',
-                                            justifyContent: 'center',
-                                            marginBottom: '12px'
+                                            height: 'auto',
+                                            borderRadius: '4px'
                                         }}
-                                    >
-                                        {cards[1]?.imageUrl
-                                            ? 'Cambiar imagen'
-                                            : 'Seleccionar imagen'
-                                        }
-                                    </Button>
+                                    />
+                                </div>
+                            )}
 
-                                )}
-                            />
+                            <p>
+                                Edita el título y la descripción directamente
+                                sobre la tarjeta.
+                            </p>
 
-                        </MediaUploadCheck>
-
-                        <p>
-                            El título y la descripción se editan directamente sobre la card.
-                        </p>
-
-                    </PanelBody>
-
-
-                    {/* =================================================
-                        CARD 3
-                    ================================================= */}
-
-                    <PanelBody
-                        title="Card 3"
-                        initialOpen={false}
-                    >
-
-                        <MediaUploadCheck>
-
-                            <MediaUpload
-                                allowedTypes={['image']}
-                                value={cards[2]?.imageId || 0}
-
-                                onSelect={(media) => {
-
-                                    const newCards = [...cards];
-
-                                    newCards[2] = {
-                                        ...newCards[2],
-                                        imageUrl: media.url,
-                                        imageId: media.id,
-                                        imageAlt: media.alt || ''
-                                    };
-
-                                    setAttributes({
-                                        cards: newCards
-                                    });
-
+                            <Button
+                                variant="secondary"
+                                isDestructive
+                                onClick={() => removeCard(index)}
+                                disabled={safeCards.length <= MIN_CARDS}
+                                style={{
+                                    width: '100%',
+                                    justifyContent: 'center',
+                                    marginTop: '8px'
                                 }}
+                            >
+                                Eliminar tarjeta
+                            </Button>
 
-                                render={({ open }) => (
+                            {safeCards.length <= MIN_CARDS && (
+                                <p>
+                                    Debes conservar al menos {MIN_CARDS} tarjetas.
+                                </p>
+                            )}
+                        </PanelBody>
+                    ))}
 
-                                    <Button
-                                        variant="secondary"
-                                        onClick={open}
-                                        style={{
-                                            width: '100%',
-                                            justifyContent: 'center',
-                                            marginBottom: '12px'
-                                        }}
-                                    >
-                                        {cards[2]?.imageUrl
-                                            ? 'Cambiar imagen'
-                                            : 'Seleccionar imagen'
-                                        }
-                                    </Button>
-
-                                )}
-                            />
-
-                        </MediaUploadCheck>
-
-                        <p>
-                            El título y la descripción se editan directamente sobre la card.
-                        </p>
-
-                    </PanelBody>
-
-
-                    {/* =================================================
-                        CARD 4
-                    ================================================= */}
-
-                    <PanelBody
-                        title="Card 4"
-                        initialOpen={false}
-                    >
-
-                        <MediaUploadCheck>
-
-                            <MediaUpload
-                                allowedTypes={['image']}
-                                value={cards[3]?.imageId || 0}
-
-                                onSelect={(media) => {
-
-                                    const newCards = [...cards];
-
-                                    newCards[3] = {
-                                        ...newCards[3],
-                                        imageUrl: media.url,
-                                        imageId: media.id,
-                                        imageAlt: media.alt || ''
-                                    };
-
-                                    setAttributes({
-                                        cards: newCards
-                                    });
-
-                                }}
-
-                                render={({ open }) => (
-
-                                    <Button
-                                        variant="secondary"
-                                        onClick={open}
-                                        style={{
-                                            width: '100%',
-                                            justifyContent: 'center',
-                                            marginBottom: '12px'
-                                        }}
-                                    >
-                                        {cards[3]?.imageUrl
-                                            ? 'Cambiar imagen'
-                                            : 'Seleccionar imagen'
-                                        }
-                                    </Button>
-
-                                )}
-                            />
-
-                        </MediaUploadCheck>
-
-                        <p>
-                            El título y la descripción se editan directamente sobre la card.
-                        </p>
-
-                    </PanelBody>
-
-
-                    {/* =================================================
-                        DISEÑO
-                    ================================================= */}
+                    {/* DISEÑO */}
 
                     <PanelBody
                         title="Diseño"
                         initialOpen={true}
                     >
-
                         <RangeControl
                             label="Altura de las cards"
                             value={cardHeight}
-                            onChange={(value) =>
-                                setAttributes({
-                                    cardHeight: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                cardHeight: value
+                            })}
                             min={350}
                             max={800}
                             step={10}
@@ -370,11 +290,9 @@ registerBlockType('hoteles-cosmos/image-cards', {
                         <RangeControl
                             label="Separación"
                             value={cardGap}
-                            onChange={(value) =>
-                                setAttributes({
-                                    cardGap: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                cardGap: value
+                            })}
                             min={0}
                             max={60}
                         />
@@ -382,36 +300,27 @@ registerBlockType('hoteles-cosmos/image-cards', {
                         <RangeControl
                             label="Oscurecimiento de imagen"
                             value={overlay}
-                            onChange={(value) =>
-                                setAttributes({
-                                    overlay: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                overlay: value
+                            })}
                             min={0}
                             max={90}
                             step={5}
                         />
-
                     </PanelBody>
 
-
-                    {/* =================================================
-                        TÍTULO
-                    ================================================= */}
+                    {/* TÍTULO */}
 
                     <PanelBody
                         title="Título"
                         initialOpen={false}
                     >
-
                         <RangeControl
                             label="Tamaño"
                             value={titleSize}
-                            onChange={(value) =>
-                                setAttributes({
-                                    titleSize: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                titleSize: value
+                            })}
                             min={16}
                             max={60}
                         />
@@ -420,90 +329,52 @@ registerBlockType('hoteles-cosmos/image-cards', {
                             label="Peso"
                             value={titleWeight}
                             options={[
-                                {
-                                    label: 'Regular',
-                                    value: '400'
-                                },
-                                {
-                                    label: 'Medio',
-                                    value: '500'
-                                },
-                                {
-                                    label: 'Seminegrita',
-                                    value: '600'
-                                },
-                                {
-                                    label: 'Negrita',
-                                    value: '700'
-                                }
+                                { label: 'Regular', value: '400' },
+                                { label: 'Medio', value: '500' },
+                                { label: 'Seminegrita', value: '600' },
+                                { label: 'Negrita', value: '700' }
                             ]}
-                            onChange={(value) =>
-                                setAttributes({
-                                    titleWeight: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                titleWeight: value
+                            })}
                         />
 
                         <SelectControl
                             label="Alineación"
                             value={titleAlign}
                             options={[
-                                {
-                                    label: 'Izquierda',
-                                    value: 'left'
-                                },
-                                {
-                                    label: 'Centro',
-                                    value: 'center'
-                                },
-                                {
-                                    label: 'Derecha',
-                                    value: 'right'
-                                },
-                                {
-                                    label: 'Justificado',
-                                    value: 'justify'
-                                }
+                                { label: 'Izquierda', value: 'left' },
+                                { label: 'Centro', value: 'center' },
+                                { label: 'Derecha', value: 'right' },
+                                { label: 'Justificado', value: 'justify' }
                             ]}
-                            onChange={(value) =>
-                                setAttributes({
-                                    titleAlign: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                titleAlign: value
+                            })}
                         />
 
                         <p>Color del título</p>
 
                         <ColorPalette
                             value={titleColor}
-                            onChange={(value) =>
-                                setAttributes({
-                                    titleColor:
-                                        value || '#ffffff'
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                titleColor: value || '#ffffff'
+                            })}
                         />
-
                     </PanelBody>
 
-
-                    {/* =================================================
-                        DESCRIPCIÓN
-                    ================================================= */}
+                    {/* DESCRIPCIÓN */}
 
                     <PanelBody
                         title="Descripción"
                         initialOpen={false}
                     >
-
                         <RangeControl
                             label="Tamaño"
                             value={descriptionSize}
-                            onChange={(value) =>
-                                setAttributes({
-                                    descriptionSize: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                descriptionSize: value
+                            })}
                             min={12}
                             max={36}
                         />
@@ -512,92 +383,52 @@ registerBlockType('hoteles-cosmos/image-cards', {
                             label="Peso"
                             value={descriptionWeight}
                             options={[
-                                {
-                                    label: 'Regular',
-                                    value: '400'
-                                },
-                                {
-                                    label: 'Medio',
-                                    value: '500'
-                                },
-                                {
-                                    label: 'Seminegrita',
-                                    value: '600'
-                                },
-                                {
-                                    label: 'Negrita',
-                                    value: '700'
-                                }
+                                { label: 'Regular', value: '400' },
+                                { label: 'Medio', value: '500' },
+                                { label: 'Seminegrita', value: '600' },
+                                { label: 'Negrita', value: '700' }
                             ]}
-                            onChange={(value) =>
-                                setAttributes({
-                                    descriptionWeight:
-                                        value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                descriptionWeight: value
+                            })}
                         />
 
                         <SelectControl
                             label="Alineación"
                             value={descriptionAlign}
                             options={[
-                                {
-                                    label: 'Izquierda',
-                                    value: 'left'
-                                },
-                                {
-                                    label: 'Centro',
-                                    value: 'center'
-                                },
-                                {
-                                    label: 'Derecha',
-                                    value: 'right'
-                                },
-                                {
-                                    label: 'Justificado',
-                                    value: 'justify'
-                                }
+                                { label: 'Izquierda', value: 'left' },
+                                { label: 'Centro', value: 'center' },
+                                { label: 'Derecha', value: 'right' },
+                                { label: 'Justificado', value: 'justify' }
                             ]}
-                            onChange={(value) =>
-                                setAttributes({
-                                    descriptionAlign:
-                                        value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                descriptionAlign: value
+                            })}
                         />
 
                         <p>Color de la descripción</p>
 
                         <ColorPalette
                             value={descriptionColor}
-                            onChange={(value) =>
-                                setAttributes({
-                                    descriptionColor:
-                                        value || '#ffffff'
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                descriptionColor: value || '#ffffff'
+                            })}
                         />
-
                     </PanelBody>
 
-
-                    {/* =================================================
-                        MARGEN
-                    ================================================= */}
+                    {/* MÁRGENES */}
 
                     <PanelBody
                         title="Margen del bloque"
                         initialOpen={false}
                     >
-
                         <RangeControl
                             label="Margen superior"
                             value={blockMarginTop}
-                            onChange={(value) =>
-                                setAttributes({
-                                    blockMarginTop: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                blockMarginTop: value
+                            })}
                             min={0}
                             max={200}
                         />
@@ -605,71 +436,45 @@ registerBlockType('hoteles-cosmos/image-cards', {
                         <RangeControl
                             label="Margen inferior"
                             value={blockMarginBottom}
-                            onChange={(value) =>
-                                setAttributes({
-                                    blockMarginBottom: value
-                                })
-                            }
+                            onChange={(value) => setAttributes({
+                                blockMarginBottom: value
+                            })}
                             min={0}
                             max={200}
                         />
-
                     </PanelBody>
-
                 </InspectorControls>
 
-
-                {/* =================================================
-                    BLOQUE
-                ================================================= */}
+                {/* VISTA DEL BLOQUE EN EL EDITOR */}
 
                 <section {...blockProps}>
-
                     <div className="container">
-
                         <div className="cosmos-image-cards__grid">
-
-                            {cards.map((card, index) => {
-
-                                const backgroundImage =
-                                    card.imageUrl
-                                        ? `linear-gradient(
-                                            rgba(0,0,0,${overlay / 100}),
-                                            rgba(0,0,0,${overlay / 100})
-                                        ),
-                                        url("${card.imageUrl}")`
-                                        : undefined;
-
+                            {safeCards.map((card, index) => {
+                                const backgroundImage = card.imageUrl
+                                    ? `linear-gradient(
+                                        rgba(0, 0, 0, ${overlay / 100}),
+                                        rgba(0, 0, 0, ${overlay / 100})
+                                    ), url("${card.imageUrl}")`
+                                    : undefined;
 
                                 return (
-
                                     <article
-                                        key={index}
+                                        key={`card-${index}`}
                                         className="cosmos-image-cards__card"
-                                        style={{
-                                            backgroundImage
-                                        }}
+                                        style={{ backgroundImage }}
                                     >
-
                                         <div className="cosmos-image-cards__content">
-
-                                            {/* TÍTULO ARRIBA */}
-
                                             <div className="cosmos-image-cards__title-area">
-
                                                 <RichText
                                                     tagName="h3"
                                                     className="cosmos-image-cards__title"
-                                                    value={
-                                                        card.title
-                                                    }
-                                                    onChange={(value) =>
-                                                        updateCard(
-                                                            index,
-                                                            'title',
-                                                            value
-                                                        )
-                                                    }
+                                                    value={card.title || ''}
+                                                    onChange={(value) => updateCard(
+                                                        index,
+                                                        'title',
+                                                        value
+                                                    )}
                                                     placeholder="Título..."
                                                     allowedFormats={[
                                                         'core/bold',
@@ -677,27 +482,18 @@ registerBlockType('hoteles-cosmos/image-cards', {
                                                         'core/link'
                                                     ]}
                                                 />
-
                                             </div>
 
-
-                                            {/* DESCRIPCIÓN ABAJO */}
-
                                             <div className="cosmos-image-cards__description-area">
-
                                                 <RichText
                                                     tagName="div"
                                                     className="cosmos-image-cards__description"
-                                                    value={
-                                                        card.description
-                                                    }
-                                                    onChange={(value) =>
-                                                        updateCard(
-                                                            index,
-                                                            'description',
-                                                            value
-                                                        )
-                                                    }
+                                                    value={card.description || ''}
+                                                    onChange={(value) => updateCard(
+                                                        index,
+                                                        'description',
+                                                        value
+                                                    )}
                                                     placeholder="Descripción..."
                                                     allowedFormats={[
                                                         'core/bold',
@@ -705,28 +501,17 @@ registerBlockType('hoteles-cosmos/image-cards', {
                                                         'core/link'
                                                     ]}
                                                 />
-
                                             </div>
-
                                         </div>
-
                                     </article>
-
                                 );
-
                             })}
-
                         </div>
-
                     </div>
-
                 </section>
-
             </Fragment>
         );
     },
 
-
     save: () => null
-
 });

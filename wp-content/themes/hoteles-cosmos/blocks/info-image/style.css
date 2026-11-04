@@ -402,6 +402,53 @@
     overflow-wrap: break-word;
 }
 
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.cosmos-info-image__description {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 30px;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    color: var(
+        --cosmos-info-description-color,
+        #333333
+    );
+
+    font-size: var(
+        --cosmos-info-description-size,
+        16px
+    );
+
+    text-align: var(
+        --cosmos-info-description-align,
+        left
+    );
+
+    line-height: 1.6;
+
+    overflow-wrap: break-word;
+}
+
+/*
+ * Evita márgenes internos adicionales en los
+ * elementos de texto que pueda generar RichText.
+ */
+
+.cosmos-info-image__description p {
+    margin: 0;
+}
+
+.cosmos-info-image__description a {
+    color: inherit;
+}
+
 
 /* =====================================================
    ITEMS

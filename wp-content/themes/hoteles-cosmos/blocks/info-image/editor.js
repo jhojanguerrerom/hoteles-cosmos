@@ -16,6 +16,7 @@ import {
     SelectControl,
     ToggleControl,
     TextControl,
+    TextareaControl,
     ColorPicker
 } from '@wordpress/components';
 
@@ -60,6 +61,11 @@ registerBlockType(metadata.name, {
             titleAlign,
             titleLineHeight,
             titleMarginBottom,
+
+            description,
+            descriptionColor,
+            descriptionSize,
+            descriptionAlign,
 
             infoAlign,
             infoTextColor,
@@ -189,6 +195,10 @@ registerBlockType(metadata.name, {
                 '--cosmos-info-title-align': titleAlign,
                 '--cosmos-info-title-line-height': titleLineHeight,
                 '--cosmos-info-title-margin-bottom': `${titleMarginBottom}px`,
+
+                '--cosmos-info-description-color': descriptionColor,
+                '--cosmos-info-description-size': `${descriptionSize}px`,
+                '--cosmos-info-description-align': descriptionAlign,
 
                 '--cosmos-info-align': infoAlign,
                 '--cosmos-info-text-color': infoTextColor,
@@ -756,6 +766,82 @@ registerBlockType(metadata.name, {
 
                     </PanelBody>
 
+                    {/* =========================================
+                        DESCRIPCIÓN
+                    ========================================== */}
+
+                    <PanelBody
+                        title={__('Descripción', 'hoteles-cosmos')}
+                        initialOpen={false}
+                    >
+                        <TextareaControl
+                            label={__('Texto de la descripción', 'hoteles-cosmos')}
+                            value={description}
+                            onChange={(value) =>
+                                setAttributes({
+                                    description: value
+                                })
+                            }
+                            rows={5}
+                        />
+
+                        <RangeControl
+                            label={__('Tamaño del texto', 'hoteles-cosmos')}
+                            value={descriptionSize}
+                            onChange={(value) =>
+                                setAttributes({
+                                    descriptionSize: value
+                                })
+                            }
+                            min={10}
+                            max={60}
+                        />
+
+                        <SelectControl
+                            label={__('Alineación', 'hoteles-cosmos')}
+                            value={descriptionAlign}
+                            options={[
+                                {
+                                    label: __('Izquierda', 'hoteles-cosmos'),
+                                    value: 'left'
+                                },
+                                {
+                                    label: __('Centro', 'hoteles-cosmos'),
+                                    value: 'center'
+                                },
+                                {
+                                    label: __('Derecha', 'hoteles-cosmos'),
+                                    value: 'right'
+                                },
+                                {
+                                    label: __('Justificado', 'hoteles-cosmos'),
+                                    value: 'justify'
+                                }
+                            ]}
+                            onChange={(value) =>
+                                setAttributes({
+                                    descriptionAlign: value
+                                })
+                            }
+                        />
+
+                        <p>
+                            <strong>
+                                {__('Color del texto', 'hoteles-cosmos')}
+                            </strong>
+                        </p>
+
+                        <ColorPicker
+                            color={descriptionColor}
+                            onChangeComplete={(color) =>
+                                setAttributes({
+                                    descriptionColor: color.hex
+                                })
+                            }
+                            disableAlpha
+                        />
+                    </PanelBody>
+
 
                     {/* =========================================
                         INFORMACIÓN
@@ -1306,6 +1392,28 @@ registerBlockType(metadata.name, {
                                             'hoteles-cosmos'
                                         )}
                                     />
+
+                                    {description && (
+                                      <RichText
+                                          tagName="p"
+                                          className="cosmos-info-image__description"
+                                          value={description}
+                                          onChange={(value) =>
+                                              setAttributes({
+                                                  description: value
+                                              })
+                                          }
+                                          placeholder={__(
+                                              'Escribe la descripción...',
+                                              'hoteles-cosmos'
+                                          )}
+                                          allowedFormats={[
+                                              'core/bold',
+                                              'core/italic',
+                                              'core/link'
+                                          ]}
+                                      />
+                                  )}
 
 
                                     <div className="cosmos-info-image__items">

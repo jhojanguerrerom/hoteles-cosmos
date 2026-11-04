@@ -1,73 +1,122 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "hoteles-cosmos/hero",
-    "title": "Hero Cosmos",
-    "category": "cosmos",
-    "icon": "format-image",
-    "description": "Bloque hero reutilizable con imagen, overlay y CTA para páginas de Hoteles Cosmos.",
-    "keywords": [
-        "hero",
-        "portada",
-        "banner",
-        "cosmos"
-    ],
-    "textdomain": "hoteles-cosmos",
-
-    "supports": {
-        "anchor": true,
-        "html": false
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "hoteles-cosmos/hero",
+  "title": "Hero Cosmos",
+  "category": "cosmos",
+  "icon": "format-image",
+  "description": "Bloque hero reutilizable con imagen, overlay y CTA para páginas de Hoteles Cosmos.",
+  "keywords": [
+    "hero",
+    "portada",
+    "banner",
+    "cosmos"
+  ],
+  "textdomain": "hoteles-cosmos",
+  "supports": {
+    "anchor": true,
+    "html": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": ""
     },
-
-    "attributes": {
-        "eyebrow": {
-            "type": "string",
-            "default": ""
-        },
-        "title": {
-            "type": "string",
-            "default": ""
-        },
-        "subtitle": {
-            "type": "string",
-            "default": ""
-        },
-        "imageId": {
-            "type": "number",
-            "default": 0
-        },
-        "imageUrl": {
-            "type": "string",
-            "default": ""
-        },
-        "imageAlt": {
-            "type": "string",
-            "default": ""
-        },
-        "buttonText": {
-            "type": "string",
-            "default": ""
-        },
-        "buttonUrl": {
-            "type": "string",
-            "default": ""
-        },
-        "overlay": {
-            "type": "number",
-            "default": 55
-        },
-        "contentWidth": {
-            "type": "string",
-            "default": "medium"
-        },
-        "headingLevel": {
-            "type": "string",
-            "default": "h1"
-        }
+    "title": {
+      "type": "string",
+      "default": ""
     },
-
-    "editorScript": "file:./build/editor.js",
-    "style": "file:./style.css",
-    "editorStyle": "file:./editor.css",
-    "render": "file:./render.php"
+    "subtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "overlay": {
+      "type": "number",
+      "default": 55
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "medium"
+    },
+    "headingLevel": {
+      "type": "string",
+      "default": "h1"
+    },
+    "eyebrowSize": {
+      "type": "number",
+      "default": 13
+    },
+    "eyebrowColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.78)"
+    },
+    "eyebrowAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "eyebrowWeight": {
+      "type": "string",
+      "default": "600"
+    },
+    "titleSize": {
+      "type": "number",
+      "default": 64
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "titleWeight": {
+      "type": "string",
+      "default": "700"
+    },
+    "subtitleSize": {
+      "type": "number",
+      "default": 18
+    },
+    "subtitleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "subtitleAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "subtitleWeight": {
+      "type": "string",
+      "default": "500"
+    },
+    "contentPosition": {
+      "type": "string",
+      "default": "left"
+    }
+  },
+  "editorScript": "file:./build/editor.js",
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css",
+  "render": "file:./render.php"
 }

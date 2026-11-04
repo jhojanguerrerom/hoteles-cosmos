@@ -233,3 +233,233 @@
     }
 
 }
+
+/* =====================================================
+   BOOKING ENGINE — MÓVIL COMPACTO
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+    .cosmos-booking-engine {
+        margin-top: var(--cosmos-booking-margin-top, 20px);
+        margin-bottom: var(--cosmos-booking-margin-bottom, 20px);
+        border-radius: var(--cosmos-booking-border-radius, 0px);
+    }
+
+    /* Formulario compacto */
+    .cosmos-booking-engine__form {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        align-items: end;
+        gap: 6px;
+        padding: 8px;
+        margin: 0;
+    }
+
+    /* Campos */
+    .cosmos-booking-engine__field {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        flex: none;
+        gap: 3px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Hotel: primera fila */
+    .cosmos-booking-engine__field:has(select[name="hotel"]) {
+        grid-column: 1 / -1;
+    }
+
+    /* Entrada y salida: segunda fila */
+    .cosmos-booking-engine__field:has(input[name="datein"]),
+    .cosmos-booking-engine__field:has(input[name="dateout"]) {
+        grid-column: span 3;
+    }
+
+    /* Habitaciones, adultos y niños: tercera fila */
+    .cosmos-booking-engine__field--small {
+        grid-column: span 2;
+        flex: none;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Etiquetas más discretas */
+    .cosmos-booking-engine__field label {
+        display: block;
+        margin: 0;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+
+    /* Controles de menor altura */
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine__field input {
+        width: 100%;
+        min-width: 0;
+        height: 32px;
+        padding: 0 6px;
+        font-size: 12px;
+        line-height: normal;
+        border-radius: 0;
+    }
+
+    /* Selector de hotel */
+    .cosmos-booking-engine__field select[name="hotel"] {
+        padding-right: 22px;
+        background-position:
+            calc(100% - 10px) 12px,
+            calc(100% - 5px) 12px;
+        background-size: 4px 4px;
+    }
+
+    /* Fechas */
+    .cosmos-booking-engine__field input[type="date"] {
+        padding-left: 3px;
+        padding-right: 2px;
+        font-size: 11px;
+    }
+
+    /* Contadores */
+    .cosmos-booking-engine__field input[type="number"] {
+        padding-left: 2px;
+        padding-right: 2px;
+        text-align: center;
+    }
+
+    /* Botón: última fila, ancho completo */
+    .cosmos-booking-engine__button {
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+        height: 34px;
+        margin: 0;
+        padding: 0 10px;
+        font-size: 12px;
+        line-height: 1;
+        transform: none;
+    }
+
+    .cosmos-booking-engine__button:hover,
+    .cosmos-booking-engine__button:active {
+        transform: none;
+    }
+
+    /* =================================================
+       STICKY MÓVIL
+       ================================================= */
+
+    .cosmos-booking-engine.is-sticky {
+        top: 76px;
+        width: 100%;
+        max-width: none;
+        margin: 0 !important;
+        padding: 0;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.96);
+        -webkit-backdrop-filter: blur(10px) saturate(140%);
+        backdrop-filter: blur(10px) saturate(140%);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__form {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 4px 5px;
+        padding: 5px 8px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field {
+        gap: 2px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field label {
+        font-size: 9px;
+        line-height: 1;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field input {
+        height: 28px;
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 11px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field select[name="hotel"] {
+        padding-right: 20px;
+        background-position:
+            calc(100% - 9px) 10px,
+            calc(100% - 4px) 10px;
+        background-size: 4px 4px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__field input[type="date"] {
+        padding-left: 2px;
+        padding-right: 0;
+        font-size: 10px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__button {
+        height: 30px;
+        padding: 0 8px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   TELÉFONOS PEQUEÑOS
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+    .cosmos-booking-engine__form {
+        gap: 5px;
+        padding: 6px;
+    }
+
+    .cosmos-booking-engine__field label {
+        font-size: 9px;
+    }
+
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine__field input {
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 11px;
+    }
+
+    .cosmos-booking-engine__field input[type="date"] {
+        font-size: 10px;
+    }
+
+    .cosmos-booking-engine.is-sticky
+    .cosmos-booking-engine__form {
+        gap: 4px;
+        padding: 4px 5px;
+    }
+}
+
+/* =====================================================
+   ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .cosmos-booking-engine,
+    .cosmos-booking-engine__field select,
+    .cosmos-booking-engine__field input,
+    .cosmos-booking-engine__button {
+        transition: none;
+    }
+}

@@ -4,14 +4,10 @@
 
 .cosmos-overlap-content {
     position: relative;
-
     width: 100%;
     max-width: 100%;
-
     padding: 60px 0;
-
     background: #ffffff;
-
     overflow: hidden;
 }
 
@@ -22,102 +18,103 @@
 
 .cosmos-overlap-content__grid {
     display: grid;
-
     grid-template-columns:
         minmax(0, 40%)
         minmax(0, 60%);
-
     align-items: center;
-
     column-gap: 40px;
-
     width: 100%;
     max-width: 100%;
-
     box-sizing: border-box;
 }
 
 
 /* =====================================================
-   COLUMNA DE IMÁGENES
+   COLUMNA DE IMÁGENES (Comportamiento por defecto / 2 imágenes)
    ===================================================== */
 
 .cosmos-overlap-content__images {
     position: relative;
-
     width: 100%;
     max-width: 100%;
-
-    /*
-     * Altura proporcional al ancho disponible.
-     */
-    aspect-ratio: 0.82 / 1;
-
+    aspect-ratio: 0.82 / 0.82;
     min-height: 0;
-
     box-sizing: border-box;
 }
 
 
 /* =====================================================
-   IMAGEN 1
+   COMPORTAMIENTO CUANDO HAY UNA SOLA IMAGEN (100% ancho)
    ===================================================== */
 
-.cosmos-overlap-content__image-one {
-    position: absolute;
+/* .cosmos-overlap-content__images.is-single-image {
+    aspect-ratio: 4 / 3;
+} */
 
+.cosmos-overlap-content__images.is-single-image .cosmos-overlap-content__image-one,
+.cosmos-overlap-content__images.is-single-image .cosmos-overlap-content__image-two {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+}
+
+.cosmos-overlap-content__images.is-single-image .cosmos-overlap-content__image-two {
+    position: relative;
+}
+
+
+/* =====================================================
+   IMAGEN 1 (Superposición original)
+   ===================================================== */
+
+.cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-one,
+.cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-one {
+    position: absolute;
     top: 0;
     left: 0;
-
     width: 68%;
     max-width: 68%;
-
     aspect-ratio: 3 / 4;
-
     overflow: hidden;
-
     z-index: 2;
 }
 
 
 /* =====================================================
-   IMAGEN 2
+   IMAGEN 2 (Superposición original)
    ===================================================== */
 
-.cosmos-overlap-content__image-two {
+.cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-two,
+.cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-two {
     position: absolute;
-
     right: 0;
     bottom: 0;
-
     width: 68%;
     max-width: 68%;
-
     aspect-ratio: 3 / 4;
-
     overflow: hidden;
-
     z-index: 1;
 }
 
 
 /* =====================================================
-   IMÁGENES
+   IMÁGENES (Tags IMG)
    ===================================================== */
 
 .cosmos-overlap-content__image-one img,
 .cosmos-overlap-content__image-two img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     max-width: 100%;
-
     object-fit: cover;
-
     object-position: center;
-
     box-sizing: border-box;
 }
 
@@ -129,14 +126,10 @@
 .cosmos-overlap-content__text {
     width: 100%;
     max-width: 100%;
-
     min-width: 0;
-
     padding-left: 30px;
     padding-right: 20px;
-
     box-sizing: border-box;
-
     text-align: left;
 }
 
@@ -147,20 +140,12 @@
 
 .cosmos-overlap-content__title {
     margin: 0;
-
     color: #111111;
-
-    font-size:
-        clamp(32px, 3vw, 46px);
-
+    font-size: clamp(32px, 3vw, 46px);
     line-height: 1.12;
-
     font-weight: 400;
-
     letter-spacing: -0.02em;
-
     text-align: left;
-
     overflow-wrap: break-word;
 }
 
@@ -171,23 +156,14 @@
 
 .cosmos-overlap-content__highlight {
     display: block;
-
     margin-top: 2px;
     margin-bottom: 30px;
-
     color: #111111;
-
-    font-size:
-        clamp(42px, 4vw, 64px);
-
+    font-size: clamp(42px, 4vw, 64px);
     line-height: 1.05;
-
     font-weight: 700;
-
     letter-spacing: -0.025em;
-
     text-align: left;
-
     overflow-wrap: break-word;
 }
 
@@ -199,28 +175,18 @@
 .cosmos-overlap-content__description {
     width: 100%;
     max-width: 680px;
-
     min-width: 0;
-
     color: #333333;
-
     font-size: 17px;
-
     line-height: 1.65;
-
     text-align: justify;
-
     text-justify: inter-word;
-
     overflow-wrap: break-word;
 }
 
-
 .cosmos-overlap-content__description p {
-    margin:
-        0 0 20px;
+    margin: 0 0 20px;
 }
-
 
 .cosmos-overlap-content__description p:last-child {
     margin-bottom: 0;
@@ -232,7 +198,6 @@
    ===================================================== */
 
 @media (min-width: 1401px) {
-
     .cosmos-overlap-content__grid {
         column-gap: 70px;
     }
@@ -241,7 +206,6 @@
         padding-left: 30px;
         padding-right: 40px;
     }
-
 }
 
 
@@ -250,67 +214,45 @@
    ===================================================== */
 
 @media (max-width: 900px) {
-
     .cosmos-overlap-content {
         padding: 70px 0;
     }
 
-
     .cosmos-overlap-content__grid {
         grid-template-columns: 1fr;
-
         column-gap: 0;
         row-gap: 60px;
     }
 
-
-    /* -----------------------------------------
-       IMÁGENES
-       ----------------------------------------- */
-
     .cosmos-overlap-content__images {
         width: 100%;
         max-width: 700px;
-
-        margin:
-            0 auto;
-
-        /*
-         * En tablet dejamos que la altura
-         * dependa del ancho.
-         */
+        margin: 0 auto;
         aspect-ratio: 0.9 / 1;
     }
 
+    .cosmos-overlap-content__images.is-single-image {
+        aspect-ratio: 4 / 3;
+    }
 
-    .cosmos-overlap-content__image-one,
-    .cosmos-overlap-content__image-two {
-
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-two,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-two {
         width: 68%;
         max-width: 68%;
     }
 
-
-    /* -----------------------------------------
-       TEXTO
-       ----------------------------------------- */
-
     .cosmos-overlap-content__text {
         width: 100%;
         max-width: 700px;
-
-        margin:
-            0 auto;
-
-        padding:
-            0;
+        margin: 0 auto;
+        padding: 0;
     }
-
 
     .cosmos-overlap-content__description {
         max-width: none;
     }
-
 }
 
 
@@ -319,99 +261,58 @@
    ===================================================== */
 
 @media (max-width: 600px) {
-
     .cosmos-overlap-content {
         padding: 55px 0;
     }
-
 
     .cosmos-overlap-content__grid {
         row-gap: 45px;
     }
 
-
-    /* -----------------------------------------
-       IMÁGENES
-       ----------------------------------------- */
-
     .cosmos-overlap-content__images {
         width: 100%;
         max-width: 100%;
-
-        /*
-         * Mantiene el efecto de superposición
-         * sin crear overflow.
-         */
         aspect-ratio: 0.88 / 1;
     }
 
-
-    .cosmos-overlap-content__image-one,
-    .cosmos-overlap-content__image-two {
-
-        width: 70%;
-        max-width: 70%;
-
-        aspect-ratio: 3 / 4;
+    .cosmos-overlap-content__images.is-single-image {
+        aspect-ratio: 4 / 3;
     }
 
-
-    /* -----------------------------------------
-       TEXTO
-       ----------------------------------------- */
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-two,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-two {
+        width: 70%;
+        max-width: 70%;
+        aspect-ratio: 3 / 4;
+    }
 
     .cosmos-overlap-content__text {
         width: 100%;
         max-width: 100%;
-
-        padding:
-            0;
-
-        margin:
-            0;
+        padding: 0;
+        margin: 0;
     }
-
-
-    /* -----------------------------------------
-       TÍTULO
-       ----------------------------------------- */
 
     .cosmos-overlap-content__title {
         font-size: 32px;
-
         line-height: 1.15;
     }
 
-
-    /* -----------------------------------------
-       DESTACADO
-       ----------------------------------------- */
-
     .cosmos-overlap-content__highlight {
         margin-bottom: 24px;
-
         font-size: 42px;
-
         line-height: 1.05;
     }
 
-
-    /* -----------------------------------------
-       DESCRIPCIÓN
-       ----------------------------------------- */
-
     .cosmos-overlap-content__description {
-
         width: 100%;
         max-width: 100%;
-
         font-size: 16px;
-
         line-height: 1.65;
-
         text-align: left;
     }
-
 }
 
 
@@ -420,38 +321,35 @@
    ===================================================== */
 
 @media (max-width: 380px) {
-
     .cosmos-overlap-content {
-        padding:
-            45px 0;
+        padding: 45px 0;
     }
-
 
     .cosmos-overlap-content__images {
         aspect-ratio: 0.84 / 1;
     }
 
+    .cosmos-overlap-content__images.is-single-image {
+        aspect-ratio: 4 / 3;
+    }
 
-    .cosmos-overlap-content__image-one,
-    .cosmos-overlap-content__image-two {
-
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images.is-double-images .cosmos-overlap-content__image-two,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-one,
+    .cosmos-overlap-content__images:not(.is-single-image):not(.is-double-images) .cosmos-overlap-content__image-two {
         width: 72%;
         max-width: 72%;
     }
-
 
     .cosmos-overlap-content__title {
         font-size: 29px;
     }
 
-
     .cosmos-overlap-content__highlight {
         font-size: 38px;
     }
 
-
     .cosmos-overlap-content__description {
         font-size: 15px;
     }
-
 }

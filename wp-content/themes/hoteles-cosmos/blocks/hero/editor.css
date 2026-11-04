@@ -5,159 +5,149 @@
 
 .cosmos-hero__preview {
     position: relative;
-
     width: 100%;
     min-height: 520px;
-
     display: flex;
     align-items: center;
-
     overflow: hidden;
-
     background: #111;
 }
 
 .cosmos-hero__image {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: 0;
 }
 
 .cosmos-hero__image-placeholder {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 24px;
     background: #222;
     color: #aaa;
-
+    text-align: center;
     z-index: 0;
 }
 
 .cosmos-hero__overlay {
     position: absolute;
     inset: 0;
-
     background: #000;
-
     z-index: 1;
-
     pointer-events: none;
 }
 
 .cosmos-hero .container {
     position: relative;
     z-index: 2;
-
     width: min(1400px, calc(100% - 48px));
-
     margin-left: auto;
     margin-right: auto;
 }
 
 .cosmos-hero__content {
     width: 100%;
-
+    box-sizing: border-box;
     padding: 80px 0;
-
-    text-align: left;
-
     color: #fff;
 }
 
-.cosmos-hero__content > * {
-    max-width: 50%;
-}
-
 .cosmos-hero__eyebrow {
-    margin: 0 0 14px;
-
-    color: rgba(255, 255, 255, 0.75);
-
-    font-size: 13px;
-    font-weight: 500;
-
+    display: block;
+    margin: 0 0 16px;
     letter-spacing: 0.14em;
-
     text-transform: uppercase;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 .cosmos-hero__title {
     margin: 0 0 20px;
-    color: #fff;
-    font-size: clamp(40px, 3vw, 72px);
-    font-weight: 700;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
 }
 
 .cosmos-hero__subtitle {
-    margin: 0 0 30px;
-    color: #fff;
-    font-size: clamp(25px, 1.2vw, 52px);
+    margin: 10px 0 0;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
 }
 
 .cosmos-hero__button-preview {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     min-height: 46px;
-
+    margin-top: 32px;
     padding: 12px 26px;
-
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: 50px;
-
     color: #fff;
-
     background: transparent;
-
     font-size: 13px;
     font-weight: 500;
-
     letter-spacing: 0.08em;
+    box-sizing: border-box;
 }
 
+.cosmos-hero .block-editor-rich-text__editable {
+    min-width: 20px;
+}
 
 @media (max-width: 900px) {
-
-    .cosmos-hero__content {
-        padding: 70px 0;
-    }
-
-    .cosmos-hero__content > * {
-        max-width: 70%;
-    }
-
+    .cosmos-hero__content { padding: 70px 0; }
 }
 
-
 @media (max-width: 600px) {
-
     .cosmos-hero__preview {
         min-height: 520px;
         align-items: flex-end;
     }
+    .cosmos-hero .container { width: calc(100% - 30px); }
+    .cosmos-hero__content { padding: 55px 0; }
+}
 
-    .cosmos-hero .container {
-        width: calc(100% - 30px);
-    }
+/* La previsualización del editor refleja la posición elegida. */
+.cosmos-hero--position-left .cosmos-hero__content {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+}
 
-    .cosmos-hero__content {
-        padding: 55px 0;
-    }
+.cosmos-hero--position-center .cosmos-hero__content,
+.cosmos-hero--position-center-banner .cosmos-hero__content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
-    .cosmos-hero__content > * {
-        max-width: 100%;
-    }
+.cosmos-hero--position-right .cosmos-hero__content {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
 
+.cosmos-hero--position-center-banner .cosmos-hero__preview .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+}
+
+.cosmos-hero--position-center-banner .cosmos-hero__content {
+    margin: 0 auto;
+}
+
+.cosmos-hero--position-center-banner .cosmos-hero__button-preview {
+    margin-left: auto;
+    margin-right: auto;
+}
+.cosmos-hero--position-center-banner .cosmos-hero__preview .container {
+    align-self: stretch;
 }

@@ -7,113 +7,46 @@ $cards = (
     ? $attributes['cards']
     : [];
 
-
-$margin_top = isset($attributes['marginTop'])
-    ? intval($attributes['marginTop'])
-    : 50;
-
-
-$margin_bottom = isset($attributes['marginBottom'])
-    ? intval($attributes['marginBottom'])
-    : 50;
-
-
-$card_gap = isset($attributes['cardGap'])
-    ? intval($attributes['cardGap'])
-    : 30;
-
-
-$image_aspect_ratio =
-    $attributes['imageAspectRatio'] ?? '4/3';
-
-
-$overlay = isset($attributes['overlay'])
-    ? intval($attributes['overlay'])
-    : 55;
-
-
-$cta_width = isset($attributes['ctaWidth'])
-    ? intval($attributes['ctaWidth'])
-    : 90;
-
-
-$cta_border_width =
-    isset($attributes['ctaBorderWidth'])
-        ? intval($attributes['ctaBorderWidth'])
-        : 1;
-
-
-$cta_border_radius =
-    isset($attributes['ctaBorderRadius'])
-        ? intval($attributes['ctaBorderRadius'])
-        : 0;
-
-
-$cta_color =
-    $attributes['ctaColor'] ?? '#111111';
-
-
-$cta_background =
-    $attributes['ctaBackground'] ?? 'transparent';
-
-
-$cta_text =
-    $attributes['ctaText'] ?? 'Conoce más';
-
-
-/*
- * =====================================================
- * LIMITES
- * =====================================================
- */
-
 $margin_top = max(
     0,
-    min(150, $margin_top)
+    min(150, intval($attributes['marginTop'] ?? 50))
 );
-
 
 $margin_bottom = max(
     0,
-    min(150, $margin_bottom)
+    min(150, intval($attributes['marginBottom'] ?? 50))
 );
-
 
 $card_gap = max(
     0,
-    min(80, $card_gap)
+    min(80, intval($attributes['cardGap'] ?? 30))
 );
 
+$image_aspect_ratio = $attributes['imageAspectRatio'] ?? '4/3';
 
 $overlay = max(
     0,
-    min(100, $overlay)
+    min(100, intval($attributes['overlay'] ?? 55))
 );
-
 
 $cta_width = max(
     50,
-    min(100, $cta_width)
+    min(100, intval($attributes['ctaWidth'] ?? 90))
 );
-
 
 $cta_border_width = max(
     0,
-    min(5, $cta_border_width)
+    min(5, intval($attributes['ctaBorderWidth'] ?? 1))
 );
-
 
 $cta_border_radius = max(
     0,
-    min(50, $cta_border_radius)
+    min(50, intval($attributes['ctaBorderRadius'] ?? 0))
 );
 
-
-/*
- * =====================================================
- * RATIOS
- * =====================================================
- */
+$cta_color = $attributes['ctaColor'] ?? '#111111';
+$cta_background = $attributes['ctaBackground'] ?? 'transparent';
+$cta_text = $attributes['ctaText'] ?? 'Conoce más';
 
 $allowed_ratios = [
     '4/3',
@@ -123,25 +56,9 @@ $allowed_ratios = [
     '1/1'
 ];
 
-
-if (
-    !in_array(
-        $image_aspect_ratio,
-        $allowed_ratios,
-        true
-    )
-) {
-
+if (!in_array($image_aspect_ratio, $allowed_ratios, true)) {
     $image_aspect_ratio = '4/3';
-
 }
-
-
-/*
- * =====================================================
- * ESTILOS DEL BLOQUE
- * =====================================================
- */
 
 $style = sprintf(
     '--cosmos-card-grid-margin-top:%dpx;
@@ -154,30 +71,19 @@ $style = sprintf(
      --cosmos-card-grid-cta-border-radius:%dpx;
      --cosmos-card-grid-cta-color:%s;
      --cosmos-card-grid-cta-background:%s;',
-
     $margin_top,
-
     $margin_bottom,
-
     $card_gap,
-
-    esc_attr($image_aspect_ratio),
-
+    esc_attr(str_replace('/', ' / ', $image_aspect_ratio)),
     $overlay,
-
     $cta_width,
-
     $cta_border_width,
-
     $cta_border_radius,
-
     esc_attr($cta_color),
-
     esc_attr($cta_background)
 );
 
 ?>
-
 
 <section
     <?php
@@ -187,176 +93,127 @@ $style = sprintf(
     ]);
     ?>
 >
-
     <div class="container">
 
         <?php if (!empty($cards)) : ?>
 
-            <div class="cosmos-card-grid__list">
+            <div class="cosmos-card-grid__carousel">
 
-                <?php foreach ($cards as $card) : ?>
+                <?php if (count($cards) > 1) : ?>
+                    <div class="cosmos-card-grid__arrows">
+                        <button
+                            type="button"
+                            class="cosmos-card-grid__arrow cosmos-card-grid__arrow--prev"
+                            aria-label="<?php echo esc_attr__('Tarjetas anteriores', 'hoteles-cosmos'); ?>"
+                        >
+                            <span aria-hidden="true">‹</span>
+                        </button>
 
-                    <?php
+                        <button
+                            type="button"
+                            class="cosmos-card-grid__arrow cosmos-card-grid__arrow--next"
+                            aria-label="<?php echo esc_attr__('Tarjetas siguientes', 'hoteles-cosmos'); ?>"
+                        >
+                            <span aria-hidden="true">›</span>
+                        </button>
+                    </div>
+                <?php endif; ?>
 
-                    $image_url =
-                        $card['imageUrl'] ?? '';
+                <div class="cosmos-card-grid__viewport">
+                    <div class="cosmos-card-grid__list">
 
-                    $image_alt =
-                        $card['imageAlt'] ?? '';
+                        <?php foreach ($cards as $card) : ?>
 
-                    $text =
-                        $card['text'] ?? '';
+                            <?php
+                            $image_url = $card['imageUrl'] ?? '';
+                            $image_alt = $card['imageAlt'] ?? '';
+                            $text = $card['text'] ?? '';
+                            $text_color = $card['textColor'] ?? '#ffffff';
 
-                    $text_color =
-                        $card['textColor']
-                        ?? '#ffffff';
+                            $text_size = max(
+                                10,
+                                min(60, intval($card['textSize'] ?? 20))
+                            );
 
-                    $text_size =
-                        isset($card['textSize'])
-                            ? intval($card['textSize'])
-                            : 20;
+                            $text_align = $card['textAlign'] ?? 'left';
 
-                    $text_align =
-                        $card['textAlign']
-                        ?? 'left';
+                            if (!in_array(
+                                $text_align,
+                                ['left', 'center', 'right'],
+                                true
+                            )) {
+                                $text_align = 'left';
+                            }
 
-                    $text_bold =
-                        !empty($card['textBold']);
+                            $text_bold = !empty($card['textBold']);
+                            $url = $card['ctaUrl'] ?? '';
+                            ?>
 
-                    $url =
-                        $card['ctaUrl'] ?? '';
+                            <article class="cosmos-card-grid__card">
 
-                    ?>
+                                <?php if ($image_url) : ?>
 
+                                    <a
+                                        class="cosmos-card-grid__image-link"
+                                        href="<?php echo esc_url($url ?: '#'); ?>"
+                                        <?php if (!$url) : ?>
+                                            aria-disabled="true"
+                                            onclick="return false;"
+                                        <?php endif; ?>
+                                    >
+                                        <div class="cosmos-card-grid__image-wrapper">
 
-                    <article
-                        class="cosmos-card-grid__card"
-                    >
+                                            <img
+                                                src="<?php echo esc_url($image_url); ?>"
+                                                alt="<?php echo esc_attr($image_alt); ?>"
+                                                loading="lazy"
+                                            />
 
-                        <?php if ($image_url) : ?>
+                                            <div class="cosmos-card-grid__overlay"></div>
 
-                            <a
-                                class="cosmos-card-grid__image-link"
-                                href="<?php
-                                    echo esc_url($url);
-                                ?>"
-                                <?php if (!$url) : ?>
-                                    aria-disabled="true"
-                                    onclick="return false;"
-                                <?php endif; ?>
-                            >
-
-                                <div
-                                    class="cosmos-card-grid__image-wrapper"
-                                >
-
-                                    <img
-                                        src="<?php
-                                            echo esc_url(
-                                                $image_url
-                                            );
-                                        ?>"
-                                        alt="<?php
-                                            echo esc_attr(
-                                                $image_alt
-                                            );
-                                        ?>"
-                                        loading="lazy"
-                                    />
-
-
-                                    <div
-                                        class="cosmos-card-grid__overlay"
-                                    ></div>
-
-
-                                    <?php if ($text) : ?>
-
-                                        <div
-                                            class="cosmos-card-grid__text <?php
-                                                echo $text_bold
-                                                    ? 'is-bold'
-                                                    : '';
-                                            ?>"
-                                            style="
-                                                color: <?php
-                                                    echo esc_attr(
-                                                        $text_color
-                                                    );
-                                                ?>;
-
-                                                font-size: <?php
-                                                    echo esc_attr(
-                                                        $text_size
-                                                    );
-                                                ?>px;
-
-                                                text-align: <?php
-                                                    echo esc_attr(
-                                                        $text_align
-                                                    );
-                                                ?>;
-                                            "
-                                        >
-
-                                            <?php
-                                            echo wp_kses_post(
-                                                $text
-                                            );
-                                            ?>
+                                            <?php if ($text !== '') : ?>
+                                                <div
+                                                    class="cosmos-card-grid__text <?php echo $text_bold ? 'is-bold' : ''; ?>"
+                                                    style="<?php
+                                                        echo esc_attr(
+                                                            'color:' . $text_color .
+                                                            ';font-size:' . $text_size . 'px' .
+                                                            ';text-align:' . $text_align . ';'
+                                                        );
+                                                    ?>"
+                                                >
+                                                    <?php echo wp_kses_post($text); ?>
+                                                </div>
+                                            <?php endif; ?>
 
                                         </div>
+                                    </a>
 
-                                    <?php endif; ?>
+                                <?php endif; ?>
 
-                                </div>
+                                <?php if ($url) : ?>
+                                    <a
+                                        class="cosmos-card-grid__cta"
+                                        href="<?php echo esc_url($url); ?>"
+                                    >
+                                        <?php echo esc_html($cta_text); ?>
+                                    </a>
+                                <?php else : ?>
+                                    <span class="cosmos-card-grid__cta">
+                                        <?php echo esc_html($cta_text); ?>
+                                    </span>
+                                <?php endif; ?>
 
-                            </a>
+                            </article>
 
-                        <?php endif; ?>
+                        <?php endforeach; ?>
 
-
-                        <?php if ($url) : ?>
-
-                            <a
-                                class="cosmos-card-grid__cta"
-                                href="<?php
-                                    echo esc_url($url);
-                                ?>"
-                            >
-
-                                <?php
-                                echo esc_html(
-                                    $cta_text
-                                );
-                                ?>
-
-                            </a>
-
-                        <?php else : ?>
-
-                            <span
-                                class="cosmos-card-grid__cta"
-                            >
-
-                                <?php
-                                echo esc_html(
-                                    $cta_text
-                                );
-                                ?>
-
-                            </span>
-
-                        <?php endif; ?>
-
-                    </article>
-
-                <?php endforeach; ?>
+                    </div>
+                </div>
 
             </div>
 
         <?php endif; ?>
 
     </div>
-
 </section>
